@@ -1,8 +1,8 @@
 # OpenClaw analysis dashboard (public mirror)
 
 Static HTML dashboards summarizing an OpenClaw chatv2 worker-pipeline audit.
-Built from data pulled via Redash/Snowflake, audited via Claude
-sub-agents, and presented under one design system.
+Built from data pulled via Redash/Snowflake, audited via Claude sub-agents,
+and presented under one design system.
 
 > **This is a redacted public mirror.** Worker emails and Mongo-style 24-character IDs
 > have been hashed; the audit evidence viewer is omitted because it embeds raw
@@ -11,13 +11,13 @@ sub-agents, and presented under one design system.
 
 ## Start here
 
-- [index.html](./index.html) — overview + four "what to do this week" recommendation cards.
-- [summary.html](./summary.html) — one-page executive summary (funnel + reviewer trust + curriculum).
-- [themes/](./themes/) — cross-cutting browse-by-question views:
-  - `themes/questions.html` — which course questions to rewrite or remove.
-  - `themes/reviewers.html` — reviewer trust + drop list.
-  - `themes/workers.html` — defect-rate distribution + stuck-worker list.
-  - `themes/courses.html` — per-course predictive vs counterproductive bar + curriculum gaps.
+- [index.html](./index.html) -- overview + four "what to do this week" recommendation cards.
+- [summary.html](./summary.html) -- one-page executive summary (funnel + reviewer trust + curriculum).
+- [themes/](./themes/) -- cross-cutting browse-by-question views:
+  - `themes/questions.html` -- which course questions to rewrite or remove.
+  - `themes/reviewers.html` -- reviewer trust + drop list.
+  - `themes/workers.html` -- defect-rate distribution + stuck-worker list.
+  - `themes/courses.html` -- per-course predictive vs counterproductive bar + curriculum gaps.
 - Deep-dive dashboards (full methodology, raw tables): `g1.html`, `g2.html`,
   `g3.html`, `g3_production_validity.html`, `g4.html`, `g_universe_coverage.html`.
 
@@ -26,7 +26,7 @@ sub-agents, and presented under one design system.
 Every page has a `Behind the numbers` section explaining the inputs +
 formulas. The headline metric throughout is **PDR** (Performance Defect
 Rate) = fraction of a worker's last 3 trusted reviews scoring below the
-promotion gate (QM &lt; 4). Lower PDR = better.
+promotion gate (QM < 4). Lower PDR = better.
 
 ## Local development
 
