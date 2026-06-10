@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Phase 0 — RL universe coverage</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="_assets/design.css">
+
+<style>.section { margin: 32px 0; }.section > h2 { margin-bottom: 14px; border-bottom: 1px solid var(--color-border);  padding-bottom: 10px; font-size: 24px; }.plot-wrap { background: var(--color-surface); border: 1px solid var(--color-border);  border-radius: var(--radius); padding: 16px; margin: 14px 0; }.plot { width: 100%; min-height: 360px; }.caption { color: var(--color-text-muted); font-size: 13px; margin: 8px 4px 0 4px; }.table-wrap { background: var(--color-surface); border: 1px solid var(--color-border);  border-radius: var(--radius); overflow: hidden; margin: 14px 0; }table.data { width: 100%; border-collapse: collapse; font-size: 14px; }table.data thead th { padding: 10px 14px; text-align: left;  background: var(--color-surface-2); font-weight: 600; font-size: 12px;  text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-text-muted);  border-bottom: 2px solid var(--color-border); cursor: pointer; user-select: none;  white-space: nowrap; position: sticky; top: 0; }table.data tbody tr { border-bottom: 1px solid var(--color-border); }table.data tbody tr:hover { background: var(--color-surface-2); }table.data td { padding: 10px 14px; vertical-align: top; word-break: break-word; }</style><script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+</head>
+<body>
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="site-title" href="index.html">OpenClaw analysis</a>
+    <nav class="site-nav" aria-label="Primary"><a class="" href="index.html">Overview</a><a class="" href="summary.html">Summary</a><a class="" href="themes/courses.html">Courses</a><a class="" href="themes/questions.html">Questions</a><a class="" href="themes/reviewers.html">Reviewers</a><a class="" href="themes/workers.html">Workers</a></nav>
+    <span class="site-meta" title="2026-06-10T18:40+00:00">Updated 2026-06-10 18:40 UTC</span>
+  </div>
+</header>
+<main class="page-shell">
+<nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Overview</a><span class="sep">/</span><span>Phase 0 — universe coverage</span></nav>
+<header class="page-header"><h1>Phase 0 — RL universe coverage</h1><p class="lede">Which RL universes are referenced in CDS payloads but missing from the local &lt;code&gt;rl_envs/&lt;/code&gt; directory? Drives the acquisition priority list.</p></header><aside class="tldr" aria-label="Summary">
+  <div class="tldr-grid">
+    <div class="tldr-block">
+      <h3>What we measured</h3>
+      <p>We scan every CDS payload for universe references, then check which universe ZIPs we have locally. The Pareto chart shows what fraction of references the top-N universes cover.</p>
+    </div>
+    <div class="tldr-block">
+      <h3>What we found</h3>
+      <p>See the headline banner above for missing-universe counts. The 'Top missing universes' bar chart is the acquisition priority list.</p>
+    </div>
+    <div class="tldr-block">
+      <h3>What to do</h3>
+      <ul><li>Acquire universes from the top of the bar chart — they cover the most CDS records.</li><li>Stop acquisition at ≈80% of the Pareto curve; the long tail is rarely worth chasing.</li></ul>
+    </div>
+  </div>
+</aside><div class="tldr" style="border-left-color:var(--color-warn);"><p>Total cached payloads: &lt;strong&gt;2858&lt;/strong&gt;. With a universe field: 2857. Missing universe field entirely: 1. Have local rl_env match: &lt;strong&gt;2857 (100.0%)&lt;/strong&gt;. Distinct universe slugs missing locally: &lt;strong&gt;0&lt;/strong&gt;.</p></div><section class="section"><h2>Top missing universes (acquire these first)</h2><div class="plot-wrap"><div id="plot_0_0" class="plot"></div><script>Plotly.newPlot("plot_0_0", {"data": [{"type": "bar", "orientation": "h", "x": [], "y": [], "hovertemplate": "<b>%{y}</b><br>%{x} payloads<extra></extra>"}], "layout": {"title": {"text": "Top 20 missing universes by payload count"}, "margin": {"l": 220, "r": 30, "t": 50, "b": 40}, "height": 280, "xaxis": {"title": "Payloads in queue"}, "yaxis": {"automargin": true}}}.data, {"data": [{"type": "bar", "orientation": "h", "x": [], "y": [], "hovertemplate": "<b>%{y}</b><br>%{x} payloads<extra></extra>"}], "layout": {"title": {"text": "Top 20 missing universes by payload count"}, "margin": {"l": 220, "r": 30, "t": 50, "b": 40}, "height": 280, "xaxis": {"title": "Payloads in queue"}, "yaxis": {"automargin": true}}}.layout, {"responsive": true, "displaylogo": false});</script></div></section><section class="section"><h2>Acquisition Pareto</h2><div class="plot-wrap"><div id="plot_1_0" class="plot"></div><p class="caption">Where to stop: 80% covers most of the impact; 95% gets nearly everything.</p><script>Plotly.newPlot("plot_1_0", {"data": [{"type": "scatter", "mode": "lines+markers", "x": [], "y": [], "hovertemplate": "Acquire top %{x}<br>%{y}% of missing payloads covered<br><extra></extra>"}], "layout": {"title": {"text": "Pareto: cumulative missing-payload coverage if you acquire the top-N"}, "xaxis": {"title": "Number of additional rl_envs acquired"}, "yaxis": {"title": "Cumulative % of missing payloads covered", "range": [0, 105]}, "height": 380, "shapes": [{"type": "line", "x0": 0, "x1": 0, "y0": 80, "y1": 80, "line": {"dash": "dash", "width": 1}}, {"type": "line", "x0": 0, "x1": 0, "y0": 95, "y1": 95, "line": {"dash": "dash", "width": 1}}], "annotations": [{"x": 0, "y": 80, "text": "80%", "showarrow": false, "xanchor": "left"}, {"x": 0, "y": 95, "text": "95%", "showarrow": false, "xanchor": "left"}]}}.data, {"data": [{"type": "scatter", "mode": "lines+markers", "x": [], "y": [], "hovertemplate": "Acquire top %{x}<br>%{y}% of missing payloads covered<br><extra></extra>"}], "layout": {"title": {"text": "Pareto: cumulative missing-payload coverage if you acquire the top-N"}, "xaxis": {"title": "Number of additional rl_envs acquired"}, "yaxis": {"title": "Cumulative % of missing payloads covered", "range": [0, 105]}, "height": 380, "shapes": [{"type": "line", "x0": 0, "x1": 0, "y0": 80, "y1": 80, "line": {"dash": "dash", "width": 1}}, {"type": "line", "x0": 0, "x1": 0, "y0": 95, "y1": 95, "line": {"dash": "dash", "width": 1}}], "annotations": [{"x": 0, "y": 80, "text": "80%", "showarrow": false, "xanchor": "left"}, {"x": 0, "y": 95, "text": "95%", "showarrow": false, "xanchor": "left"}]}}.layout, {"responsive": true, "displaylogo": false});</script></div></section><section class="section"><h2>Acquisition table (top 50)</h2><div class="table-wrap"><table class="data"><thead><tr><th>rank</th><th>universe_slug</th><th>n_missing</th><th>cumulative_pct</th><th>raw_slug</th><th>source_platform</th><th>source_url</th><th>example_attempt_id</th></tr></thead><tbody></tbody></table></div></section>
+</main>
+<footer class="site-footer">
+  Generated 2026-06-10 18:40 UTC ·
+  <a href="index.html">Overview</a> ·
+  <a href="summary.html">Summary</a> ·
+  Source: <code>analysis/</code>
+</footer>
+<script src="_assets/dashboard.js"></script>
+<script>
+// Click headers to sort. Numeric columns sort numerically, others lex.
+document.querySelectorAll('table.data').forEach(function(t){
+  var ths = t.querySelectorAll('thead th');
+  ths.forEach(function(th, idx){
+    th.addEventListener('click', function(){
+      var tb = t.querySelector('tbody');
+      var rows = Array.from(tb.querySelectorAll('tr'));
+      var asc = th.dataset.sortAsc !== 'true';
+      ths.forEach(function(h){ delete h.dataset.sortAsc; });
+      th.dataset.sortAsc = asc ? 'true' : 'false';
+      rows.sort(function(a, b){
+        var av = a.children[idx].innerText.trim();
+        var bv = b.children[idx].innerText.trim();
+        var anum = parseFloat(av), bnum = parseFloat(bv);
+        if (!isNaN(anum) && !isNaN(bnum)) { return asc ? anum - bnum : bnum - anum; }
+        return asc ? av.localeCompare(bv) : bv.localeCompare(av);
+      });
+      rows.forEach(function(r){ tb.appendChild(r); });
+    });
+  });
+});
+</script>
+</body>
+</html>

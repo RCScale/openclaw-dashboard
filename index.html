@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OpenClaw analysis — overview</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="_assets/design.css">
+
+
+</head>
+<body>
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="site-title" href="index.html">OpenClaw analysis</a>
+    <nav class="site-nav" aria-label="Primary"><a class="is-active" href="index.html">Overview</a><a class="" href="summary.html">Summary</a><a class="" href="themes/courses.html">Courses</a><a class="" href="themes/questions.html">Questions</a><a class="" href="themes/reviewers.html">Reviewers</a><a class="" href="themes/workers.html">Workers</a></nav>
+    <span class="site-meta" title="2026-06-10T18:48+00:00">Updated 2026-06-10 18:48 UTC</span>
+  </div>
+</header>
+<main class="page-shell">
+<div role="note" style="background:#fff8dc;border-left:3px solid #fbbf24;padding:10px 14px;margin:0 0 18px 0;border-radius:4px;font-size:14px;line-height:1.5;color:#475569;"><b>This is a redacted public mirror.</b> Worker emails and Mongo-style IDs are hashed; the audit evidence viewer is omitted (view locally via <code>python3 -m analysis.build_audit_viewer</code>). Numbers and rankings are unchanged.</div>
+
+<header class="page-header"><h1>OpenClaw analysis</h1><p class="lede">This dashboard tells you what is working and what to fix in your worker pipeline. Start with the four recommendations below — each card links to the data behind the number.</p></header>
+<div class="stat-grid"><a class="stat is-accent" href="themes/workers.html">
+  <div class="stat-label">Workers</div>
+  <div class="stat-number num">495</div>
+  <div class="stat-sub">with recent trusted reviews</div><div class="stat-cta">View funnel</div>
+</a><a class="stat is-accent" href="themes/reviewers.html">
+  <div class="stat-label">Reviews</div>
+  <div class="stat-number num">883</div>
+  <div class="stat-sub">from 40 audited reviewers</div><div class="stat-cta">View reviewers</div>
+</a><a class="stat is-accent" href="themes/courses.html">
+  <div class="stat-label">Courses analyzed</div>
+  <div class="stat-number num">5</div>
+  <div class="stat-sub">with question-level signal</div><div class="stat-cta">View courses</div>
+</a><a class="stat is-accent" href="themes/questions.html">
+  <div class="stat-label">Audited questions</div>
+  <div class="stat-number num">52</div>
+  <div class="stat-sub">across all courses</div><div class="stat-cta">View questions</div>
+</a></div>
+<h2 style="margin-top:36px;">What to do this week</h2>
+<p class="muted" style="max-width:70ch;margin-top:-8px;">Four action lists, derived deterministically from the latest pipeline run. Each card opens the underlying list with the most actionable rows on top.</p>
+<section class="recos"><a class="reco" href="themes/reviewers.html#dropped">
+  <div class="reco-eyebrow">Reviewers to drop</div>
+  <div class="reco-headline">Drop 4 untrusted reviewers</div>
+  <div class="reco-example">user_53c626@remotasks.com+outlier — 60% unjustified of 5 audits</div>
+  <div class="reco-cta">Open the reviewer list</div>
+</a><a class="reco" href="themes/questions.html#counterproductive">
+  <div class="reco-eyebrow">Counterproductive questions</div>
+  <div class="reco-headline">Rewrite or remove 9 questions</div>
+  <div class="reco-example">OpenClaw - Screening Course — 3f08b984 — passers PDR 72% vs failers 0% (r_pdr +0.11)</div>
+  <div class="reco-cta">Open the question list</div>
+</a><a class="reco" href="themes/courses.html#gaps">
+  <div class="reco-eyebrow">Curriculum gaps</div>
+  <div class="reco-headline">Cover 6 curriculum gaps</div>
+  <div class="reco-example">source_inspiration_invalid — 35 bad-review records, coverage score 1/9</div>
+  <div class="reco-cta">Open the gap list</div>
+</a><a class="reco" href="themes/workers.html#stuck">
+  <div class="reco-eyebrow">Workers in funnel</div>
+  <div class="reco-headline">Triage 209 stuck workers</div>
+  <div class="reco-example">user_1f8f56@deleted.com — 61 days in attempting — 0 of 2 consecutive 4+ scores at L-1 (total scored attempts: 4)</div>
+  <div class="reco-cta">Open the stuck-worker list</div>
+</a></section>
+<h2 style="margin-top:36px;">Browse by theme</h2>
+<p class="muted" style="max-width:70ch;margin-top:-8px;">Four cross-cutting views. Each page leads with a plain-English summary, then drills into the underlying numbers.</p>
+<div class="theme-grid"><a class="theme-tile" href="themes/courses.html">
+  <div class="theme-name">Courses</div>
+  <div class="theme-headline">10 ↑ vs 9 ↓</div>
+  <div class="theme-sub">10 questions predict lower defect rate, 9 predict higher.</div>
+</a><a class="theme-tile" href="themes/questions.html">
+  <div class="theme-name">Questions</div>
+  <div class="theme-headline">9/52</div>
+  <div class="theme-sub">9 of 52 questions correlate with WORSE production work — candidates to rewrite.</div>
+</a><a class="theme-tile" href="themes/reviewers.html">
+  <div class="theme-name">Reviewers</div>
+  <div class="theme-headline">4/40</div>
+  <div class="theme-sub">4 of 40 audited reviewers dropped for majority-unjustified verdicts.</div>
+</a><a class="theme-tile" href="themes/workers.html">
+  <div class="theme-name">Workers</div>
+  <div class="theme-headline">72%</div>
+  <div class="theme-sub">Average <b>defect rate</b> across 495 workers with recent trusted reviews. Lower is better.</div>
+</a></div>
+<h2 style="margin-top:36px;">Methodology &amp; deep-dives</h2>
+<p class="muted" style="max-width:70ch;margin-top:-8px;">The deep-dive dashboards behind each theme — useful when you need to audit a number, inspect raw tables, or share evidence with a reviewer.</p>
+<details class="notes" open>
+  <summary>Deep-dive dashboards (full methodology, raw tables)</summary>
+  <ul style="list-style: none; padding-left: 0;"><li><a href="g1.html"><b>Goal 1</b> — Last-toucher pipeline</a></li><li><a href="g2.html"><b>Goal 2</b> — Reviewer-feedback audit</a></li><li><a href="g3.html"><b>Goal 3</b> — Course / question psych.</a></li><li><a href="g4.html"><b>Goal 4</b> — Worker-quality drivers</a></li><li><a href="g_universe_coverage.html"><b>Phase 0</b> — Universe coverage</a></li><li><a href="g2_audit_review.html"><b>Audit evidence viewer</b></a></li></ul>
+</details>
+</main>
+<footer class="site-footer">
+  Generated 2026-06-10 18:48 UTC ·
+  <a href="index.html">Overview</a> ·
+  <a href="summary.html">Summary</a> ·
+  Source: <code>analysis/</code>
+</footer>
+<script src="_assets/dashboard.js"></script>
+
+</body>
+</html>

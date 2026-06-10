@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Courses — OpenClaw analysis</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../_assets/design.css">
+<script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="site-title" href="../index.html">OpenClaw analysis</a>
+    <nav class="site-nav" aria-label="Primary"><a class="" href="../index.html">Overview</a><a class="" href="../summary.html">Summary</a><a class="is-active" href="../themes/courses.html">Courses</a><a class="" href="../themes/questions.html">Questions</a><a class="" href="../themes/reviewers.html">Reviewers</a><a class="" href="../themes/workers.html">Workers</a></nav>
+    <span class="site-meta" title="2026-06-10T18:48+00:00">Updated 2026-06-10 18:48 UTC</span>
+  </div>
+</header>
+<main class="page-shell">
+<nav class="crumbs" aria-label="Breadcrumb"><a href="../index.html">Overview</a><span class="sep">/</span><span>Courses</span></nav>
+<header class="page-header"><h1>Courses</h1><p class="lede">Which courses are pulling their weight, and which are teaching the wrong things? Sorted with the net-positive courses on top.</p></header>
+<aside class="tldr" aria-label="Summary">
+  <div class="tldr-grid">
+    <div class="tldr-block">
+      <h3>What we measured</h3>
+      <p>For each course we count how many of its questions are <em>predictive</em> (passing them is linked to fewer downstream defects) vs <em>counterproductive</em> (passing is linked to more defects). We also look at <em>curriculum gaps</em>: mistakes that show up in bad reviews but aren't well covered by any course.</p>
+    </div>
+    <div class="tldr-block">
+      <h3>What we found</h3>
+      <p><b>5</b> courses, <b>52</b> questions analyzed. Net signal is <b>10 predictive</b> vs <b>9 counterproductive</b>. <b>6</b> common mistake patterns are weakly covered by any course (out of 22 mistake clusters total).</p>
+    </div>
+    <div class="tldr-block">
+      <h3>What to do</h3>
+      <ul><li>Look at the per-course bar chart below: courses with <b>more red than green</b> need a rewrite.</li><li>Use the <a href="#gaps">curriculum-gap list</a> to prioritize new course content (6 priority gaps, each with at least 20 bad-review records).</li><li>For deep-dive: per-course question subsets are in <a href="../g4.html#s26">g4 Step 2.6</a>.</li></ul>
+    </div>
+  </div>
+</aside>
+<div class="stat-grid"><div class="stat is-accent">
+  <div class="stat-label">Courses</div>
+  <div class="stat-number num">5</div>
+  <div class="stat-sub">with question-level data</div>
+</div><div class="stat is-good">
+  <div class="stat-label">Predictive questions</div>
+  <div class="stat-number num">10</div>
+  <div class="stat-sub">across all courses</div>
+</div><div class="stat is-bad">
+  <div class="stat-label">Counterproductive</div>
+  <div class="stat-number num">9</div>
+  <div class="stat-sub">across all courses</div>
+</div><div class="stat is-warn">
+  <div class="stat-label">Curriculum gaps</div>
+  <div class="stat-number num">6</div>
+  <div class="stat-sub">mistake patterns weakly covered</div>
+</div></div>
+<section class="card"><div class="card-header"><h2>Per-course question signal</h2></div><div class="hero-chart"><div id="courses_hero" class="plot" role="img" aria-label="Per course: how many of its questions are linked to lower (green) vs higher (red) defect rate. Net-positive courses are at the top."></div><script>Plotly.newPlot("courses_hero", {"data": [{"type": "bar", "name": "Predictive", "orientation": "h", "x": [2, 3, 2, 0, 3], "y": ["OpenClaw Atlas Reviewers", "Rubrics + Unit Tests Screening", "OpenClaw RL Common Errors Screening", "Almost Right: The Science of LLM Errors", "OpenClaw - Screening Course"], "marker": {"color": "#059669"}, "text": ["2", "3", "2", "", "3"], "textposition": "outside", "hovertemplate": "%{y}: <b>%{x}</b> predictive<extra></extra>"}, {"type": "bar", "name": "Counterproductive", "orientation": "h", "x": [0, -2, -1, 0, -6], "y": ["OpenClaw Atlas Reviewers", "Rubrics + Unit Tests Screening", "OpenClaw RL Common Errors Screening", "Almost Right: The Science of LLM Errors", "OpenClaw - Screening Course"], "marker": {"color": "#e11d48"}, "text": ["", "2", "1", "", "6"], "textposition": "outside", "customdata": [0, 2, 1, 0, 6], "hovertemplate": "%{y}: <b>%{customdata}</b> counterproductive<extra></extra>"}], "layout": {"font": {"family": "\"Inter\", -apple-system, BlinkMacSystemFont, system-ui, sans-serif", "size": 13, "color": "#0f172a"}, "paper_bgcolor": "rgba(0,0,0,0)", "plot_bgcolor": "rgba(0,0,0,0)", "height": 300, "margin": {"l": 260, "r": 50, "t": 16, "b": 56}, "hoverlabel": {"bgcolor": "#ffffff", "bordercolor": "#e2e8f0", "font": {"family": "\"Inter\", system-ui, sans-serif", "color": "#0f172a"}}, "xaxis": {"title": {"text": "Question count (left = bad, right = good)", "font": {"size": 12, "color": "#475569"}}, "showgrid": true, "gridcolor": "#e2e8f0", "zeroline": false, "linecolor": "#e2e8f0", "tickfont": {"size": 12, "color": "#475569"}}, "yaxis": {"automargin": true, "tickfont": {"size": 13}}, "legend": {"bgcolor": "rgba(0,0,0,0)", "bordercolor": "rgba(0,0,0,0)", "font": {"size": 12, "color": "#475569"}, "orientation": "h", "yanchor": "bottom", "y": 1.0, "xanchor": "right", "x": 1.0}, "showlegend": true, "barmode": "relative"}}.data, {"data": [{"type": "bar", "name": "Predictive", "orientation": "h", "x": [2, 3, 2, 0, 3], "y": ["OpenClaw Atlas Reviewers", "Rubrics + Unit Tests Screening", "OpenClaw RL Common Errors Screening", "Almost Right: The Science of LLM Errors", "OpenClaw - Screening Course"], "marker": {"color": "#059669"}, "text": ["2", "3", "2", "", "3"], "textposition": "outside", "hovertemplate": "%{y}: <b>%{x}</b> predictive<extra></extra>"}, {"type": "bar", "name": "Counterproductive", "orientation": "h", "x": [0, -2, -1, 0, -6], "y": ["OpenClaw Atlas Reviewers", "Rubrics + Unit Tests Screening", "OpenClaw RL Common Errors Screening", "Almost Right: The Science of LLM Errors", "OpenClaw - Screening Course"], "marker": {"color": "#e11d48"}, "text": ["", "2", "1", "", "6"], "textposition": "outside", "customdata": [0, 2, 1, 0, 6], "hovertemplate": "%{y}: <b>%{customdata}</b> counterproductive<extra></extra>"}], "layout": {"font": {"family": "\"Inter\", -apple-system, BlinkMacSystemFont, system-ui, sans-serif", "size": 13, "color": "#0f172a"}, "paper_bgcolor": "rgba(0,0,0,0)", "plot_bgcolor": "rgba(0,0,0,0)", "height": 300, "margin": {"l": 260, "r": 50, "t": 16, "b": 56}, "hoverlabel": {"bgcolor": "#ffffff", "bordercolor": "#e2e8f0", "font": {"family": "\"Inter\", system-ui, sans-serif", "color": "#0f172a"}}, "xaxis": {"title": {"text": "Question count (left = bad, right = good)", "font": {"size": 12, "color": "#475569"}}, "showgrid": true, "gridcolor": "#e2e8f0", "zeroline": false, "linecolor": "#e2e8f0", "tickfont": {"size": 12, "color": "#475569"}}, "yaxis": {"automargin": true, "tickfont": {"size": 13}}, "legend": {"bgcolor": "rgba(0,0,0,0)", "bordercolor": "rgba(0,0,0,0)", "font": {"size": 12, "color": "#475569"}, "orientation": "h", "yanchor": "bottom", "y": 1.0, "xanchor": "right", "x": 1.0}, "showlegend": true, "barmode": "relative"}}.layout,{"responsive": true, "displaylogo": false});</script><p class="plot-caption">Per course: how many of its questions are linked to lower (green) vs higher (red) defect rate. Net-positive courses are at the top.</p></div></section>
+<a id="course-table"></a><section class="section"><h2>Per-course table</h2><div class="table-wrap">
+  <div class="table-toolbar">
+  <input type="search" data-filter placeholder="Filter rows…" aria-label="Filter rows">
+  <span class="table-info">5 rows</span>
+</div>
+  <div class="table-scroll">
+    <table class="data">
+      <thead><tr><th data-sortable scope="col">Course</th><th data-sortable scope="col">Questions</th><th data-sortable scope="col">Predictive</th><th data-sortable scope="col">Counterproductive</th><th data-sortable scope="col">No signal</th><th data-sortable scope="col">Max n workers</th><th data-sortable scope="col">Net</th></tr></thead>
+      <tbody><tr data-row-id="id_890f81"><td class="wide">OpenClaw Atlas Reviewers</td><td class="num">5</td><td class="num"><span class="good no-glyph">2</span></td><td class="num">0</td><td class="num">3</td><td class="num">131</td><td class="num" data-sort-value="2"><span class="good no-glyph">+2</span></td></tr><tr data-row-id="id_5d5fdb"><td class="wide">Rubrics + Unit Tests Screening</td><td class="num">14</td><td class="num"><span class="good no-glyph">3</span></td><td class="num"><span class="bad no-glyph">2</span></td><td class="num">9</td><td class="num">400</td><td class="num" data-sort-value="1"><span class="good no-glyph">+1</span></td></tr><tr data-row-id="id_f47543"><td class="wide">OpenClaw RL Common Errors Screening</td><td class="num">10</td><td class="num"><span class="good no-glyph">2</span></td><td class="num"><span class="bad no-glyph">1</span></td><td class="num">7</td><td class="num">320</td><td class="num" data-sort-value="1"><span class="good no-glyph">+1</span></td></tr><tr data-row-id="id_db8e62"><td class="wide">Almost Right: The Science of LLM Errors</td><td class="num">1</td><td class="num"><span class="good no-glyph">0</span></td><td class="num">0</td><td class="num">1</td><td class="num">456</td><td class="num" data-sort-value="0"><span class="muted no-glyph">+0</span></td></tr><tr data-row-id="id_69087b"><td class="wide">OpenClaw - Screening Course</td><td class="num">22</td><td class="num"><span class="good no-glyph">3</span></td><td class="num"><span class="bad no-glyph">6</span></td><td class="num">13</td><td class="num">426</td><td class="num" data-sort-value="-3"><span class="bad no-glyph">-3</span></td></tr></tbody>
+    </table>
+  </div>
+  
+</div></section>
+<a id="gaps"></a><section class="section"><h2>Curriculum gaps — frequent mistakes the courses don't teach</h2><div class="table-wrap">
+  <div class="table-toolbar">
+  <input type="search" data-filter placeholder="Filter rows…" aria-label="Filter rows">
+  <span class="table-info">6 rows</span>
+</div>
+  <div class="table-scroll">
+    <table class="data">
+      <thead><tr><th data-sortable scope="col">Mistake cluster</th><th scope="col">Description</th><th data-sortable scope="col">Bad-review records</th><th data-sortable scope="col">Coverage score</th><th scope="col">Weakly covered by</th></tr></thead>
+      <tbody><tr data-row-id="C05"><td class="wide">source_inspiration_invalid</td><td class="wide">The Source of Inspiration is invalid: it uses the universe viewer URL, a generic platform link, an AI-generated source (utm_source=chatgpt), or an unrelated post. The spec requires a real social media post about OpenClaw use cases from approved platforms.</td><td class="num">35</td><td class="num" data-sort-value="1.0"><span class="bad no-glyph">1/9</span></td><td class="wide">OpenClaw - Screening Course (1)</td></tr><tr data-row-id="C06"><td class="wide">silver_trajectory_not_iterated</td><td class="wide">The Silver trajectory is either identical to Model A (same session, byte-for-byte copy), was never executed, is incomplete (0-byte MEMORY.md, missing deliverables), or was not corrected with follow-up prompts to pass all rubrics as required by spec.</td><td class="num">31</td><td class="num" data-sort-value="1.0"><span class="bad no-glyph">1/9</span></td><td class="wide">OpenClaw - Screening Course (1)</td></tr><tr data-row-id="C08"><td class="wide">fields_internal_misalignment</td><td class="wide">The Agent Objective, Core Functionalities, and Desired Outcome are inconsistent with each other — describing different tasks, different deliverables, different data sources, or contradictory requirements across sections.</td><td class="num">26</td><td class="num" data-sort-value="2.0"><span class="warn no-glyph">2/9</span></td><td class="wide">OpenClaw - Screening Course (1); OpenClaw RL Common Errors Screening (1)</td></tr><tr data-row-id="C09"><td class="wide">prompt_unnatural_overstructured</td><td class="wide">The prompt is too long, overly formatted, includes backticks/em-dashes/rigid constraints, reads like a grading rubric or technical specification rather than a natural user request. Should be a short, conversational, single-paragraph message.</td><td class="num">25</td><td class="num" data-sort-value="1.0"><span class="bad no-glyph">1/9</span></td><td class="wide">OpenClaw - Screening Course (1)</td></tr><tr data-row-id="C11"><td class="wide">single_turn_multi_turn_mismatch</td><td class="wide">Task is assigned as Single-Turn but the prompt/design requires follow-up turns (multi-turn interaction, confirmation gates, approval steps), or the design fields describe multi-turn behavior in a single-turn task.</td><td class="num">20</td><td class="num" data-sort-value="1.0"><span class="bad no-glyph">1/9</span></td><td class="wide">OpenClaw - Screening Course (1)</td></tr><tr data-row-id="C12"><td class="wide">temporal_data_outside_universe_range</td><td class="wide">The task references dates or time windows that fall outside the universe&#x27;s actual data range (e.g., requesting May 2026 data when universe ends in March, or using ambiguous references like &#x27;this Thursday&#x27; without an absolute date anchor).</td><td class="num">20</td><td class="num" data-sort-value="1.0"><span class="bad no-glyph">1/9</span></td><td class="wide">OpenClaw RL - Universes (1)</td></tr></tbody>
+    </table>
+  </div>
+  
+</div></section>
+<details class="method">
+  <summary>Behind the numbers</summary>
+  <div class="details-body"><p><b>Predictive / counterproductive</b>: see the <a href='questions.html'>Questions theme page</a> for the per-question definition. This page aggregates those flags up to course level.</p><p><b>Curriculum gap</b>: a mistake cluster (mined by LLM from bad-review feedback) with <code>total_coverage_score ≤ 2</code> (weakly addressed by any course) AND <code>n_records_matched ≥ 20</code> (frequent enough to matter).</p><p>Sources: <code>analysis/g4_question_predictive.csv</code>, <code>analysis/g4_mistake_coverage.csv</code>, <code>analysis/g4_mistake_clusters.csv</code> from <code>analysis.run_g4 step-2</code> + <code>analysis.run_g4_mistakes</code>.</p><p>For 'courses covered but workers still fail' analysis (35 pairs found), see <a href="../g4.html#s5">g4 Step 5</a>.</p></div>
+</details>
+<details class="caveats">
+  <summary>Things to watch for</summary>
+  <ul><li>The 'predictive / counterproductive' aggregate hides effect-size variation — a course with 1 strong predictive + 2 weak counterproductive questions reads as net-negative, but the strong question may dominate in practice.</li><li>Curriculum-gap coverage is scored by an LLM reading section titles + a sample of question stems. A course that thoroughly teaches a topic in its body but doesn't name it in a section title may be undercounted.</li><li>Mistake-cluster names come from a single LLM pass over the bad-review feedback corpus. Verify against the example task_attempt_ids in <code>g4_mistake_clusters.csv</code> before acting on a cluster.</li></ul>
+</details>
+</main>
+<footer class="site-footer">
+  Generated 2026-06-10 18:48 UTC ·
+  <a href="../index.html">Overview</a> ·
+  <a href="../summary.html">Summary</a> ·
+  Source: <code>analysis/</code>
+</footer>
+<script src="../_assets/dashboard.js"></script>
+
+</body>
+</html>

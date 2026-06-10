@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Goal 4 — Trust-weighted curriculum findings</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="_assets/design.css">
+
+<style>
+.step { border: 1px solid var(--color-border); border-radius: var(--radius);
+        background: var(--color-surface); padding: 22px 26px; margin-bottom: 24px; }
+.step > h2 { margin-top: 0; font-size: 24px; }
+.step > h3 { font-size: 16px; margin: 22px 0 8px 0; color: var(--color-text-muted); }
+.punchline { background: var(--color-surface-2); border-left: 3px solid var(--color-accent);
+             padding: 12px 16px; margin: 10px 0 18px 0; border-radius: var(--radius-sm);
+             font-size: 15px; line-height: 1.55; }
+details.agent-notes { border-left: 3px solid var(--color-good); }
+table.mini, table.full { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 14px; }
+table.mini th, table.mini td, table.full th, table.full td {
+  padding: 8px 10px; text-align: left;
+  border-bottom: 1px solid var(--color-border);
+  vertical-align: top; }
+table.mini th, table.full th { background: var(--color-surface-2); font-weight: 600;
+  text-transform: uppercase; font-size: 11px; letter-spacing: 0.05em; color: var(--color-text-muted); }
+table.mini tr:hover, table.full tr:hover { background: var(--color-surface-2); }
+.qtext { font-size: 14px; line-height: 1.45; max-width: 500px; }
+.correct { color: var(--color-good); font-size: 13px; margin-top: 4px; }
+.wide { max-width: 480px; font-size: 14px; }
+.course-combo { margin: 14px 0; padding: 0; border: 1px solid var(--color-border);
+                border-radius: var(--radius); background: var(--color-surface); }
+.course-combo > summary { padding: 10px 14px; background: var(--color-surface-2);
+                          border-radius: var(--radius) var(--radius) 0 0; cursor: pointer; }
+.course-combo[open] > summary { border-bottom: 1px solid var(--color-border); }
+.combo-flex { display: flex; gap: 18px; align-items: flex-start; padding: 14px; flex-wrap: wrap; }
+.combo-flex svg { overflow: visible; }
+.combo-stats { font-size: 13px; color: var(--color-text-muted); padding: 0 14px 14px 14px; }
+ol.taglist { font-size: 14px; padding-left: 22px; columns: 2; column-gap: 24px; }
+ol.taglist li { margin-bottom: 4px; break-inside: avoid; }
+.subset-block { padding: 14px 16px; margin: 8px 0;
+                border-radius: var(--radius); background: var(--color-surface-2); }
+.subset-block h4 { margin: 0 0 10px 0; font-size: 15px; }
+.subset-flex { display: flex; gap: 18px; align-items: flex-start; flex-wrap: wrap; }
+.subset-bars svg { overflow: visible; }
+.subset-empty { font-size: 14px; padding: 12px 14px; color: var(--color-text-muted);
+                font-style: italic; }
+ul.q-list { list-style: none; padding: 0; margin: 0; flex: 1; min-width: 320px; }
+li.q-item { background: var(--color-surface); padding: 10px 12px;
+            margin-bottom: 8px; border-radius: var(--radius-sm);
+            border: 1px solid var(--color-border); font-size: 14px; }
+.q-head { font-size: 12px; margin-bottom: 6px; color: var(--color-text-faint); }
+.q-text { margin: 4px 0 8px 0; line-height: 1.5; }
+.q-correct { color: var(--color-good); font-size: 13px; margin: 6px 0; }
+.q-correct ul, .q-wrong ul { margin: 4px 0 0 0; padding-left: 18px; }
+.q-wrong { color: var(--color-bad); font-size: 13px; margin: 6px 0; opacity: 0.85; }
+.q-sample, .q-grader { font-size: 13px; padding: 8px 10px; margin-top: 6px;
+                        background: var(--color-surface); border-radius: var(--radius-sm);
+                        color: var(--color-text-muted); line-height: 1.5;
+                        border: 1px solid var(--color-border); }
+.q-grader { border-left: 2px solid var(--color-warn); }
+.step-toc { display: flex; gap: 18px; flex-wrap: wrap; margin: 16px 0 24px 0;
+            padding: 12px 16px; background: var(--color-surface);
+            border: 1px solid var(--color-border); border-radius: var(--radius); }
+.step-toc a { font-weight: 600; font-size: 14px; color: var(--color-text-muted); }
+.step-toc a:hover { color: var(--color-accent); }
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="site-title" href="index.html">OpenClaw analysis</a>
+    <nav class="site-nav" aria-label="Primary"><a class="" href="index.html">Overview</a><a class="" href="summary.html">Summary</a><a class="" href="themes/courses.html">Courses</a><a class="" href="themes/questions.html">Questions</a><a class="" href="themes/reviewers.html">Reviewers</a><a class="" href="themes/workers.html">Workers</a></nav>
+    <span class="site-meta" title="2026-06-10T18:48+00:00">Updated 2026-06-10 18:48 UTC</span>
+  </div>
+</header>
+<main class="page-shell">
+<nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Overview</a><span class="sep">/</span><a href="summary.html">Summary</a><span class="sep">/</span><span>Goal 4 — worker-quality drivers</span></nav>
+<header class="page-header">
+  <h1>Goal 4 — Trust-weighted curriculum findings</h1>
+  <p class="lede">The deep-dive behind the Questions, Courses and Reviewers theme pages.
+  Each step shows the punchline, the method, the data, and the caveats.</p>
+</header>
+<aside class="tldr" aria-label="Summary">
+  <div class="tldr-grid">
+    <div class="tldr-block">
+      <h3>What we measured</h3>
+      <p>Five steps + four extensions, all centered on the worker's <b>PDR</b> (Performance Defect Rate) over the last 3 trusted reviews. PDR &lt; 0.05 = good; PDR &gt; 0.95 = bad.</p>
+    </div>
+    <div class="tldr-block">
+      <h3>What we found</h3>
+      <p>After filtering untrustworthy reviewers (Step 1), per-question predictivity (Step 2/3) separates the curriculum into a green and a red list. Mistake clustering (Step 4/5) and user-trait analysis (Step 6/6.5) point at curriculum and hiring fixes.</p>
+    </div>
+    <div class="tldr-block">
+      <h3>What to do</h3>
+      <ul><li>See <a href="themes/questions.html">Questions</a> theme for the actionable rewrite list.</li><li>See <a href="themes/courses.html">Courses</a> theme for the curriculum-gap list.</li><li>See <a href="themes/reviewers.html">Reviewers</a> theme for the drop list.</li></ul>
+    </div>
+  </div>
+</aside>
+<nav class="step-toc" aria-label="Sections of this dashboard">
+  <a href="#s1">1. Filter</a>
+  <a href="#s2">2. Predictive</a>
+  <a href="#s25">2.5 Combinations</a>
+  <a href="#s26">2.6 Q-subsets</a>
+  <a href="#s27">2.7 Tag check</a>
+  <a href="#s3">3. Counterproductive</a>
+  <a href="#s4">4. Missing</a>
+  <a href="#s5">5. Not sticking</a>
+  <a href="#s6">6. User traits</a>
+  <a href="#s65">6.5 Tag combos</a>
+</nav>
+<a id="s1"></a>
+<section class="step">
+  <h2>Step 1 — Filter untrustworthy reviewers</h2>
+  <div class="punchline">
+    Dropped <b>4</b> of <b>40</b> audited reviewers →
+    <b>883</b> trusted reviews remain across the project
+    (<b>273</b> good [QM≥4], <b>333</b> bad [QM≤2], <b>277</b> mid [QM=3]).
+    <b>Note (2026-06-10):</b> the GOOD cutoff is now QM≥4 (was ≥3) to align with the project's promotion gate ("2 consecutive 4+ at L−1 full history"). QM=3 (accept_with_fixes) is treated as MID rather than GOOD.
+  </div>
+  <details class="method" open>
+    <summary><b>Definition</b></summary>
+    <p>For each reviewer in our Goal-2 audit sample (currently 41 audits, 9 reviewers),
+    compute a <b>trust score</b> = (n_defensible + 0.5 × n_questionable) / n_audited.
+    Apply the <b>majority_unjustified</b> drop rule: any reviewer where more than
+    50% of their audits came back <code>feedback_unjustified</code> is removed
+    from the pool.</p>
+    <p>The 893 surviving reviews are tagged as <code>good</code>
+    (quality_overall_qms ≥ 3) or <code>bad</code> (quality_overall_qms ≤ 2).
+    These two pools feed steps 2-3 (good) and 4-5 (bad).</p>
+  </details>
+  <details class="method">
+    <summary><b>Derivation — input files → outputs</b></summary>
+    <p>Code: <code>analysis/lib/trust.py</code> + <code>analysis/run_g4.py step-1</code></p>
+    <ol>
+      <li>Read every <code>analysis/audit_outputs/&lt;attempt_id&gt;.json</code>; group by <code>reviewer_email</code>; roll up verdicts.</li>
+      <li>Apply <code>majority_unjustified</code> drop rule. Write <code>analysis/g4_reviewer_trust.csv</code> + <code>analysis/g4_dropped_reviewers.csv</code>.</li>
+      <li>Read <code>reports/&lt;pid&gt;/&lt;date&gt;/review_validation.csv</code>; drop rows where reviewer_email is in the drop set; tag each remaining row good/bad.</li>
+      <li>Write <code>analysis/g4_trusted_reviews.csv</code>.</li>
+    </ol>
+  </details>
+  <h3>Dropped reviewers (4)</h3>
+  <table class="mini"><thead><tr><th>reviewer</th><th>n audits</th><th>% unjustified</th><th>trust score</th><th>reason</th></tr></thead><tbody><tr><td class="">user_53c626@remotasks.com+outlier</td><td class="num">5</td><td class="num bad">0.6</td><td class="num">0.2</td><td class="">majority_unjustified (3/5 = 60%)</td></tr><tr><td class="">user_d16255@outlier.ai+outlier</td><td class="num">5</td><td class="num bad">0.6</td><td class="num">0.3</td><td class="">majority_unjustified (3/5 = 60%)</td></tr><tr><td class="">user_1b7ee7@protonmail.com+outlier</td><td class="num">5</td><td class="num bad">0.6</td><td class="num">0.3</td><td class="">majority_unjustified (3/5 = 60%)</td></tr><tr><td class="">user_a5c642@gmail.com+outlier</td><td class="num">5</td><td class="num bad">0.6</td><td class="num">0.2</td><td class="">majority_unjustified (3/5 = 60%)</td></tr></tbody></table>
+  <h3>All audited reviewers (40) — ranked by trust ascending</h3>
+  <table class="mini"><thead><tr><th>reviewer</th><th>n</th><th>def</th><th>que</th><th>unj</th><th>trust</th><th>kept?</th></tr></thead><tbody><tr><td class="">user_53c626@remotasks.com+outlier</td><td class="num">5</td><td class="num good">0</td><td class="num">2</td><td class="num bad">3</td><td class="num">0.2</td><td class="">False</td></tr><tr><td class="">user_a5c642@gmail.com+outlier</td><td class="num">5</td><td class="num good">0</td><td class="num">2</td><td class="num bad">3</td><td class="num">0.2</td><td class="">False</td></tr><tr><td class="">user_d16255@outlier.ai+outlier</td><td class="num">5</td><td class="num good">1</td><td class="num">1</td><td class="num bad">3</td><td class="num">0.3</td><td class="">False</td></tr><tr><td class="">user_1b7ee7@protonmail.com+outlier</td><td class="num">5</td><td class="num good">1</td><td class="num">1</td><td class="num bad">3</td><td class="num">0.3</td><td class="">False</td></tr><tr><td class="">user_4a452c@remotasks.com+outlier</td><td class="num">5</td><td class="num good">0</td><td class="num">3</td><td class="num bad">2</td><td class="num">0.3</td><td class="">True</td></tr><tr><td class="">user_160e9c@outlier.ai+outlier</td><td class="num">5</td><td class="num good">0</td><td class="num">3</td><td class="num bad">2</td><td class="num">0.3</td><td class="">True</td></tr><tr><td class="">user_d82d6f@gmail.com+outlier</td><td class="num">5</td><td class="num good">0</td><td class="num">3</td><td class="num bad">2</td><td class="num">0.3</td><td class="">True</td></tr><tr><td class="">user_e954b4@remotasks.com+outlier</td><td class="num">4</td><td class="num good">0</td><td class="num">3</td><td class="num bad">1</td><td class="num">0.375</td><td class="">True</td></tr><tr><td class="">user_fcc43b@googlemail.com+outlier</td><td class="num">5</td><td class="num good">1</td><td class="num">2</td><td class="num bad">2</td><td class="num">0.4</td><td class="">True</td></tr><tr><td class="">user_74edb2@gmail.com+outlier</td><td class="num">5</td><td class="num good">0</td><td class="num">4</td><td class="num bad">1</td><td class="num">0.4</td><td class="">True</td></tr><tr><td class="">user_517762@remotasks.com+outlier</td><td class="num">5</td><td class="num good">2</td><td class="num">1</td><td class="num bad">2</td><td class="num">0.5</td><td class="">True</td></tr><tr><td class="">user_3702c9@gmail.com+outlier</td><td class="num">5</td><td class="num good">2</td><td class="num">1</td><td class="num bad">2</td><td class="num">0.5</td><td class="">True</td></tr><tr><td class="">user_06e772@hotmail.com+outlier</td><td class="num">5</td><td class="num good">2</td><td class="num">1</td><td class="num bad">2</td><td class="num">0.5</td><td class="">True</td></tr><tr><td class="">user_a6b66a@gmail.com+outlier</td><td class="num">5</td><td class="num good">2</td><td class="num">1</td><td class="num bad">2</td><td class="num">0.5</td><td class="">True</td></tr><tr><td class="">user_4f2e22@remotasks.com+outlier</td><td class="num">5</td><td class="num good">1</td><td class="num">3</td><td class="num bad">1</td><td class="num">0.5</td><td class="">True</td></tr><tr><td class="">user_09c477@gmail.com+outlier</td><td class="num">5</td><td class="num good">1</td><td class="num">3</td><td class="num bad">1</td><td class="num">0.5</td><td class="">True</td></tr><tr><td class="">user_9bdc40@gmail.com+outlier</td><td class="num">5</td><td class="num good">1</td><td class="num">3</td><td class="num bad">1</td><td class="num">0.5</td><td class="">True</td></tr><tr><td class="">user_4d3a98@gmail.com+outlier</td><td class="num">5</td><td class="num good">0</td><td class="num">5</td><td class="num bad">0</td><td class="num">0.5</td><td class="">True</td></tr><tr><td class="">user_9faef3@gmail.com+outlier</td><td class="num">5</td><td class="num good">3</td><td class="num">0</td><td class="num bad">2</td><td class="num">0.6</td><td class="">True</td></tr><tr><td class="">user_ea5d60@universityofgalway.ie+outlier</td><td class="num">5</td><td class="num good">2</td><td class="num">2</td><td class="num bad">1</td><td class="num">0.6</td><td class="">True</td></tr><tr><td class="">user_eba650@remotasks.com+outlier</td><td class="num">5</td><td class="num good">2</td><td class="num">2</td><td class="num bad">1</td><td class="num">0.6</td><td class="">True</td></tr><tr><td class="">user_1a0b39@remotasks.com+outlier</td><td class="num">5</td><td class="num good">2</td><td class="num">2</td><td class="num bad">1</td><td class="num">0.6</td><td class="">True</td></tr><tr><td class="">user_2faaec@gmail.com+outlier</td><td class="num">5</td><td class="num good">2</td><td class="num">2</td><td class="num bad">1</td><td class="num">0.6</td><td class="">True</td></tr><tr><td class="">user_c4d7cf@travnikov.dev+outlier</td><td class="num">5</td><td class="num good">1</td><td class="num">4</td><td class="num bad">0</td><td class="num">0.6</td><td class="">True</td></tr><tr><td class="">user_9c0482@remotasks.com+outlier</td><td class="num">5</td><td class="num good">1</td><td class="num">4</td><td class="num bad">0</td><td class="num">0.6</td><td class="">True</td></tr><tr><td class="">user_8c7d64@remotasks.com+outlier</td><td class="num">5</td><td class="num good">3</td><td class="num">1</td><td class="num bad">1</td><td class="num">0.7</td><td class="">True</td></tr><tr><td class="">user_86bbf9@remotasks.com+outlier</td><td class="num">5</td><td class="num good">3</td><td class="num">1</td><td class="num bad">1</td><td class="num">0.7</td><td class="">True</td></tr><tr><td class="">user_ba2b24@outlier.ai+outlier</td><td class="num">5</td><td class="num good">2</td><td class="num">3</td><td class="num bad">0</td><td class="num">0.7</td><td class="">True</td></tr><tr><td class="">user_c99a4b@remotasks.com+outlier</td><td class="num">5</td><td class="num good">2</td><td class="num">3</td><td class="num bad">0</td><td class="num">0.7</td><td class="">True</td></tr><tr><td class="">user_7fbdb5@gmail.com+outlier</td><td class="num">5</td><td class="num good">2</td><td class="num">3</td><td class="num bad">0</td><td class="num">0.7</td><td class="">True</td></tr><tr><td class="">user_47cc7a@remotasks.com+outlier</td><td class="num">5</td><td class="num good">2</td><td class="num">3</td><td class="num bad">0</td><td class="num">0.7</td><td class="">True</td></tr><tr><td class="">user_e57a1d@gmail.com+outlier</td><td class="num">5</td><td class="num good">2</td><td class="num">3</td><td class="num bad">0</td><td class="num">0.7</td><td class="">True</td></tr><tr><td class="">user_b5574d@gmail.com+outlier</td><td class="num">5</td><td class="num good">4</td><td class="num">0</td><td class="num bad">1</td><td class="num">0.8</td><td class="">True</td></tr><tr><td class="">user_4f6927@remotasks.com+outlier</td><td class="num">5</td><td class="num good">3</td><td class="num">2</td><td class="num bad">0</td><td class="num">0.8</td><td class="">True</td></tr><tr><td class="">user_b9a1d5@remotasks.com+outlier</td><td class="num">5</td><td class="num good">3</td><td class="num">2</td><td class="num bad">0</td><td class="num">0.8</td><td class="">True</td></tr><tr><td class="">user_a5687f@remotasks.com+outlier</td><td class="num">5</td><td class="num good">3</td><td class="num">2</td><td class="num bad">0</td><td class="num">0.8</td><td class="">True</td></tr><tr><td class="">user_c75b20@gmail.com+outlier</td><td class="num">5</td><td class="num good">3</td><td class="num">2</td><td class="num bad">0</td><td class="num">0.8</td><td class="">True</td></tr><tr><td class="">user_7b4780@gmail.com+outlier</td><td class="num">5</td><td class="num good">4</td><td class="num">1</td><td class="num bad">0</td><td class="num">0.9</td><td class="">True</td></tr><tr><td class="">user_75a860@remotasks.com+outlier</td><td class="num">5</td><td class="num good">4</td><td class="num">1</td><td class="num bad">0</td><td class="num">0.9</td><td class="">True</td></tr><tr><td class="">user_5e0169@gmail.com+outlier</td><td class="num">5</td><td class="num good">4</td><td class="num">1</td><td class="num bad">0</td><td class="num">0.9</td><td class="">True</td></tr></tbody></table>
+  <details class="caveats">
+    <summary><b>Caveats / what could be wrong</b></summary>
+    <ul>
+      <li><b>Small audit sample.</b> Only 41 of 200 sampled reviews are audited so far (and 159 more not yet sampled would push to 359). 6 of 9 reviewers have N ≤ 5 audits each — a single new audit can flip the trust score by 20pp.</li>
+      <li><b>N=1 edge case.</b> <code>bobrow.taylor</code> has only 1 audit (which came back unjustified). Strict reading of <code>majority_unjustified</code> drops them, but the evidence is weak. Re-evaluate after more audits.</li>
+      <li><b>Borderline reviewers kept.</b> <code>sebastian.martinez</code> sits at 40% unjustified (just under the &gt;50% cutoff). Worth flagging for manual review.</li>
+      <li><b>Unaudited reviewers are kept by default.</b> Roughly 30 reviewers across the full project have not been audited yet. Their reviews are still counted in steps 2-5 with no trust signal applied. Set <code>--audited-only</code> on step-1 to exclude them.</li>
+    </ul>
+  </details>
+</section>
+
+<a id="s2"></a>
+<section class="step">
+  <h2>Step 2 — Course questions PREDICTIVE of better project performance</h2>
+  <div class="punchline">
+    Of <b>52</b> (course, question) pairs with enough workers (n ≥ 10):
+    <b>10</b> are <b>predictive</b> (r_pdr &lt; −0.05 — passing the question
+    correlates with a <b>LOWER defect rate</b> downstream).
+  </div>
+  <details class="method" open>
+    <summary><b>Definition</b></summary>
+    <p><b>Predictor:</b> per worker, did they get this course question correct?
+    (0/1, from Q-G1.<code>questionScoresBreakdown[qid].score</code>; best
+    attempt per worker if multi-attempt.)</p>
+    <p><b>Outcome (PRIMARY):</b> per worker, <b>PDR</b> = Performance Defect Rate =
+    fraction of the worker's <b>last 3</b> trusted reviews where
+    <code>quality_overall_qms &lt; 4</code> (below the promotion gate).
+    Range [0, 1]. Lower = better. Rolling window is configurable via
+    <code>--rolling-window-n</code>; set to 0 to use all reviews.</p>
+    <p><b>Secondary outcome:</b> trusted <code>mean_qm</code> over the same window
+    (continuous, 1–5). Kept in the CSV as <code>r_meanqm</code> for inspection
+    but no longer the primary signal.</p>
+    <p><b>Stat:</b> <a href="https://en.wikipedia.org/wiki/Point-biserial_correlation_coefficient">
+    point-biserial r</a> between predictor (binary) and outcome (PDR).
+    Range [−1, +1]. <b>NEGATIVE r</b> means passers have a LOWER defect rate (the GOOD direction).</p>
+    <p><b>Flag:</b> a question is "predictive" iff <code>r_pdr &lt; −0.05</code>.
+    The full ranking is in <code>analysis/g4_question_predictive.csv</code>.</p>
+  </details>
+  <details class="method">
+    <summary><b>Derivation</b></summary>
+    <p>Code: <code>analysis/run_g4.py step-2</code></p>
+    <ol>
+      <li>Read trusted reviews. For each worker, join via Q-C.<code>WORKER_ID</code> = attemper of the reviewed_attempt.</li>
+      <li>Per worker compute PDR over the last 3 trusted reviews (and mean_qm + pct_good as side metrics).</li>
+      <li>Read Q-G1. For each (worker, course, question) extract pass/fail (score ∈ {0,1}).</li>
+      <li>For each (course, question), compute point-biserial correlation between pass-state and PDR. Require n ≥ 10 workers.</li>
+      <li>Also compute mean PDR for passers, mean PDR for failers, and Δ (Δ negative → passers do better).</li>
+    </ol>
+  </details>
+  <h3>Top 10 predictive questions (sorted by r_pdr asc; most negative first)</h3>
+  <table class="full"><thead><tr><th>Course</th><th>QID</th><th>Question</th><th>Pass rate</th><th>n</th><th>r_pdr</th><th>Δ PDR (pass−fail)</th></tr></thead><tbody>
+<tr>
+  <td>OpenClaw Atlas Reviewers </td>
+  <td><code>181f47fc</code></td>
+  <td class="qtext">A rubric has the following weights assigned to its criteria: +5, +3, +3, +1, +1. Everything else about the task is solid. What should the reviewer flag?<div class="correct">✓ Fail — there is no negative-weight criterion</div></td>
+  <td class="num">96.2%</td>
+  <td class="num">131</td>
+  <td class="num good">-0.207</td>
+  <td class="num">-0.456</td>
+</tr>
+<tr>
+  <td>Rubrics + Unit Tests Screening</td>
+  <td><code>685f4d53</code></td>
+  <td class="qtext">One of the rubric criteria is overly specific and requires something the prompt did not ask for. Identify the bad rubric criterion and explain why it is overly specific.
+
+**Guidelines**\
+Read the prompt and rubric. Then:
+
+* identify the rubric criterion number that is overly specific
+* explain what …</td>
+  <td class="num">85.7%</td>
+  <td class="num">42</td>
+  <td class="num good">-0.126</td>
+  <td class="num">-0.167</td>
+</tr>
+<tr>
+  <td>OpenClaw RL Common Errors Screening</td>
+  <td><code>c516bff2</code></td>
+  <td class="qtext">**Instructions:** Read the prompt and the rubric criteria below. Some criteria evaluate implementation-level requirements that the prompt never specified.
+
+1. Identify at least one criterion that is overly specific
+2. Explain what that criterion technically requires
+3. Explain why that requirement i…</td>
+  <td class="num">73.7%</td>
+  <td class="num">217</td>
+  <td class="num good">-0.117</td>
+  <td class="num">-0.108</td>
+</tr>
+<tr>
+  <td>OpenClaw - Screening Course</td>
+  <td><code>ecdecee0</code></td>
+  <td class="qtext">**After you have finished the trajectory and collected the traces, what should you do to properly close the OpenClaw session?** (*Select ONE answer.)*<div class="correct">✓ Simply close the browser tab. Do not use &quot;Force End Session&quot; when the trajectory is complete.</div></td>
+  <td class="num">80.5%</td>
+  <td class="num">426</td>
+  <td class="num good">-0.110</td>
+  <td class="num">-0.114</td>
+</tr>
+<tr>
+  <td>OpenClaw RL Common Errors Screening</td>
+  <td><code>f8e777d4</code></td>
+  <td class="qtext">**Instructions:** Read the prompt and the rubric criteria below. One criterion is overly specific because it evaluates something the prompt never requested. Identify it and explain:
+
+1. The criterion number
+2. What exactly the criterion requires
+3. Why that requirement is not supported by the prompt…</td>
+  <td class="num">35.0%</td>
+  <td class="num">217</td>
+  <td class="num good">-0.073</td>
+  <td class="num">-0.062</td>
+</tr>
+<tr>
+  <td>OpenClaw - Screening Course</td>
+  <td><code>f236cb1b</code></td>
+  <td class="qtext">(question text not in Q-G2 SECTIONS export)</td>
+  <td class="num">91.3%</td>
+  <td class="num">263</td>
+  <td class="num good">-0.072</td>
+  <td class="num">-0.100</td>
+</tr>
+<tr>
+  <td>Rubrics + Unit Tests Screening</td>
+  <td><code>1823c815</code></td>
+  <td class="qtext">### **Free Response Questions**
+
+For the  test below, explain **specifically** whether it is valid or flawed. If flawed, state what is wrong and what should be done (keep, delete, or rewrite — and if rewrite, describe how). If valid, explain why it's a good test.
+
+### **Test 2 —** `test_restock_orde…</td>
+  <td class="num">97.8%</td>
+  <td class="num">400</td>
+  <td class="num good">-0.070</td>
+  <td class="num">-0.195</td>
+</tr>
+<tr>
+  <td>OpenClaw Atlas Reviewers </td>
+  <td><code>2658a3aa</code></td>
+  <td class="qtext">A task scores a 5 on desired outcome, a 5 on sources, a 3 on rubric quality, and a 5 on depth/friction. What is the correct overall score?<div class="correct">✓ 3 — the task follows the weakest dimension</div></td>
+  <td class="num">98.5%</td>
+  <td class="num">131</td>
+  <td class="num good">-0.056</td>
+  <td class="num">-0.192</td>
+</tr>
+<tr>
+  <td>Rubrics + Unit Tests Screening</td>
+  <td><code>4443ab66</code></td>
+  <td class="qtext">A prompt says: "Analyze the attached sales data and produce a risk assessment report in JSON format." A contributor submits the following rubric criteria. Which ones are overfitted?
+
+* A. "The report includes a valid JSON structure that successfully compiles."
+* B. "The report is saved as a file nam…<div class="correct">✓ Criterion B — the prompt specifies JSON format but not a filename, so enforcing a specific filename is overfitted.; Criterion D — the prompt never specifies key names or nesting structure, so locking </div></td>
+  <td class="num">88.2%</td>
+  <td class="num">400</td>
+  <td class="num good">-0.050</td>
+  <td class="num">-0.065</td>
+</tr>
+<tr>
+  <td>OpenClaw - Screening Course</td>
+  <td><code>99591dc0</code></td>
+  <td class="qtext">A contributor is mid-task and needs to reset the OpenClaw environment. They see two options under the Reset button and are unsure which to use. Their goal for one scenario is to fix a token session error without losing the conversation context. For a second scenario, they want to completely start ov…<div class="correct">✓ &quot;Restart Session&quot; refreshes the token session but preserves the previous request and response — useful for recovering from session errors without losing context.; &quot;Start Fresh&quot; removes all data from t</div></td>
+  <td class="num">95.5%</td>
+  <td class="num">426</td>
+  <td class="num good">-0.050</td>
+  <td class="num">-0.100</td>
+</tr></tbody></table>
+  <details class="caveats">
+    <summary><b>Caveats</b></summary>
+    <ul>
+      <li><b>Effect sizes are small.</b> Top |r| is roughly 0.13–0.20 — conventionally a "small" effect (Cohen). Useful as a screening signal in aggregate, not a deterministic single-question filter.</li>
+      <li><b>PDR is bounded.</b> With a rolling window of 3, PDR can only take values {0, 0.33, 0.67, 1.0} — fewer distinct values than mean_qm. This deflates correlation magnitudes slightly vs the old mean_qm-based numbers.</li>
+      <li><b>Fisher z CI is added by <code>run_g4_qdiagnose stats</code>.</b> Re-run that to refresh <code>r_pdr_ci95_lo/hi</code> after this metric switch.</li>
+      <li><b>1 of 52 questions lack a body</b> because they live in a nested sub-section structure our Q-G2 walker didn't reach. Those rows show "(question text not in Q-G2 SECTIONS export)" — the correlation is computed correctly, we just can't display the wording.</li>
+      <li><b>The outcome is the reviewer-graded defect rate, not promotion or task-completion rate.</b> Predictive of "fewer reviewers reject the work", not "task survives end-to-end".</li>
+    </ul>
+  </details>
+</section>
+
+<a id="s25"></a>
+<section class="step">
+  <h2>Step 2.5 — Combinations: does passing N of the predictive questions matter?</h2>
+  <div class="punchline">
+    For each course, we built a <b>composite score</b> = how many of the predictive questions a worker passed,
+    and grouped workers by that count. Bars are mean PDR with 95% CI; dashed line at PDR=0.50 marks where
+    half the worker's recent reviews fall below the promotion gate. LOWER bars = better.
+  </div>
+  <details class="method" open>
+    <summary><b>Definition</b></summary>
+    <p>For each course, take the questions where r_pdr &lt; −0.05 from step 2 (the "predictive" set: passing the question is associated with a LOWER defect rate downstream).
+    For each worker who took the course, compute a composite score = number of those predictive questions they passed.
+    Group workers by composite score; report mean PDR ± 95% CI per bucket. Also report Pearson r between
+    composite score and PDR (NEGATIVE r = more passes → fewer defects). For context, raw all-question pass-count is shown too.</p>
+  </details>
+  <details class="method">
+    <summary><b>Derivation</b></summary>
+    <p>Code: <code>analysis/run_g4_combos.py</code>. Outputs:
+    <code>g4_combo_curves.csv</code>, <code>g4_combo_summary.csv</code>, <code>g4_combo_curves.json</code>.</p>
+  </details>
+  
+<details class="course-combo" open>
+  <summary><b>OpenClaw Atlas Reviewers </b> &mdash; 2 predictive q’s, 131 workers in join</summary>
+  <div class="combo-flex">
+    <div><svg width="490" height="212" viewBox="-30 -8 520 220" style="font-family: -apple-system, sans-serif;"><rect x="46.0" y="12.9" width="138.0" height="167.1" fill="#d62728" opacity="0.7"/><line x1="115.0" y1="-12.3" x2="115.0" y2="38.1" stroke="#333" stroke-width="1.5"/><line x1="111.0" y1="-12.3" x2="119.0" y2="-12.3" stroke="#333" stroke-width="1.5"/><line x1="111.0" y1="38.1" x2="119.0" y2="38.1" stroke="#333" stroke-width="1.5"/><text x="115.0" y="194.0" font-size="10" text-anchor="middle" fill="#666">1</text><text x="115.0" y="8.9" font-size="9" text-anchor="middle" fill="#333">0.93</text><rect x="276.0" y="82.7" width="138.0" height="97.3" fill="#d62728" opacity="0.7"/><line x1="345.0" y1="69.3" x2="345.0" y2="96.2" stroke="#333" stroke-width="1.5"/><line x1="341.0" y1="69.3" x2="349.0" y2="69.3" stroke="#333" stroke-width="1.5"/><line x1="341.0" y1="96.2" x2="349.0" y2="96.2" stroke="#333" stroke-width="1.5"/><text x="345.0" y="194.0" font-size="10" text-anchor="middle" fill="#666">2</text><text x="345.0" y="78.7" font-size="9" text-anchor="middle" fill="#333">0.54</text><line x1="0" y1="135.0" x2="460" y2="135.0" stroke="#ddd" stroke-width="0.5"/><text x="-4" y="138.0" font-size="9" text-anchor="end" fill="#999">0.25</text><line x1="0" y1="90.0" x2="460" y2="90.0" stroke="#ddd" stroke-width="0.5"/><text x="-4" y="93.0" font-size="9" text-anchor="end" fill="#999">0.50</text><line x1="0" y1="45.0" x2="460" y2="45.0" stroke="#ddd" stroke-width="0.5"/><text x="-4" y="48.0" font-size="9" text-anchor="end" fill="#999">0.75</text><line x1="0" y1="90.0" x2="460" y2="90.0" stroke="#aaa" stroke-width="1" stroke-dasharray="4,3"/><text x="230.0" y="208" font-size="10" fill="#666" text-anchor="middle"># of 2 predictive questions passed (lower PDR = better)</text></svg></div>
+    <table class="mini">
+      <thead><tr><th>pred passed</th><th>n workers</th><th>PDR</th><th>95% CI</th></tr></thead>
+      <tbody><tr><td class="num">1</td><td class="num">7</td><td class="num"><b>0.93</b></td><td class="num">[0.79, 1.07]</td></tr><tr><td class="num">2</td><td class="num">124</td><td class="num"><b>0.54</b></td><td class="num">[0.47, 0.61]</td></tr></tbody>
+    </table>
+  </div>
+  <div class="combo-stats">
+    r_composite (predictive subset) vs PDR: <b class="good">-0.207</b>
+    &middot; r_all_pass_count: -0.132
+    &middot; best single-q r_pdr: -0.207
+    &middot; composite uplift (more negative is better): <b class="bad">+0.000</b>
+  </div>
+</details>
+
+<details class="course-combo" open>
+  <summary><b>Rubrics + Unit Tests Screening</b> &mdash; 3 predictive q’s, 400 workers in join</summary>
+  <div class="combo-flex">
+    <div><svg width="490" height="212" viewBox="-30 -8 520 220" style="font-family: -apple-system, sans-serif;"><rect x="23.0" y="0.0" width="69.0" height="180.0" fill="#d62728" opacity="0.7"/><text x="57.5" y="194.0" font-size="10" text-anchor="middle" fill="#666">0</text><text x="57.5" y="-4.0" font-size="9" text-anchor="middle" fill="#333">1.00</text><rect x="138.0" y="43.3" width="69.0" height="136.7" fill="#d62728" opacity="0.7"/><line x1="172.5" y1="25.3" x2="172.5" y2="61.3" stroke="#333" stroke-width="1.5"/><line x1="168.5" y1="25.3" x2="176.5" y2="25.3" stroke="#333" stroke-width="1.5"/><line x1="168.5" y1="61.3" x2="176.5" y2="61.3" stroke="#333" stroke-width="1.5"/><text x="172.5" y="194.0" font-size="10" text-anchor="middle" fill="#666">1</text><text x="172.5" y="39.3" font-size="9" text-anchor="middle" fill="#333">0.76</text><rect x="253.0" y="55.3" width="69.0" height="124.7" fill="#d62728" opacity="0.7"/><line x1="287.5" y1="47.1" x2="287.5" y2="63.5" stroke="#333" stroke-width="1.5"/><line x1="283.5" y1="47.1" x2="291.5" y2="47.1" stroke="#333" stroke-width="1.5"/><line x1="283.5" y1="63.5" x2="291.5" y2="63.5" stroke="#333" stroke-width="1.5"/><text x="287.5" y="194.0" font-size="10" text-anchor="middle" fill="#666">2</text><text x="287.5" y="51.3" font-size="9" text-anchor="middle" fill="#333">0.69</text><rect x="368.0" y="63.5" width="69.0" height="116.5" fill="#d62728" opacity="0.7"/><line x1="402.5" y1="34.2" x2="402.5" y2="92.9" stroke="#333" stroke-width="1.5"/><line x1="398.5" y1="34.2" x2="406.5" y2="34.2" stroke="#333" stroke-width="1.5"/><line x1="398.5" y1="92.9" x2="406.5" y2="92.9" stroke="#333" stroke-width="1.5"/><text x="402.5" y="194.0" font-size="10" text-anchor="middle" fill="#666">3</text><text x="402.5" y="59.5" font-size="9" text-anchor="middle" fill="#333">0.65</text><line x1="0" y1="135.0" x2="460" y2="135.0" stroke="#ddd" stroke-width="0.5"/><text x="-4" y="138.0" font-size="9" text-anchor="end" fill="#999">0.25</text><line x1="0" y1="90.0" x2="460" y2="90.0" stroke="#ddd" stroke-width="0.5"/><text x="-4" y="93.0" font-size="9" text-anchor="end" fill="#999">0.50</text><line x1="0" y1="45.0" x2="460" y2="45.0" stroke="#ddd" stroke-width="0.5"/><text x="-4" y="48.0" font-size="9" text-anchor="end" fill="#999">0.75</text><line x1="0" y1="90.0" x2="460" y2="90.0" stroke="#aaa" stroke-width="1" stroke-dasharray="4,3"/><text x="230.0" y="208" font-size="10" fill="#666" text-anchor="middle"># of 3 predictive questions passed (lower PDR = better)</text></svg></div>
+    <table class="mini">
+      <thead><tr><th>pred passed</th><th>n workers</th><th>PDR</th><th>95% CI</th></tr></thead>
+      <tbody><tr><td class="num">0</td><td class="num">1</td><td class="num"><b>1.00</b></td><td class="num">(n=1)</td></tr><tr><td class="num">1</td><td class="num">52</td><td class="num"><b>0.76</b></td><td class="num">[0.66, 0.86]</td></tr><tr><td class="num">2</td><td class="num">313</td><td class="num"><b>0.69</b></td><td class="num">[0.65, 0.74]</td></tr><tr><td class="num">3</td><td class="num">34</td><td class="num"><b>0.65</b></td><td class="num">[0.48, 0.81]</td></tr></tbody>
+    </table>
+  </div>
+  <div class="combo-stats">
+    r_composite (predictive subset) vs PDR: <b class="good">-0.071</b>
+    &middot; r_all_pass_count: +0.007
+    &middot; best single-q r_pdr: -0.126
+    &middot; composite uplift (more negative is better): <b class="bad">+0.055</b>
+  </div>
+</details>
+
+<details class="course-combo" open>
+  <summary><b>OpenClaw RL Common Errors Screening</b> &mdash; 2 predictive q’s, 320 workers in join</summary>
+  <div class="combo-flex">
+    <div><svg width="490" height="212" viewBox="-30 -8 520 220" style="font-family: -apple-system, sans-serif;"><rect x="30.7" y="48.5" width="92.0" height="131.5" fill="#d62728" opacity="0.7"/><line x1="76.7" y1="35.8" x2="76.7" y2="61.2" stroke="#333" stroke-width="1.5"/><line x1="72.7" y1="35.8" x2="80.7" y2="35.8" stroke="#333" stroke-width="1.5"/><line x1="72.7" y1="61.2" x2="80.7" y2="61.2" stroke="#333" stroke-width="1.5"/><text x="76.7" y="194.0" font-size="10" text-anchor="middle" fill="#666">0</text><text x="76.7" y="44.5" font-size="9" text-anchor="middle" fill="#333">0.73</text><rect x="184.0" y="57.0" width="92.0" height="123.0" fill="#d62728" opacity="0.7"/><line x1="230.0" y1="44.7" x2="230.0" y2="69.2" stroke="#333" stroke-width="1.5"/><line x1="226.0" y1="44.7" x2="234.0" y2="44.7" stroke="#333" stroke-width="1.5"/><line x1="226.0" y1="69.2" x2="234.0" y2="69.2" stroke="#333" stroke-width="1.5"/><text x="230.0" y="194.0" font-size="10" text-anchor="middle" fill="#666">1</text><text x="230.0" y="53.0" font-size="9" text-anchor="middle" fill="#333">0.68</text><rect x="337.3" y="72.3" width="92.0" height="107.7" fill="#d62728" opacity="0.7"/><line x1="383.3" y1="50.5" x2="383.3" y2="94.0" stroke="#333" stroke-width="1.5"/><line x1="379.3" y1="50.5" x2="387.3" y2="50.5" stroke="#333" stroke-width="1.5"/><line x1="379.3" y1="94.0" x2="387.3" y2="94.0" stroke="#333" stroke-width="1.5"/><text x="383.3" y="194.0" font-size="10" text-anchor="middle" fill="#666">2</text><text x="383.3" y="68.3" font-size="9" text-anchor="middle" fill="#333">0.60</text><line x1="0" y1="135.0" x2="460" y2="135.0" stroke="#ddd" stroke-width="0.5"/><text x="-4" y="138.0" font-size="9" text-anchor="end" fill="#999">0.25</text><line x1="0" y1="90.0" x2="460" y2="90.0" stroke="#ddd" stroke-width="0.5"/><text x="-4" y="93.0" font-size="9" text-anchor="end" fill="#999">0.50</text><line x1="0" y1="45.0" x2="460" y2="45.0" stroke="#ddd" stroke-width="0.5"/><text x="-4" y="48.0" font-size="9" text-anchor="end" fill="#999">0.75</text><line x1="0" y1="90.0" x2="460" y2="90.0" stroke="#aaa" stroke-width="1" stroke-dasharray="4,3"/><text x="230.0" y="208" font-size="10" fill="#666" text-anchor="middle"># of 2 predictive questions passed (lower PDR = better)</text></svg></div>
+    <table class="mini">
+      <thead><tr><th>pred passed</th><th>n workers</th><th>PDR</th><th>95% CI</th></tr></thead>
+      <tbody><tr><td class="num">0</td><td class="num">133</td><td class="num"><b>0.73</b></td><td class="num">[0.66, 0.80]</td></tr><tr><td class="num">1</td><td class="num">138</td><td class="num"><b>0.68</b></td><td class="num">[0.62, 0.75]</td></tr><tr><td class="num">2</td><td class="num">49</td><td class="num"><b>0.60</b></td><td class="num">[0.48, 0.72]</td></tr></tbody>
+    </table>
+  </div>
+  <div class="combo-stats">
+    r_composite (predictive subset) vs PDR: <b class="good">-0.105</b>
+    &middot; r_all_pass_count: -0.080
+    &middot; best single-q r_pdr: -0.117
+    &middot; composite uplift (more negative is better): <b class="bad">+0.013</b>
+  </div>
+</details>
+
+<details class="course-combo" open>
+  <summary><b>OpenClaw - Screening Course</b> &mdash; 3 predictive q’s, 426 workers in join</summary>
+  <div class="combo-flex">
+    <div><svg width="490" height="212" viewBox="-30 -8 520 220" style="font-family: -apple-system, sans-serif;"><rect x="23.0" y="0.0" width="69.0" height="180.0" fill="#d62728" opacity="0.7"/><text x="57.5" y="194.0" font-size="10" text-anchor="middle" fill="#666">0</text><text x="57.5" y="-4.0" font-size="9" text-anchor="middle" fill="#333">1.00</text><rect x="138.0" y="31.8" width="69.0" height="148.2" fill="#d62728" opacity="0.7"/><line x1="172.5" y1="14.6" x2="172.5" y2="49.0" stroke="#333" stroke-width="1.5"/><line x1="168.5" y1="14.6" x2="176.5" y2="14.6" stroke="#333" stroke-width="1.5"/><line x1="168.5" y1="49.0" x2="176.5" y2="49.0" stroke="#333" stroke-width="1.5"/><text x="172.5" y="194.0" font-size="10" text-anchor="middle" fill="#666">1</text><text x="172.5" y="27.8" font-size="9" text-anchor="middle" fill="#333">0.82</text><rect x="253.0" y="58.9" width="69.0" height="121.1" fill="#d62728" opacity="0.7"/><line x1="287.5" y1="47.6" x2="287.5" y2="70.1" stroke="#333" stroke-width="1.5"/><line x1="283.5" y1="47.6" x2="291.5" y2="47.6" stroke="#333" stroke-width="1.5"/><line x1="283.5" y1="70.1" x2="291.5" y2="70.1" stroke="#333" stroke-width="1.5"/><text x="287.5" y="194.0" font-size="10" text-anchor="middle" fill="#666">2</text><text x="287.5" y="54.9" font-size="9" text-anchor="middle" fill="#333">0.67</text><rect x="368.0" y="54.2" width="69.0" height="125.8" fill="#d62728" opacity="0.7"/><line x1="402.5" y1="43.8" x2="402.5" y2="64.5" stroke="#333" stroke-width="1.5"/><line x1="398.5" y1="43.8" x2="406.5" y2="43.8" stroke="#333" stroke-width="1.5"/><line x1="398.5" y1="64.5" x2="406.5" y2="64.5" stroke="#333" stroke-width="1.5"/><text x="402.5" y="194.0" font-size="10" text-anchor="middle" fill="#666">3</text><text x="402.5" y="50.2" font-size="9" text-anchor="middle" fill="#333">0.70</text><line x1="0" y1="135.0" x2="460" y2="135.0" stroke="#ddd" stroke-width="0.5"/><text x="-4" y="138.0" font-size="9" text-anchor="end" fill="#999">0.25</text><line x1="0" y1="90.0" x2="460" y2="90.0" stroke="#ddd" stroke-width="0.5"/><text x="-4" y="93.0" font-size="9" text-anchor="end" fill="#999">0.50</text><line x1="0" y1="45.0" x2="460" y2="45.0" stroke="#ddd" stroke-width="0.5"/><text x="-4" y="48.0" font-size="9" text-anchor="end" fill="#999">0.75</text><line x1="0" y1="90.0" x2="460" y2="90.0" stroke="#aaa" stroke-width="1" stroke-dasharray="4,3"/><text x="230.0" y="208" font-size="10" fill="#666" text-anchor="middle"># of 3 predictive questions passed (lower PDR = better)</text></svg></div>
+    <table class="mini">
+      <thead><tr><th>pred passed</th><th>n workers</th><th>PDR</th><th>95% CI</th></tr></thead>
+      <tbody><tr><td class="num">0</td><td class="num">1</td><td class="num"><b>1.00</b></td><td class="num">(n=1)</td></tr><tr><td class="num">1</td><td class="num">50</td><td class="num"><b>0.82</b></td><td class="num">[0.73, 0.92]</td></tr><tr><td class="num">2</td><td class="num">185</td><td class="num"><b>0.67</b></td><td class="num">[0.61, 0.74]</td></tr><tr><td class="num">3</td><td class="num">190</td><td class="num"><b>0.70</b></td><td class="num">[0.64, 0.76]</td></tr></tbody>
+    </table>
+  </div>
+  <div class="combo-stats">
+    r_composite (predictive subset) vs PDR: <b class="good">-0.061</b>
+    &middot; r_all_pass_count: +0.061
+    &middot; best single-q r_pdr: -0.110
+    &middot; composite uplift (more negative is better): <b class="bad">+0.049</b>
+  </div>
+</details>
+
+  <details class="caveats">
+    <summary><b>Caveats</b></summary>
+    <ul>
+      <li>"Predictive" is defined by single-q r_pdr &lt; −0.05 from step 2. That set may itself be noisy at small effect sizes — the composite inherits any noise.</li>
+      <li>95% CI on the bucket means uses a normal approximation (z=1.96). For small buckets (n &lt; 30) Welch t intervals would be more conservative; the CI shown is therefore slightly tight at low n.</li>
+      <li>Composite Pearson r treats "n_passed" as continuous, but it's really an integer count with a small range. Spearman rank-order would be a more conservative test; results would be similar.</li>
+      <li>This is descriptive correlation. We're NOT claiming course passage causes lower defect rate — the same trait may drive both.</li>
+      <li><b>PDR ceiling.</b> Because PDR ∈ {0, 0.33, 0.67, 1.0} for the rolling-3 window, the bar chart granularity is coarse. The dashboard's Step 2.7 plots the same data using <code>mean_qm_in_window</code> for a continuous view.</li>
+    </ul>
+  </details>
+</section>
+
+<a id="s26"></a>
+<section class="step">
+  <h2>Step 2.6 — Per-course question subsets: which questions actually predict lower defect rate?</h2>
+  <div class="punchline">
+    For each course, we searched every subset (size 1–5) of its questions to find the bundle whose carriers (workers who passed ALL questions in the bundle) have the most extreme mean PDR. We surface the <b>best predictive</b> bundle (most-negative Δ PDR) AND the <b>worst counterproductive</b> bundle (most-positive Δ PDR). The full question text + correct answer + sample worker response is shown for each question in the bundle.
+  </div>
+  <details class="method" open>
+    <summary><b>Definition</b></summary>
+    <p>For each course, enumerate every subset of size 1–5 of its candidate questions (predictive set = questions with r_pdr &lt; +0.05 from Step 2; counterproductive search uses ALL questions). For each subset, compute mean PDR of workers who passed ALL questions in the subset vs workers who didn’t. Surface the best (most-negative Δ PDR) and worst (most-positive Δ PDR) subset per course with n_carriers ≥ 10.</p>
+    <p><b>Question bodies</b> shown below come from Q-G2 SECTIONS (40 questions) or a Q-G1 sample answer + grader hint (11 questions whose body isn’t in the SECTIONS export).</p>
+  </details>
+  <details class="method">
+    <summary><b>Derivation</b></summary>
+    <p>Code: <code>analysis/run_g4_q_subsets.py</code>. Outputs: <code>g4_q_subset_summary.csv</code>, <code>g4_q_subset_all.csv</code>.</p>
+  </details>
+  
+<details class="course-combo" open>
+  <summary><b>OpenClaw - Screening Course</b></summary>
+  <div class="subset-block"><h4 style="color:#2ca02c">Predictive (carriers have LOWER defect rate) subset (2 question(s); n_carriers=326; Δ PDR=-0.116)</h4><div class="subset-flex"><div class="subset-bars"><svg width="244" height="174" viewBox="-22 -6 256 184" style="font-family: -apple-system, sans-serif;"><rect x="25.0" y="48.6" width="60" height="101.4" fill="#2ca02c" opacity="0.7"/><text x="55.0" y="164.0" font-size="10" text-anchor="middle" fill="#666">with</text><text x="55.0" y="44.6" font-size="10" text-anchor="middle" fill="#333">0.68</text><rect x="135.0" y="31.2" width="60" height="118.8" fill="#999" opacity="0.7"/><text x="165.0" y="164.0" font-size="10" text-anchor="middle" fill="#666">without</text><text x="165.0" y="27.2" font-size="10" text-anchor="middle" fill="#333">0.79</text><line x1="0" y1="112.5" x2="220" y2="112.5" stroke="#ddd" stroke-width="0.5"/><text x="-4" y="115.5" font-size="9" text-anchor="end" fill="#999">0.25</text><line x1="0" y1="75.0" x2="220" y2="75.0" stroke="#ddd" stroke-width="0.5"/><text x="-4" y="78.0" font-size="9" text-anchor="end" fill="#999">0.50</text><line x1="0" y1="37.5" x2="220" y2="37.5" stroke="#ddd" stroke-width="0.5"/><text x="-4" y="40.5" font-size="9" text-anchor="end" fill="#999">0.75</text></svg><div class="meta">Pass these questions → PDR = <b>0.68</b>; don’t pass → <b>0.79</b></div></div><ul class="q-list"><li class="q-item"><div class="q-head"><code>99591dc0</code> <span class="meta">(multiple_choice)</span></div><div class="q-text">A contributor is mid-task and needs to reset the OpenClaw environment. They see two options under the Reset button and are unsure which to use. Their goal for one scenario is to fix a token session error without losing the conversation context. For a second scenario, they want to completely start over as if the task had never been run. Which of the following statements correctly describe the behavior of each option?(Select ALL that apply)</div><div class="q-correct"><b>Correct:</b><ul><li>&quot;Restart Session&quot; refreshes the token session but preserves the previous request and response — useful for recovering from session errors without losing context.</li><li>&quot;Start Fresh&quot; removes all data from the last session entirely, giving the contributor a clean slate.</li></ul></div><div class="q-wrong"><b>Wrong:</b><ul><li>&quot;Restart Session&quot; wipes all conversation data and starts a completely clean environment, equivalent to opening the task for the first time.</li><li>Both options produce the same result — the difference is only in how long the reset takes.</li><li>&quot;Start Fresh&quot; only clears the most recent message while keeping the rest of the conversation history intact.</li></ul></div></li><li class="q-item"><div class="q-head"><code>ecdecee0</code> <span class="meta">(multiple_choice)</span></div><div class="q-text">**After you have finished the trajectory and collected the traces, what should you do to properly close the OpenClaw session?** (*Select ONE answer.)*</div><div class="q-correct"><b>Correct:</b><ul><li>Simply close the browser tab. Do not use &quot;Force End Session&quot; when the trajectory is complete.</li></ul></div><div class="q-wrong"><b>Wrong:</b><ul><li>Click &quot;Force End Session&quot; to make sure the session closes and saves correctly.</li><li>Click &quot;Reset &gt; Start Fresh&quot; to end the session and save your work.</li><li>Click &quot;Collect Traces &amp; Continue&quot; to keep working in the same OpenClaw session.</li></ul></div></li></ul></div></div>
+  <div class="subset-block"><h4 style="color:#d62728">Counterproductive (carriers have HIGHER defect rate) subset (5 question(s); n_carriers=16; Δ PDR=+0.179)</h4><div class="subset-flex"><div class="subset-bars"><svg width="244" height="174" viewBox="-22 -6 256 184" style="font-family: -apple-system, sans-serif;"><rect x="25.0" y="18.8" width="60" height="131.2" fill="#d62728" opacity="0.7"/><text x="55.0" y="164.0" font-size="10" text-anchor="middle" fill="#666">with</text><text x="55.0" y="14.8" font-size="10" text-anchor="middle" fill="#333">0.88</text><rect x="135.0" y="45.6" width="60" height="104.4" fill="#999" opacity="0.7"/><text x="165.0" y="164.0" font-size="10" text-anchor="middle" fill="#666">without</text><text x="165.0" y="41.6" font-size="10" text-anchor="middle" fill="#333">0.70</text><line x1="0" y1="112.5" x2="220" y2="112.5" stroke="#ddd" stroke-width="0.5"/><text x="-4" y="115.5" font-size="9" text-anchor="end" fill="#999">0.25</text><line x1="0" y1="75.0" x2="220" y2="75.0" stroke="#ddd" stroke-width="0.5"/><text x="-4" y="78.0" font-size="9" text-anchor="end" fill="#999">0.50</text><line x1="0" y1="37.5" x2="220" y2="37.5" stroke="#ddd" stroke-width="0.5"/><text x="-4" y="40.5" font-size="9" text-anchor="end" fill="#999">0.75</text></svg><div class="meta">Pass these questions → PDR = <b>0.88</b>; don’t pass → <b>0.70</b></div></div><ul class="q-list"><li class="q-item"><div class="q-head"><code>176e1137</code> <span class="meta">(multiple_choice)</span></div><div class="q-text">**Regarding the Silver Trajectory process, which of the following statements are NOT TRUE**?</div><div class="q-correct"><b>Correct:</b><ul><li>If the model never reaches the correct answer, you must discard the task entirely and start over.</li></ul></div><div class="q-wrong"><b>Wrong:</b><ul><li>You must select the model that produced a result most similar to the desired Outcome.</li><li>The silver trajectory will be cloned and the conversation will continue from the last response given by the model.</li><li>If the selected model has already reached the desired outcome, no further iteration is needed.</li></ul></div></li><li class="q-item"><div class="q-head"><code>30e8972f</code> <span class="meta">(multiple_choice)</span></div><div class="q-text">(question text not in Q-G2 SECTIONS export)</div><div class="q-sample"><b>Sample worker answer:</b> [&quot;3de4aa84-c067-4346-94f5-cf8eeecc5c74&quot;]…</div></li><li class="q-item"><div class="q-head"><code>4c90c7d8</code> <span class="meta">(multiple_choice)</span></div><div class="q-text">A contributor links the following five items as their source of inspiration. Which ones are invalid and must be rejected?
+
+*Scenario:*
+
+* A. A Reddit post where a user describes using an AI agent to manage their Airbnb calendar.
+* B. The OpenClaw universe viewer page for the assigned persona (e.g., [/](http://rcscale.github.io/persona-007/)).
+* C. A private ChatGPT conversation the contributor had while brainstorming the task.
+* D. A link to a Twitter/X profile homepage (not a specific post).
+* E. A Medium article written by an external author describing a real AI productivity workflow.\
+  (**Select all that apply)**</div><div class="q-correct"><b>Correct:</b><ul><li>B</li><li>C</li><li>D</li></ul></div><div class="q-wrong"><b>Wrong:</b><ul><li>A</li><li>E</li></ul></div></li><li class="q-item"><div class="q-head"><code>9e20a1b9</code> <span class="meta">(text_response)</span></div><div class="q-text">(question text not in Q-G2 SECTIONS export)</div><div class="q-sample"><b>Sample worker answer:</b> Bad criteria: 3, 4, 5, 6, 7, 8, 9, 10, 11, 17, 33, 34, 35, 24, 25, 26
+
+Why:
+3–11: Hardcoded student names, emails, and scores not mentioned in the prompt. Agent cannot guess these.
+17: Forces a specific email subject line never requested by the user.…</div><div class="q-grader"><b>Grader hint:</b> The response does say some rubric items add unsupported requirements, but it does not cover the main over-specificity pattern described in the grading instructions. It focuses on hardcoded names, emails, subject lines, and privacy/file issues rather …</div></li><li class="q-item"><div class="q-head"><code>fa5ba3ec</code> <span class="meta">(multiple_choice)</span></div><div class="q-text">**When annotating a safety failure in a trajectory, which of the following elements must be included as part of the annotation?** (Select ALL that apply)</div><div class="q-correct"><b>Correct:</b><ul><li>The failure category, selected from F1–F8, along with the appropriate subtype.</li><li>The specific assistant step (turn) where the failure occurred.</li><li>A concise failure description consisting of 1–2 sentences explaining what went wrong.</li><li>The action tier (T0–T3) assigned to the failure.</li></ul></div><div class="q-wrong"><b>Wrong:</b><ul><li>A restatement of the user’s original prompt without additional context.</li></ul></div></li></ul></div></div>
+</details>
+<details class="course-combo" open>
+  <summary><b>OpenClaw Atlas Reviewers </b></summary>
+  <div class="subset-block"><h4 style="color:#2ca02c">Predictive (carriers have LOWER defect rate) subset (3 question(s); n_carriers=120; Δ PDR=-0.231)</h4><div class="subset-flex"><div class="subset-bars"><svg width="244" height="174" viewBox="-22 -6 256 184" style="font-family: -apple-system, sans-serif;"><rect x="25.0" y="68.7" width="60" height="81.3" fill="#2ca02c" opacity="0.7"/><text x="55.0" y="164.0" font-size="10" text-anchor="middle" fill="#666">with</text><text x="55.0" y="64.7" font-size="10" text-anchor="middle" fill="#333">0.54</text><rect x="135.0" y="34.1" width="60" height="115.9" fill="#999" opacity="0.7"/><text x="165.0" y="164.0" font-size="10" text-anchor="middle" fill="#666">without</text><text x="165.0" y="30.1" font-size="10" text-anchor="middle" fill="#333">0.77</text><line x1="0" y1="112.5" x2="220" y2="112.5" stroke="#ddd" stroke-width="0.5"/><text x="-4" y="115.5" font-size="9" text-anchor="end" fill="#999">0.25</text><line x1="0" y1="75.0" x2="220" y2="75.0" stroke="#ddd" stroke-width="0.5"/><text x="-4" y="78.0" font-size="9" text-anchor="end" fill="#999">0.50</text><line x1="0" y1="37.5" x2="220" y2="37.5" stroke="#ddd" stroke-width="0.5"/><text x="-4" y="40.5" font-size="9" text-anchor="end" fill="#999">0.75</text></svg><div class="meta">Pass these questions → PDR = <b>0.54</b>; don’t pass → <b>0.77</b></div></div><ul class="q-list"><li class="q-item"><div class="q-head"><code>181f47fc</code> <span class="meta">(multiple_choice)</span></div><div class="q-text">A rubric has the following weights assigned to its criteria: +5, +3, +3, +1, +1. Everything else about the task is solid. What should the reviewer flag?</div><div class="q-correct"><b>Correct:</b><ul><li>Fail — there is no negative-weight criterion</li></ul></div><div class="q-wrong"><b>Wrong:</b><ul><li>Fail — duplicate weights are not allowed</li><li>Not-fail — weight diversity only requires at least three distinct values</li><li>Not-fail — negative weights are optional as long as the total is positive</li><li>Fail — the rubric must contain at least one criterion weighted -5</li></ul></div></li><li class="q-item"><div class="q-head"><code>2658a3aa</code> <span class="meta">(multiple_choice)</span></div><div class="q-text">A task scores a 5 on desired outcome, a 5 on sources, a 3 on rubric quality, and a 5 on depth/friction. What is the correct overall score?</div><div class="q-correct"><b>Correct:</b><ul><li>3 — the task follows the weakest dimension</li></ul></div><div class="q-wrong"><b>Wrong:</b><ul><li>5 — the majority of dimensions are perfect</li><li>4 — the average rounds up and only one dimension is weak</li><li>2 — any dimension below 4 means the task fails</li><li>It depends on the reviewer&#x27;s subjective judgment of severity</li></ul></div></li><li class="q-item"><div class="q-head"><code>e92effaf</code> <span class="meta">(multiple_choice)</span></div><div class="q-text">A task&#x27;s prompt is well-written and clearly steers the model toward the desired outcome. However, Model A successfully completes 70% of the final rubric score. The attempter claims Model A should fail. According to the course, which of the following is true?</div><div class="q-correct"><b>Correct:</b><ul><li>This is a fail — Model A must fail at least 50% of the final rubric score, meaning it should earn no more than 50% of the total weight sum</li></ul></div><div class="q-wrong"><b>Wrong:</b><ul><li>This is acceptable — the 50% rule only applies to Model B</li><li>This is not-fail — the reviewer can adjust rubric weights to force Model A below 50%</li><li>This is acceptable — as long as Model A doesn&#x27;t get a perfect score, the task is valid</li><li>This is a fail — &quot;tricking&quot; the model is the only valid way to ensure the 50% failure</li></ul></div></li></ul></div></div>
+  <div class="subset-empty">No Counterproductive (carriers have HIGHER defect rate) subset with n≥10 in this course.</div>
+</details>
+<details class="course-combo" open>
+  <summary><b>OpenClaw RL Common Errors Screening</b></summary>
+  <div class="subset-block"><h4 style="color:#2ca02c">Predictive (carriers have LOWER defect rate) subset (4 question(s); n_carriers=44; Δ PDR=-0.146)</h4><div class="subset-flex"><div class="subset-bars"><svg width="244" height="174" viewBox="-22 -6 256 184" style="font-family: -apple-system, sans-serif;"><rect x="25.0" y="65.3" width="60" height="84.7" fill="#2ca02c" opacity="0.7"/><text x="55.0" y="164.0" font-size="10" text-anchor="middle" fill="#666">with</text><text x="55.0" y="61.3" font-size="10" text-anchor="middle" fill="#333">0.56</text><rect x="135.0" y="43.5" width="60" height="106.5" fill="#999" opacity="0.7"/><text x="165.0" y="164.0" font-size="10" text-anchor="middle" fill="#666">without</text><text x="165.0" y="39.5" font-size="10" text-anchor="middle" fill="#333">0.71</text><line x1="0" y1="112.5" x2="220" y2="112.5" stroke="#ddd" stroke-width="0.5"/><text x="-4" y="115.5" font-size="9" text-anchor="end" fill="#999">0.25</text><line x1="0" y1="75.0" x2="220" y2="75.0" stroke="#ddd" stroke-width="0.5"/><text x="-4" y="78.0" font-size="9" text-anchor="end" fill="#999">0.50</text><line x1="0" y1="37.5" x2="220" y2="37.5" stroke="#ddd" stroke-width="0.5"/><text x="-4" y="40.5" font-size="9" text-anchor="end" fill="#999">0.75</text></svg><div class="meta">Pass these questions → PDR = <b>0.56</b>; don’t pass → <b>0.71</b></div></div><ul class="q-list"><li class="q-item"><div class="q-head"><code>07f51396</code> <span class="meta">(text_response)</span></div><div class="q-text">The rubric criterion below has at least one major error.
+
+**Instructions:**
+
+1. Identify the error type(s): not self-contained / not atomic / incorrect
+2. Rewrite it as correctly structured criterion(ia)
+3. If it needs to be split into multiple criteria, write all of them and assign appropriate weights to each
+
+**Prompt:** *&quot;I manage a weekly newsletter with 500 subscribers. Read the subscriber list from subscribers.csv, identify everyone who hasn&#x27;t opened the last 3 issues, remove them from the active list, and generate a re-engagement email draft for the inactive subscribers. Save the updated active list as active_subscribers.csv.&quot;*
+
+**Original criterion:** *&quot;The agent correctly processes the subscriber data and generates the output file.&quot; (+5)*</div></li><li class="q-item"><div class="q-head"><code>c516bff2</code> <span class="meta">(text_response)</span></div><div class="q-text">**Instructions:** Read the prompt and the rubric criteria below. Some criteria evaluate implementation-level requirements that the prompt never specified.
+
+1. Identify at least one criterion that is overly specific
+2. Explain what that criterion technically requires
+3. Explain why that requirement is not supported by the prompt
+4. Explain why this makes the criterion a flawed evaluation tool
+
+Your answer must clearly connect the rubric problem to what the prompt actually asks for.\
+Prompt:\
+Rubrics:</div></li><li class="q-item"><div class="q-head"><code>f8e777d4</code> <span class="meta">(text_response)</span></div><div class="q-text">**Instructions:** Read the prompt and the rubric criteria below. One criterion is overly specific because it evaluates something the prompt never requested. Identify it and explain:
+
+1. The criterion number
+2. What exactly the criterion requires
+3. Why that requirement is not supported by the prompt
+4. Why this makes the criterion flawed
+
+Your answer must clearly connect the rubric problem to what the prompt actually asks for.\
+Prompt:\
+Rubric:</div></li><li class="q-item"><div class="q-head"><code>f9267d8f</code> <span class="meta">(text_response)</span></div><div class="q-text">Review the rubric below and identify all major errors you find.
+
+**Instructions:** Read the task prompt and rubric set carefully. For each flawed criterion, state:
+
+1. The criterion number
+2. The error type: not self-contained / not atomic / incorrect
+3. Why it is flawed — be specific and tie your reasoning to the prompt
+
+Your response should include all issues you find. Do not just label a criterion as bad — explain the problem clearly.
+
+**Prompt:** *&quot;I manage a weekly newsletter with 500 subscribers. Read the subscriber list from subscribers.csv, identify everyone who hasn&#x27;t opened the last 3 issues, remove them from the active list, and generate a re-engagement email draft for the inactive subscribers. Save the updated active list as active_subscribers.csv.&quot;*
+
+**Rubric:**
+
+1. The agent reads the subscriber data from the correct file. (+5)
+2. The agent identifies inactive subscribers and removes them from the list. (+5)
+3. The agent generates a re-engagement email draft. (+3)
+4. The agent saves the updated file correctly. (+5)
+5. The response addresses all the user&#x27;s requirements from the prompt. (+3)</div></li></ul></div></div>
+  <div class="subset-block"><h4 style="color:#d62728">Counterproductive (carriers have HIGHER defect rate) subset (3 question(s); n_carriers=301; Δ PDR=+0.062)</h4><div class="subset-flex"><div class="subset-bars"><svg width="244" height="174" viewBox="-22 -6 256 184" style="font-family: -apple-system, sans-serif;"><rect x="25.0" y="45.9" width="60" height="104.1" fill="#d62728" opacity="0.7"/><text x="55.0" y="164.0" font-size="10" text-anchor="middle" fill="#666">with</text><text x="55.0" y="41.9" font-size="10" text-anchor="middle" fill="#333">0.69</text><rect x="135.0" y="55.3" width="60" height="94.7" fill="#999" opacity="0.7"/><text x="165.0" y="164.0" font-size="10" text-anchor="middle" fill="#666">without</text><text x="165.0" y="51.3" font-size="10" text-anchor="middle" fill="#333">0.63</text><line x1="0" y1="112.5" x2="220" y2="112.5" stroke="#ddd" stroke-width="0.5"/><text x="-4" y="115.5" font-size="9" text-anchor="end" fill="#999">0.25</text><line x1="0" y1="75.0" x2="220" y2="75.0" stroke="#ddd" stroke-width="0.5"/><text x="-4" y="78.0" font-size="9" text-anchor="end" fill="#999">0.50</text><line x1="0" y1="37.5" x2="220" y2="37.5" stroke="#ddd" stroke-width="0.5"/><text x="-4" y="40.5" font-size="9" text-anchor="end" fill="#999">0.75</text></svg><div class="meta">Pass these questions → PDR = <b>0.69</b>; don’t pass → <b>0.63</b></div></div><ul class="q-list"><li class="q-item"><div class="q-head"><code>07f51396</code> <span class="meta">(text_response)</span></div><div class="q-text">The rubric criterion below has at least one major error.
+
+**Instructions:**
+
+1. Identify the error type(s): not self-contained / not atomic / incorrect
+2. Rewrite it as correctly structured criterion(ia)
+3. If it needs to be split into multiple criteria, write all of them and assign appropriate weights to each
+
+**Prompt:** *&quot;I manage a weekly newsletter with 500 subscribers. Read the subscriber list from subscribers.csv, identify everyone who hasn&#x27;t opened the last 3 issues, remove them from the active list, and generate a re-engagement email draft for the inactive subscribers. Save the updated active list as active_subscribers.csv.&quot;*
+
+**Original criterion:** *&quot;The agent correctly processes the subscriber data and generates the output file.&quot; (+5)*</div></li><li class="q-item"><div class="q-head"><code>88371c2f</code> <span class="meta">(text_response)</span></div><div class="q-text">Review the rubric set below. Identify the structural problem, then fix it.
+
+**Instructions:** In your response, explain:
+
+1. What the structural problem is and why it causes a reviewer FAIL
+2. The negative-weight criterion you are adding
+3. What specific model behavior or failure it is designed to catch
+4. Why you chose that weight (-1, -3, or -5)
+
+**Task context:** An agent that monitors brand mentions on social media, classifies each mention&#x27;s sentiment, and produces a weekly summary report.
+
+**Rubric set (as submitted):**
+
+1. The agent reads brand mention data from the assigned data source. (+3)
+2. The agent classifies each mention as positive, neutral, or negative. (+5)
+3. The agent produces a file named brand_report.csv. (+5)
+4. brand_report.csv includes columns: date, mention_text, sentiment, source. (+3)
+5. The agent&#x27;s weekly summary includes total mention counts per sentiment category. (+3)</div></li><li class="q-item"><div class="q-head"><code>cb2a9f83</code> <span class="meta">(text_response)</span></div><div class="q-text">You are reviewing two multi-turn trajectory excerpts. Determine which one correctly uses [MEMORY.md](http://MEMORY.md) and which one fails the requirement.
+
+**Instructions:**
+
+* Identify which trajectory is **valid** and which **fails**
+* For the **failing trajectory**: explain specifically what is wrong and describe at least one concrete fix
+
+**Trajectory A:**
+
+* Turn 1: *&quot;Plan a 3-day road trip from Austin to New Orleans. Save our chosen stops and driving schedule to memory.&quot;* → Agent plans route, saves stops and schedule to [MEMORY.md](http://MEMORY.md).
+* Turn 2: *&quot;Based on the stops you saved, find one restaurant recommendation near each stop.&quot;* → Agent reads [MEMORY.md](http://MEMORY.md), retrieves stops, finds restaurants per stop.
+* Turn 3: *&quot;Update memory — we&#x27;re skipping the Houston stop. Recalculate our total drive time.&quot;* → Agent updates [MEMORY.md](http://MEMORY.md), removes Houston, recalculates.
+
+**Trajectory B:**
+
+* Turn 1: *&quot;Help me plan a 3-day road trip.&quot;* → Agent suggests a general itinerary.
+* Turn 2: *&quot;What are some good restaurants in New Orleans?&quot;* → Agent lists restaurants. No connection to Turn 1.
+* Turn 3: *&quot;What&#x27;s the weather usually like on I-10 in summer?&quot;* → Agent answers weather question. No connection to earlier turns.</div></li></ul></div></div>
+</details>
+<details class="course-combo" open>
+  <summary><b>Rubrics + Unit Tests Screening</b></summary>
+  <div class="subset-block"><h4 style="color:#2ca02c">Predictive (carriers have LOWER defect rate) subset (2 question(s); n_carriers=387; Δ PDR=-0.153)</h4><div class="subset-flex"><div class="subset-bars"><svg width="244" height="174" viewBox="-22 -6 256 184" style="font-family: -apple-system, sans-serif;"><rect x="25.0" y="46.0" width="60" height="104.0" fill="#2ca02c" opacity="0.7"/><text x="55.0" y="164.0" font-size="10" text-anchor="middle" fill="#666">with</text><text x="55.0" y="42.0" font-size="10" text-anchor="middle" fill="#333">0.69</text><rect x="135.0" y="23.1" width="60" height="126.9" fill="#999" opacity="0.7"/><text x="165.0" y="164.0" font-size="10" text-anchor="middle" fill="#666">without</text><text x="165.0" y="19.1" font-size="10" text-anchor="middle" fill="#333">0.85</text><line x1="0" y1="112.5" x2="220" y2="112.5" stroke="#ddd" stroke-width="0.5"/><text x="-4" y="115.5" font-size="9" text-anchor="end" fill="#999">0.25</text><line x1="0" y1="75.0" x2="220" y2="75.0" stroke="#ddd" stroke-width="0.5"/><text x="-4" y="78.0" font-size="9" text-anchor="end" fill="#999">0.50</text><line x1="0" y1="37.5" x2="220" y2="37.5" stroke="#ddd" stroke-width="0.5"/><text x="-4" y="40.5" font-size="9" text-anchor="end" fill="#999">0.75</text></svg><div class="meta">Pass these questions → PDR = <b>0.69</b>; don’t pass → <b>0.85</b></div></div><ul class="q-list"><li class="q-item"><div class="q-head"><code>1823c815</code> <span class="meta">(text_response)</span></div><div class="q-text">### **Free Response Questions**
+
+For the  test below, explain **specifically** whether it is valid or flawed. If flawed, state what is wrong and what should be done (keep, delete, or rewrite — and if rewrite, describe how). If valid, explain why it&#x27;s a good test.
+
+### **Test 2 —** `test_restock_order_contains_required_fields`
+
+Identify all issues</div></li><li class="q-item"><div class="q-head"><code>4f42b014</code> <span class="meta">(multiple_choice)</span></div><div class="q-text">A prompt says: &quot;Search for flights and hotels, then produce a travel plan with cost estimates.&quot; Which rubric is NOT grounded in the prompt?</div><div class="q-correct"><b>Correct:</b><ul><li>&quot;The travel plan includes a packing list tailored to the destination weather.&quot;</li></ul></div><div class="q-wrong"><b>Wrong:</b><ul><li>&quot;The travel plan includes an estimated cost for flights.&quot;</li><li>&quot;The travel plan includes at least one hotel option with a price.&quot;</li><li>&quot;The travel plan includes a total estimated cost.&quot;</li></ul></div></li></ul></div></div>
+  <div class="subset-block"><h4 style="color:#d62728">Counterproductive (carriers have HIGHER defect rate) subset (2 question(s); n_carriers=383; Δ PDR=+0.115)</h4><div class="subset-flex"><div class="subset-bars"><svg width="244" height="174" viewBox="-22 -6 256 184" style="font-family: -apple-system, sans-serif;"><rect x="25.0" y="44.5" width="60" height="105.5" fill="#d62728" opacity="0.7"/><text x="55.0" y="164.0" font-size="10" text-anchor="middle" fill="#666">with</text><text x="55.0" y="40.5" font-size="10" text-anchor="middle" fill="#333">0.70</text><rect x="135.0" y="61.8" width="60" height="88.2" fill="#999" opacity="0.7"/><text x="165.0" y="164.0" font-size="10" text-anchor="middle" fill="#666">without</text><text x="165.0" y="57.8" font-size="10" text-anchor="middle" fill="#333">0.59</text><line x1="0" y1="112.5" x2="220" y2="112.5" stroke="#ddd" stroke-width="0.5"/><text x="-4" y="115.5" font-size="9" text-anchor="end" fill="#999">0.25</text><line x1="0" y1="75.0" x2="220" y2="75.0" stroke="#ddd" stroke-width="0.5"/><text x="-4" y="78.0" font-size="9" text-anchor="end" fill="#999">0.50</text><line x1="0" y1="37.5" x2="220" y2="37.5" stroke="#ddd" stroke-width="0.5"/><text x="-4" y="40.5" font-size="9" text-anchor="end" fill="#999">0.75</text></svg><div class="meta">Pass these questions → PDR = <b>0.70</b>; don’t pass → <b>0.59</b></div></div><ul class="q-list"><li class="q-item"><div class="q-head"><code>79edf72e</code> <span class="meta">(multiple_choice)</span></div><div class="q-text">Which of the following violates the positive language requirement?</div><div class="q-correct"><b>Correct:</b><ul><li>&quot;The model does not hallucinate any vendor names in the final report.&quot; (weight: -5)</li></ul></div><div class="q-wrong"><b>Wrong:</b><ul><li>The final report includes only vendor names that appear in the input CSV.&quot; (weight: -5)</li><li>&quot;The agent produces all 5 required email drafts.&quot; (weight: +5)</li><li>&quot;The final report includes a methodology section.&quot; (weight: +3)</li></ul></div></li><li class="q-item"><div class="q-head"><code>7d0c9322</code> <span class="meta">(multiple_choice)</span></div><div class="q-text">What happens if a task’s rubric set does not include any negative‑weight criteria?</div><div class="q-correct"><b>Correct:</b><ul><li>The task fails, because at least one negative criterion is mandatory</li></ul></div><div class="q-wrong"><b>Wrong:</b><ul><li>Nothing; negative criteria are optional</li><li>The negative criteria can be replaced by more +1 criteria</li><li>Only the negative criteria are ignored, but the task still passes</li></ul></div></li></ul></div></div>
+</details>
+  <details class="caveats">
+    <summary><b>Caveats</b></summary>
+    <ul>
+      <li><b>Small carriers for some subsets.</b> Counterproductive bundles often have n right at the floor (10–20) — enough to surface a pattern but not enough for tight CIs. Treat the Δ magnitude as directional, not precise.</li>
+      <li><b>Co-occurrence inflation.</b> Several courses have many subsets with identical Δ — that’s because adding "easy" questions to a subset doesn’t change who carries it (almost everyone passes them). The reported “best subset” is the smallest version of the equivalence class.</li>
+      <li><b>Synergy isn’t isolated here.</b> We report Δ PDR, not synergy uplift. Some subsets just inherit the strength of one good single question. See <code>g4_q_subset_all.csv</code>’s <code>synergy_uplift</code> column for the multi-question-bonus metric.</li>
+      <li><b>This is descriptive correlation</b>, not causal. Passing question X doesn’t MAKE a worker good; the trait that makes them good probably also helps them pass X.</li>
+    </ul>
+  </details>
+</section>
+
+<a id="s27"></a>
+<section class="step">
+  <h2>Step 2.7 — Tag-based ground-truth check (cross-validating Step 2)</h2>
+  <div class="punchline">
+    Step 2 ranks questions by their correlation with our derived PDR. <b>This step cross-validates that ranking against a completely independent signal</b>: the platform’s pre-existing <code>openclaw_rl_trusted_reviewer</code> (known-good) and <code>openclaw_rl_bad_quality</code> (known-bad) worker tags. A question that's truly predictive should ALSO have a higher pass-rate among the known-good cohort than the known-bad cohort.
+    <br><br>
+    <b>6 questions</b> agree on "predictive" (both signals point down on defects); <b>0</b> agree on "counterproductive"; <b>1</b> CONTRADICT each other and need a manual look.
+  </div>
+  <details class="method" open>
+    <summary><b>Definitions</b></summary>
+    <p><b>PDR per worker</b> = fraction of their last 3 trusted reviews scored below the promotion gate (QM &lt; 4). Lower PDR = better. Across 495 workers in the trusted cohort: mean PDR = <b>71.62%</b>; <b>103 workers</b> have PDR=0 (all recent reviews ≥4), <b>312 workers</b> have PDR=1.0 (no recent reviews ≥4), <b>80</b> are in between.</p>
+    <p><b>Δ PDR</b> = (mean PDR of question passers) − (mean PDR of question failers). Negative = passers have fewer defects.</p>
+    <p><b>Tag separation</b> = (pass rate among workers carrying <code>openclaw_rl_trusted_reviewer</code>) − (pass rate among workers carrying <code>openclaw_rl_bad_quality</code>). Positive = the question correctly discriminates known-good from known-bad. Negative = the question is INVERSELY related to known quality (red flag).</p>
+    <p><b>Why two signals?</b> Δ PDR uses OUR derived trust-weighted outcome (Steps 1 + 2). Tag separation uses the platform’s pre-existing known-good / known-bad tags as a SEPARATE ground truth. When both signals agree, the question's classification is double-confirmed. When they CONTRADICT, the question is suspicious and should be manually re-graded.</p>
+  </details>
+  <details class="method">
+    <summary><b>Derivation</b></summary>
+    <p>Code: <code>analysis/run_g4_pdr.py</code>. Outputs: <code>g4_worker_pdr.json</code>, <code>g4_question_pdr.csv</code>.</p>
+    <p>Defect definition: any trusted review where QM &lt; 4 (below the promotion gate). The threshold is configurable via <code>--good-qm-min</code>. Rolling window over last 3 reviews matches the cohort used in steps 2 onward.</p>
+  </details>
+
+  <h3>Double-confirmed PREDICTIVE (6 questions; top 10 shown)</h3>
+  <p class="meta">Both Δ PDR &lt; −0.05 AND tag_separation &gt; +0.05. High confidence: keep these questions.</p>
+  <table class="full"><thead><tr><th>Course</th><th>QID</th><th>Question</th><th>n joined</th><th>Δ PDR</th><th>tag carriers (G/B)</th><th>pass rate (G/B)</th><th>tag separation</th></tr></thead><tbody>
+<tr>
+  <td>OpenClaw Atlas Reviewers </td>
+  <td><code>2658a3aa</code></td>
+  <td class="qtext">A task scores a 5 on desired outcome, a 5 on sources, a 3 on rubric quality, and a 5 on depth/friction. What is the correct overall score?</td>
+  <td class="num">131</td>
+  <td class="num good">-0.192</td>
+  <td class="num">87 / 10</td>
+  <td class="num">98.9% / 90.0%</td>
+  <td class="num good">+0.088</td>
+</tr>
+<tr>
+  <td>OpenClaw - Screening Course</td>
+  <td><code>ecdecee0</code></td>
+  <td class="qtext">**After you have finished the trajectory and collected the traces, what should you do to properly close the OpenClaw session?** (*Select ONE…</td>
+  <td class="num">426</td>
+  <td class="num good">-0.114</td>
+  <td class="num">101 / 52</td>
+  <td class="num">84.2% / 75.0%</td>
+  <td class="num good">+0.092</td>
+</tr>
+<tr>
+  <td>OpenClaw RL Common Errors Screening</td>
+  <td><code>c516bff2</code></td>
+  <td class="qtext">**Instructions:** Read the prompt and the rubric criteria below. Some criteria evaluate implementation-level requirements that the prompt ne…</td>
+  <td class="num">217</td>
+  <td class="num good">-0.108</td>
+  <td class="num">74 / 13</td>
+  <td class="num">78.4% / 61.5%</td>
+  <td class="num good">+0.168</td>
+</tr>
+<tr>
+  <td>OpenClaw - Screening Course</td>
+  <td><code>f236cb1b</code></td>
+  <td class="qtext">(question text not in Q-G2 SECTIONS export)</td>
+  <td class="num">263</td>
+  <td class="num good">-0.100</td>
+  <td class="num">56 / 42</td>
+  <td class="num">98.2% / 85.7%</td>
+  <td class="num good">+0.125</td>
+</tr>
+<tr>
+  <td>Rubrics + Unit Tests Screening</td>
+  <td><code>4443ab66</code></td>
+  <td class="qtext">A prompt says: &quot;Analyze the attached sales data and produce a risk assessment report in JSON format.&quot; A contributor submits the following ru…</td>
+  <td class="num">400</td>
+  <td class="num good">-0.065</td>
+  <td class="num">95 / 39</td>
+  <td class="num">94.7% / 82.0%</td>
+  <td class="num good">+0.127</td>
+</tr>
+<tr>
+  <td>OpenClaw RL Common Errors Screening</td>
+  <td><code>f8e777d4</code></td>
+  <td class="qtext">**Instructions:** Read the prompt and the rubric criteria below. One criterion is overly specific because it evaluates something the prompt …</td>
+  <td class="num">217</td>
+  <td class="num good">-0.062</td>
+  <td class="num">74 / 13</td>
+  <td class="num">47.3% / 30.8%</td>
+  <td class="num good">+0.165</td>
+</tr></tbody></table>
+
+  <h3>Double-confirmed COUNTERPRODUCTIVE (0 questions; top 10 shown)</h3>
+  <p class="meta">Both Δ PDR &gt; +0.05 AND tag_separation &lt; −0.05. High confidence: rewrite or remove these.</p>
+  <div class="meta">(no questions matched this bucket)</div>
+
+  <h3>CONTRADICTIONS — PDR and tag disagree (1 questions; top 10 by disagreement magnitude)</h3>
+  <p class="meta">The two signals point opposite directions — manually re-grade these before acting on either signal.</p>
+  <table class="full"><thead><tr><th>Course</th><th>QID</th><th>Question</th><th>n joined</th><th>Δ PDR</th><th>tag carriers (G/B)</th><th>pass rate (G/B)</th><th>tag separation</th></tr></thead><tbody>
+<tr>
+  <td>Rubrics + Unit Tests Screening</td>
+  <td><code>685f4d53</code></td>
+  <td class="qtext">One of the rubric criteria is overly specific and requires something the prompt did not ask for. Identify the bad rubric criterion and expla…</td>
+  <td class="num">42</td>
+  <td class="num good">-0.167</td>
+  <td class="num">7 / 2</td>
+  <td class="num">71.4% / 100.0%</td>
+  <td class="num bad">-0.286</td>
+</tr></tbody></table>
+
+  <details class="caveats">
+    <summary><b>Caveats</b></summary>
+    <ul>
+      <li><b>PDR = 1.0 dominates.</b> Because mean_QM in this cohort hovers around 2.9, most workers have all 3 recent reviews below QM=4 and end up with PDR=1.0. That collapses information — there's no way to distinguish "always fail by a little" from "always fail badly". For a finer-grained metric, use <code>mean_qm_in_window</code> (also in <code>g4_worker_pdr.json</code>).</li>
+      <li><b>Tag separation requires both tag groups to be present in the question's join sample.</b> If a question has only trusted-tagged carriers (no bad-tagged), tag_separation is null and the question is excluded from this section.</li>
+      <li><b>Why might the two signals disagree?</b> (a) The platform's <code>trusted_reviewer</code> / <code>bad_quality</code> tags are set by different criteria than our trusted-mean-QM (they may include behaviours like rejection rate, not just QM); (b) Sample selection — tagged workers may have taken courses in a different period than the cohort in our PDR window; (c) The question is genuinely picking up a confounder.</li>
+      <li><b>Don’t act on a contradiction without reading the question.</b> Use the diagnosis Step 7 (LLM per-question) to understand WHY before recommending a fix.</li>
+    </ul>
+  </details>
+</section>
+
+<a id="s3"></a>
+<section class="step">
+  <h2>Step 3 — Course questions that are COUNTERPRODUCTIVE</h2>
+  <div class="punchline">
+    <b>9</b> course questions show r_pdr &gt; +0.05 — passing the
+    question correlates with a <b>HIGHER defect rate</b> downstream. Either the
+    answer key is wrong, the question selects for a trait misaligned with task
+    quality, or the LLM grader is rewarding the wrong thing.
+  </div>
+  <details class="method" open>
+    <summary><b>Definition</b></summary>
+    <p>Same stat as step 2 (point-biserial against PDR), opposite threshold:
+    <code>r_pdr &gt; +0.05</code> flags a question as
+    <code>counterproductive</code>. Same CSV (<code>g4_question_predictive.csv</code>)
+    just filtered/sorted differently.</p>
+  </details>
+  <h3>Top 10 counterproductive questions (sorted by r_pdr desc; most positive first)</h3>
+  <table class="full"><thead><tr><th>Course</th><th>QID</th><th>Question</th><th>Pass rate</th><th>n</th><th>r_pdr</th><th>Δ PDR (pass−fail)</th></tr></thead><tbody>
+<tr>
+  <td>OpenClaw - Screening Course</td>
+  <td><code>3f08b984</code></td>
+  <td class="qtext">(question text not in Q-G2 SECTIONS export)</td>
+  <td class="num">99.6%</td>
+  <td class="num">263</td>
+  <td class="num bad">+0.113</td>
+  <td class="num">+0.723</td>
+</tr>
+<tr>
+  <td>OpenClaw - Screening Course</td>
+  <td><code>0f8dc730</code></td>
+  <td class="qtext">(question text not in Q-G2 SECTIONS export)</td>
+  <td class="num">4.4%</td>
+  <td class="num">249</td>
+  <td class="num bad">+0.106</td>
+  <td class="num">+0.206</td>
+</tr>
+<tr>
+  <td>Rubrics + Unit Tests Screening</td>
+  <td><code>35d7529e</code></td>
+  <td class="qtext">A contributor writes the following four rubric criteria for a task. One of them is not self-contained. Which one, and why?
+
+* A. "The response includes a budget breakdown table with columns for category, amount, and percentage of total."
+* B. "The response correctly resolves the conflict described i…<div class="correct">✓ Criterion B — it references &quot;the conflict described in the scenario&quot; without stating what that conflict is, so a reviewer cannot evaluate it without going back to the prompt.</div></td>
+  <td class="num">97.8%</td>
+  <td class="num">400</td>
+  <td class="num bad">+0.100</td>
+  <td class="num">+0.279</td>
+</tr>
+<tr>
+  <td>OpenClaw - Screening Course</td>
+  <td><code>b090dbbd</code></td>
+  <td class="qtext">**When determining the appropriate safety tier for a task, how should the tier be assigned?** (Select ONE correct answer)<div class="correct">✓ Assign a single safety tier based on the most sensitive or highest-risk action in the overall request.</div></td>
+  <td class="num">94.6%</td>
+  <td class="num">426</td>
+  <td class="num bad">+0.088</td>
+  <td class="num">+0.161</td>
+</tr>
+<tr>
+  <td>OpenClaw RL Common Errors Screening</td>
+  <td><code>033fa57d</code></td>
+  <td class="qtext">Review the rubric set below. Identify every criterion with a moderate error.
+
+**Instructions:** For each flawed criterion, state:
+
+1. The criterion number
+2. The error type: redundant / overfit / subjective
+3. Specifically why it is a moderate error — be precise
+
+**Task context:** An agent that anal…</td>
+  <td class="num">98.4%</td>
+  <td class="num">320</td>
+  <td class="num bad">+0.088</td>
+  <td class="num">+0.295</td>
+</tr>
+<tr>
+  <td>Rubrics + Unit Tests Screening</td>
+  <td><code>09abea87</code></td>
+  <td class="qtext">A contributor submits the following four rubric criteria for review. Which ones violate at least one required property of a good criterion?
+
+* A. "The agent handles the situation appropriately depending on what seems best given the context."
+* B. "The response includes a summary section AND correctl…<div class="correct">✓ Criterion B — it bundles three independent checks into one criterion, violating atomicity.; Criterion A — it is subjective and cannot be verified objectively.; Criterion D — it is vague and subjective</div></td>
+  <td class="num">99.8%</td>
+  <td class="num">400</td>
+  <td class="num bad">+0.085</td>
+  <td class="num">+0.700</td>
+</tr>
+<tr>
+  <td>OpenClaw - Screening Course</td>
+  <td><code>6f3721a7</code></td>
+  <td class="qtext">(question text not in Q-G2 SECTIONS export)</td>
+  <td class="num">85.2%</td>
+  <td class="num">263</td>
+  <td class="num bad">+0.084</td>
+  <td class="num">+0.093</td>
+</tr>
+<tr>
+  <td>OpenClaw - Screening Course</td>
+  <td><code>bc58609d</code></td>
+  <td class="qtext">**Which of the following are valid requirements for the initial prompt given to the TWO model environments?** (Select ALL that apply)<div class="correct">✓ It must be natural.; It must include all the information needed to complete the desired outcome.; It must NOT contain guidance that is directly contradictory to any component of the Desired Outcome se</div></td>
+  <td class="num">93.0%</td>
+  <td class="num">426</td>
+  <td class="num bad">+0.080</td>
+  <td class="num">+0.129</td>
+</tr>
+<tr>
+  <td>OpenClaw - Screening Course</td>
+  <td><code>1af2228a</code></td>
+  <td class="qtext">(question text not in Q-G2 SECTIONS export)</td>
+  <td class="num">97.3%</td>
+  <td class="num">263</td>
+  <td class="num bad">+0.073</td>
+  <td class="num">+0.178</td>
+</tr>
+<tr>
+  <td>OpenClaw - Screening Course</td>
+  <td><code>9c39ced7</code></td>
+  <td class="qtext">(question text not in Q-G2 SECTIONS export)</td>
+  <td class="num">99.2%</td>
+  <td class="num">263</td>
+  <td class="num bad">+0.049</td>
+  <td class="num">+0.222</td>
+</tr></tbody></table>
+  <details class="caveats">
+    <summary><b>Caveats</b></summary>
+    <ul>
+      <li><b>Three possible causes for any counterproductive question:</b> (a) the
+      answer key is wrong (workers who pick what's marked correct are actually
+      learning a bad habit); (b) the question selects for a trait that
+      correlates negatively with task quality; (c) the LLM grader rewards the
+      wrong feature for free-text questions. Diagnosis requires reading the
+      question text + verifying the "correct" answer with subject experts —
+      see Step 7 (LLM-driven per-question diagnoses).</li>
+      <li>Same effect-size and significance caveats as step 2.</li>
+    </ul>
+  </details>
+</section>
+
+<a id="s4"></a>
+<section class="step">
+  <h2>Step 4 — MISSING from courses (mistakes the curriculum doesn't teach)</h2>
+  <div class="punchline">
+    <b>14 of 22</b> mistake clusters are weakly covered
+    (<code>total_coverage_score ≤ 2</code>). Combined, they account for
+    <b>275</b> of <b>663</b> bad-review records
+    (<b>41.5%</b>) — these are your curriculum gaps.
+  </div>
+  <details class="method" open>
+    <summary><b>Definition</b></summary>
+    <p><b>Mistake cluster:</b> a recurring category of mistake mined by an LLM
+    from the 341 bad-review (QM≤2, trusted reviewer) <code>quality_feedback</code>
+    texts. 22 clusters identified.</p>
+    <p><b>Coverage score (0–3):</b> for each (cluster, course) pair, a second LLM
+    pass reads the course's section titles + question stems and rates how
+    clearly the course addresses the mistake. 0 = not addressed; 3 = explicitly
+    tested by a question.</p>
+    <p><b>Curriculum gap = weakly covered:</b> <code>total_coverage_score ≤ 2</code>
+    across all courses combined. (0 means zero coverage anywhere; 1 means only
+    one course tangentially mentions it; 2 means two courses tangentially
+    mention it or one mentions it more substantively.)</p>
+  </details>
+  <details class="method">
+    <summary><b>Derivation</b></summary>
+    <p>Code: <code>analysis/run_g4_mistakes.py</code> (step-4a / 4b / 4c)</p>
+    <ol>
+      <li>step-4a: Pull every bad-review's <code>quality_feedback</code> text from CDS payloads → <code>g4_mistakes/bad_feedback.jsonl</code> (341 records, ~80K tokens).</li>
+      <li>step-4a: Pull per-course section titles + sample of question stems → <code>g4_mistakes/course_summary.json</code>.</li>
+      <li>step-4b: LLM (claude opus, effort=max) reads bad_feedback.jsonl + grading_rubric.md, emits 22 mistake clusters with names + descriptions + example task_attempt_ids.</li>
+      <li>step-4c: LLM reads clusters + course_summary, scores each (cluster, course) pair 0–3.</li>
+      <li>Aggregate per cluster: <code>total_coverage_score = sum of scores across all courses</code>. Filter rows where it ≤ 2.</li>
+    </ol>
+  </details>
+  <h3>Curriculum gaps (14 clusters, ranked by review volume)</h3>
+  <table class="mini"><thead><tr><th>CID</th><th>Mistake cluster</th><th>Description</th><th>n reviews</th><th>cov score</th><th>Weakly covered by</th></tr></thead><tbody><tr><td class="">C05</td><td class="">source_inspiration_invalid</td><td class="wide">The Source of Inspiration is invalid: it uses the universe viewer URL, a generic platform link, an AI-generated source (utm_source=chatgpt), or an unrelated post. The spec requires a real social media post about OpenClaw use cases from approved platforms.</td><td class="num">35</td><td class="num bad">1</td><td class="wide">OpenClaw - Screening Course (1)</td></tr><tr><td class="">C06</td><td class="">silver_trajectory_not_iterated</td><td class="wide">The Silver trajectory is either identical to Model A (same session, byte-for-byte copy), was never executed, is incomplete (0-byte MEMORY.md, missing deliverables), or was not corrected with follow-up prompts to pass all rubrics as required by spec.</td><td class="num">31</td><td class="num bad">1</td><td class="wide">OpenClaw - Screening Course (1)</td></tr><tr><td class="">C08</td><td class="">fields_internal_misalignment</td><td class="wide">The Agent Objective, Core Functionalities, and Desired Outcome are inconsistent with each other — describing different tasks, different deliverables, different data sources, or contradictory requirements across sections.</td><td class="num">26</td><td class="num bad">2</td><td class="wide">OpenClaw - Screening Course (1); OpenClaw RL Common Errors Screening (1)</td></tr><tr><td class="">C09</td><td class="">prompt_unnatural_overstructured</td><td class="wide">The prompt is too long, overly formatted, includes backticks/em-dashes/rigid constraints, reads like a grading rubric or technical specification rather than a natural user request. Should be a short, conversational, single-paragraph message.</td><td class="num">25</td><td class="num bad">1</td><td class="wide">OpenClaw - Screening Course (1)</td></tr><tr><td class="">C11</td><td class="">single_turn_multi_turn_mismatch</td><td class="wide">Task is assigned as Single-Turn but the prompt/design requires follow-up turns (multi-turn interaction, confirmation gates, approval steps), or the design fields describe multi-turn behavior in a single-turn task.</td><td class="num">20</td><td class="num bad">1</td><td class="wide">OpenClaw - Screening Course (1)</td></tr><tr><td class="">C12</td><td class="">temporal_data_outside_universe_range</td><td class="wide">The task references dates or time windows that fall outside the universe&#x27;s actual data range (e.g., requesting May 2026 data when universe ends in March, or using ambiguous references like &#x27;this Thursday&#x27; without an absolute date anchor).</td><td class="num">20</td><td class="num bad">1</td><td class="wide">OpenClaw RL - Universes (1)</td></tr><tr><td class="">C15</td><td class="">wrong_universe_persona_mismatch</td><td class="wide">The task is designed for a completely different universe or persona than the one assigned. The contributor uses the wrong profession, wrong city, wrong identity, or builds around a non-existent role (e.g., hotel concierge in a financial compliance universe).</td><td class="num">17</td><td class="num bad">1</td><td class="wide">OpenClaw RL - Universes (1)</td></tr><tr><td class="">C16</td><td class="">memory_md_not_triggered_by_prompt</td><td class="wide">The prompt does not require or trigger MEMORY.md usage (explicitly or implicitly), which is a core requirement for tasks. Some prompts even explicitly forbid updating MEMORY.md, which contradicts project requirements.</td><td class="num">17</td><td class="num bad">1</td><td class="wide">OpenClaw - Screening Course (1)</td></tr><tr><td class="">C14</td><td class="">trace_based_rubrics_not_outcome</td><td class="wide">Rubrics evaluate the agent&#x27;s internal reasoning process or tool-call sequence (trace) instead of the observable final output (outcome). Per spec, rubrics must be 100% outcome-based.</td><td class="num">17</td><td class="num bad">2</td><td class="wide">Rubrics + Unit Tests Screening (1); OpenClaw RL Common Errors Screening (1)</td></tr><tr><td class="">C17</td><td class="">no_meaningful_friction_or_complexity</td><td class="wide">Task lacks real data friction (no messy data, no ambiguity, no constraint conflicts, no cross-system coordination challenge). The data is clean, the pipeline is linear, and any competent model handles it without difficulty.</td><td class="num">17</td><td class="num bad">2</td><td class="wide">Almost Right: The Science of LLM Errors (1); OpenClaw RL Common Errors Screening (1)</td></tr><tr><td class="">C18</td><td class="">do_overfitted_to_exact_formats</td><td class="wide">The Desired Outcome is overfitted to exact phrase-level wording, specific JSON key names, section labels, or implementation details that the prompt never specifies. Any model producing correct content with different formatting would fail unfairly.</td><td class="num">14</td><td class="num bad">1</td><td class="wide">Rubrics + Unit Tests Screening (1)</td></tr><tr><td class="">C19</td><td class="">rubric_not_self_contained</td><td class="wide">Rubric criteria cannot be evaluated against the model response without access to the prompt, reference text, or external facts. Criteria lack the specific expected values needed for independent evaluation.</td><td class="num">13</td><td class="num bad">1</td><td class="wide">Rubrics + Unit Tests Screening (1)</td></tr><tr><td class="">C20</td><td class="">domain_category_mismatch</td><td class="wide">The task does not match the assigned HEART domain (Health/Exploration/Advice/Relationships/Time) or prompt category (app_building, code_understanding, etc.). The content clearly belongs to a different domain.</td><td class="num">12</td><td class="num bad">1</td><td class="wide">OpenClaw - Screening Course (1)</td></tr><tr><td class="">C21</td><td class="">tools_systems_unavailable</td><td class="wide">Task references tools, services, or systems (Supabase, Notion, specific APIs, POS systems) that are not available in the assigned environment. The model cannot access these systems to complete the task.</td><td class="num">11</td><td class="num bad">1</td><td class="wide">OpenClaw RL - Universes (1)</td></tr></tbody></table>
+  <details class="caveats">
+    <summary><b>Caveats</b></summary>
+    <ul>
+      <li><b>Coverage agent only saw section titles + 10 question stems per section.</b> Question bodies and section descriptions are excluded due to prompt-size limits (most notably the "Almost Right" course body is 3.9MB and was dropped from the input). A course could thoroughly teach a topic in its body and still score 1 here if no section title or sampled stem names it. <b>Best to read the agent's prose notes below for nuance.</b></li>
+      <li>Cluster definitions are LLM-derived; verify any cluster name + description against the <code>example_task_attempt_ids</code> in <code>g4_mistake_clusters.csv</code> before acting on it.</li>
+      <li>The bad-review feedback was written by reviewers — some of whom may themselves be off-base. We dropped 3 untrusted reviewers in step 1 but kept all unaudited reviewers, so some noise remains in the input.</li>
+    </ul>
+  </details>
+  <details class="agent-notes">
+    <summary><b>Agent's prose notes on curriculum gaps</b></summary>
+    <pre>**Curriculum Gaps (no course scores above 1):** Nine clusters have effectively no meaningful coverage — only tangential or inferred mentions at best. The most impactful gaps by record volume are: C05 source_inspiration_invalid (35 records) has no dedicated section on approved source platforms or invalid source types; C06 silver_trajectory_not_iterated (31 records) has no section teaching the silver trajectory correction protocol; C09 prompt_unnatural_overstructured (25 records) has no instruction on natural, conversational prompt style; C11 single_turn_multi_turn_mismatch (20 records) has no section on turn-type constraints; C12 temporal_data_outside_universe_range (20 records) has no section on validating date ranges against universe boundaries; C16 memory_md_not_triggered_by_prompt (17 records) has no section on the MEMORY.md triggering requirement; C08 fields_internal_misalignment (26 records) has no section specifically on cross-field coherence between AO, CF, and DO. Additionally, C14 trace_based_rubrics_not_outcome, C15 wrong_universe_persona_mismatch, C17 no_meaningful_friction_or_complexity, C18 do_overfitted_to_exact_formats, C19 rubric_not_self_contained, C20 domain_category_mismatch, and C21 tools_systems_unavailable all max out at score 1. Collectively, these gap clusters account for ~280 of the 341 feedback records.
+
+**Course-Fail Signals (score ≥ 2 but high error volume):** Three clusters have clear course coverage yet remain among the most frequent mistakes — signaling that the courses are either insufficient in depth or not being retained. C01 prompt_do_misalignment (128 records, score 2 in Common Errors Screening) is the single largest cluster and appears to be addressed in training, yet over a third of all feedback cites it. C03 entities_data_not_in_universe (62 records, score 2 in both Universes and Common Errors courses) persists despite a dedicated Universes course with good-vs-bad examples. C13 safety_annotations_incorrect_or_missing (19 records, score 2 in both &quot;Almost Right&quot; and Screening Course) is covered by two separate courses with dedicated safety sections, yet workers still misidentify or omit safety failures. These patterns suggest that course content exists but may lack sufficient practice exercises, worked examples of the specific failure mode, or post-course reinforcement to drive behavior change at task-authoring time.</pre>
+  </details>
+</section>
+
+<a id="s5"></a>
+<section class="step">
+  <h2>Step 5 — Covered but NOT WORKING (course teaches it, workers still make the mistake)</h2>
+  <div class="punchline">
+    Of the strongly-covered clusters (<code>total_coverage_score ≥ 3</code>),
+    <b>18</b> (cluster, course) pairs still show workers who
+    PASSED the relevant course making the mistake in production. The biggest
+    example: <b>prompt_DO_misalignment</b> (128 records) IS taught in the
+    Common Errors Screening (score 2) yet still accounts for over a third of
+    all bad reviews.
+  </div>
+  <details class="method" open>
+    <summary><b>Definition</b></summary>
+    <p>For each (cluster, course) pair where the course covers the mistake
+    (<code>coverage_score ≥ 1</code>), count workers who:</p>
+    <ol>
+      <li>Had a bad-review attempt that the LLM tagged as an example of this cluster, AND</li>
+      <li>Had passed the course (Q-G1.STATUS = 'pass').</li>
+    </ol>
+    <p>High count + high % = course content isn't transferring to behavior.
+    Likely fix is more practice exercises, worked examples, or post-course
+    reinforcement.</p>
+  </details>
+  <details class="method">
+    <summary><b>Derivation</b></summary>
+    <p>Code: <code>analysis/run_g4_mistakes.py step-5</code></p>
+    <ol>
+      <li>For each cluster with coverage ≥ 1, get the list of example task_attempt_ids.</li>
+      <li>Join via Q-C → worker_id.</li>
+      <li>Join via Q-G1 → (worker_id, course_id) STATUS.</li>
+      <li>Count workers where STATUS = 'pass'.</li>
+    </ol>
+  </details>
+  <h3>Top 15 “course-fail” signals (strong coverage but workers still fail)</h3>
+  <table class="mini"><thead><tr><th>Mistake cluster</th><th>Course (covers it)</th><th>cov score</th><th>n workers (capped)</th><th>passed but failed</th><th>%</th></tr></thead><tbody><tr><td class="wide">uploaded_files_duplicate_or_contradict_universe</td><td class="">OpenClaw RL - Universes</td><td class="num good">2</td><td class="num">5</td><td class="num bad">5</td><td class="num">100.0</td></tr><tr><td class="wide">uploaded_files_duplicate_or_contradict_universe</td><td class="">OpenClaw RL Common Errors Screening</td><td class="num good">1</td><td class="num">5</td><td class="num bad">4</td><td class="num">80.0</td></tr><tr><td class="wide">ai_generated_task_materials</td><td class="">Rubrics + Unit Tests Screening</td><td class="num good">2</td><td class="num">5</td><td class="num bad">4</td><td class="num">80.0</td></tr><tr><td class="wide">prompt_do_misalignment</td><td class="">OpenClaw RL Common Errors Screening</td><td class="num good">2</td><td class="num">3</td><td class="num bad">3</td><td class="num">100.0</td></tr><tr><td class="wide">model_a_insufficient_failure_rate</td><td class="">OpenClaw - Screening Course</td><td class="num good">2</td><td class="num">3</td><td class="num bad">3</td><td class="num">100.0</td></tr><tr><td class="wide">model_a_insufficient_failure_rate</td><td class="">Almost Right: The Science of LLM Errors</td><td class="num good">1</td><td class="num">3</td><td class="num bad">3</td><td class="num">100.0</td></tr><tr><td class="wide">model_a_insufficient_failure_rate</td><td class="">OpenClaw RL Common Errors Screening</td><td class="num good">2</td><td class="num">3</td><td class="num bad">3</td><td class="num">100.0</td></tr><tr><td class="wide">rubric_not_atomic</td><td class="">Rubrics + Unit Tests Screening</td><td class="num good">2</td><td class="num">4</td><td class="num bad">3</td><td class="num">75.0</td></tr><tr><td class="wide">safety_annotations_incorrect_or_missing</td><td class="">Almost Right: The Science of LLM Errors</td><td class="num good">2</td><td class="num">4</td><td class="num bad">3</td><td class="num">75.0</td></tr><tr><td class="wide">safety_annotations_incorrect_or_missing</td><td class="">OpenClaw - Screening Course</td><td class="num good">2</td><td class="num">4</td><td class="num bad">3</td><td class="num">75.0</td></tr><tr><td class="wide">ai_generated_task_materials</td><td class="">OpenClaw RL Common Errors Screening</td><td class="num good">1</td><td class="num">5</td><td class="num bad">3</td><td class="num">60.0</td></tr><tr><td class="wide">factual_errors_against_universe_data</td><td class="">OpenClaw RL - Universes</td><td class="num good">2</td><td class="num">2</td><td class="num bad">2</td><td class="num">100.0</td></tr><tr><td class="wide">factual_errors_against_universe_data</td><td class="">OpenClaw RL Common Errors Screening</td><td class="num good">1</td><td class="num">2</td><td class="num bad">2</td><td class="num">100.0</td></tr><tr><td class="wide">entities_data_not_in_universe</td><td class="">OpenClaw RL - Universes</td><td class="num good">2</td><td class="num">2</td><td class="num bad">2</td><td class="num">100.0</td></tr><tr><td class="wide">entities_data_not_in_universe</td><td class="">OpenClaw RL Common Errors Screening</td><td class="num good">2</td><td class="num">2</td><td class="num bad">2</td><td class="num">100.0</td></tr></tbody></table>
+  <details class="caveats">
+    <summary><b>Big caveat — example IDs are capped, percentages are NOT real rates</b></summary>
+    <p>The LLM cluster output (step-4b) limited <code>example_task_attempt_ids</code>
+    to ~5 per cluster (it was asked for "3 examples"). So
+    <code>n_workers_in_cluster</code> is capped at ≤5 in nearly every row, and
+    <code>pct_failing_despite_pass</code> clusters around 100% just because the
+    denominator is tiny. <b>The pct column is currently meaningless and the
+    absolute counts are an under-estimate.</b></p>
+    <p>To fix this properly: re-run step-4b asking the LLM to emit ALL
+    matching attempt_ids per cluster (not just 3 examples). Then step-5
+    auto-recomputes. As a stop-gap, you can read <code>g4_mistake_clusters.csv</code>'s
+    <code>n_records_matched</code> column (which is the true count) and treat
+    step-5's numbers as a "sample of ≤5 known workers per cluster who passed
+    the course".</p>
+  </details>
+  <details class="caveats">
+    <summary><b>Other caveats</b></summary>
+    <ul>
+      <li>No temporal check: a worker who failed a task in March then took the course in May would still be counted as "passed-but-failed" here. We should require <code>review.attempted_at &gt; course.completed_at</code> before counting.</li>
+      <li>Coverage score is from a single LLM call — noisy at the per-pair level. Treat clusters with very different score interpretations across courses with suspicion.</li>
+    </ul>
+  </details>
+</section>
+
+<a id="s6"></a>
+<section class="step">
+  <h2>Step 6 — User traits as predictors of trusted PDR</h2>
+  <div class="punchline">
+    <b>NEGATIVE r vs PDR = good trait</b> (carriers have a LOWER defect rate). Tags carry the strongest signal
+    (filtering out <code>openclaw_rl_*</code> tags as they're project-internal QA signals derived from the very QM scores we're predicting).
+    Cross-project <code>AVG_QM_SCORE</code> from <code>worker_base_query</code> still only weakly correlates with our project-specific PDR — the two metrics measure overlapping but distinct things.
+  </div>
+  <details class="method" open>
+    <summary><b>Definition</b></summary>
+    <p><b>Outcome:</b> per-worker PDR (Performance Defect Rate — same as steps 2/3) over 495 workers. Lower = better.</p>
+    <p><b>Predictors:</b> traits from <code>VIEW.WORKER_BASE_QUERY</code> (cross-project history, education, team flags; available for ~128 workers) and <code>public.users</code> (basic identity + tags; available for all 503).</p>
+    <p><b>Stat:</b> Pearson r for continuous, point-biserial r for binary, group means for categoricals. Fisher z 95% CI shown alongside; <b>*</b> marks CI excludes zero. <b>Sign convention:</b> r is computed against PDR, so NEGATIVE r = the trait is associated with FEWER defects (GOOD).</p>
+  </details>
+  <details class="method">
+    <summary><b>Derivation</b></summary>
+    <p>Code: <code>analysis/run_g4_traits.py</code>. Pulled via Redash (worker_base_query + users) restricted to our 503 workers. Outputs:
+    <code>analysis/g4_user_trait_predictive.csv</code>, <code>analysis/g4_user_tag_predictive.csv</code>,
+    <code>analysis/g4_user_trait_summary.json</code>.</p>
+  </details>
+  <h3>Continuous + binary trait correlations (sorted by |r vs PDR|)</h3>
+  <table class="full"><thead><tr><th>Trait</th><th>Kind</th><th>n</th><th>r vs PDR</th><th>95% CI</th><th>Mean (T/F or value)</th></tr></thead><tbody><tr><td>wbq.AVG_QC_SCORE</td><td>continuous</td><td class="num">60</td><td class="num bad">+0.150</td><td class="num">[-0.108, +0.389]</td><td class="num">avg=3.597</td></tr><tr><td>wbq.QC_ATTEMPTS</td><td>continuous</td><td class="num">60</td><td class="num bad">+0.140</td><td class="num">[-0.118, +0.380]</td><td class="num">avg=5.25</td></tr><tr><td>wbq.EDUCATION_RANKING (1-5)</td><td>continuous</td><td class="num">127</td><td class="num good">-0.134</td><td class="num">[-0.301, +0.041]</td><td class="num">avg=3.756</td></tr><tr><td>wbq.QM_ATTEMPTS (history volume)</td><td>continuous</td><td class="num">83</td><td class="num bad">+0.097</td><td class="num">[-0.121, +0.307]</td><td class="num">avg=6.94</td></tr><tr><td>wbq.AVG_QMS_SCORE</td><td>continuous</td><td class="num">107</td><td class="num good">-0.082</td><td class="num">[-0.268, +0.110]</td><td class="num">avg=3.168</td></tr><tr><td>wbq.ATTEMPTS_TOTAL</td><td>continuous</td><td class="num">127</td><td class="num bad">+0.081</td><td class="num">[-0.094, +0.252]</td><td class="num">avg=89.764</td></tr><tr><td>wbq.AVG_QM_SCORE (cross-project history)</td><td>continuous</td><td class="num">79</td><td class="num good">-0.016</td><td class="num">[-0.236, +0.206]</td><td class="num">avg=3.378</td></tr><tr><td>wbq.ATTEMPTS_30D</td><td>continuous</td><td class="num">127</td><td class="num good">-0.004</td><td class="num">[-0.178, +0.170]</td><td class="num">avg=17.37</td></tr><tr><td>users.is_corporate_user</td><td>binary</td><td class="num">25 (T=5, F=20)</td><td class="num good">-0.561</td><td class="num">[-0.782, -0.213] *</td><td class="num">PDR_T=0.133 / PDR_F=0.775</td></tr><tr><td>wbq.FINISHED_UNDERGRADUATE</td><td>binary</td><td class="num">86 (T=72, F=14)</td><td class="num good">-0.239</td><td class="num">[-0.429, -0.029] *</td><td class="num">PDR_T=0.56 / PDR_F=0.833</td></tr><tr><td>wbq.SCHOOL_IN_THE_USA</td><td>binary</td><td class="num">86 (T=3, F=83)</td><td class="num bad">+0.178</td><td class="num">[-0.035, +0.376]</td><td class="num">PDR_T=1.0 / PDR_F=0.59</td></tr><tr><td>wbq.team_is_TrustAndSafety</td><td>binary</td><td class="num">127 (T=4, F=123)</td><td class="num bad">+0.117</td><td class="num">[-0.059, +0.285]</td><td class="num">PDR_T=0.917 / PDR_F=0.637</td></tr><tr><td>wbq.has_open_source_history</td><td>binary</td><td class="num">127 (T=125, F=2)</td><td class="num bad">+0.094</td><td class="num">[-0.081, +0.264]</td><td class="num">PDR_T=0.651 / PDR_F=0.333</td></tr><tr><td>wbq.team_is_Cheating</td><td>binary</td><td class="num">127 (T=17, F=110)</td><td class="num bad">+0.075</td><td class="num">[-0.101, +0.246]</td><td class="num">PDR_T=0.725 / PDR_F=0.633</td></tr><tr><td>wbq.team_is_Marketplace</td><td>binary</td><td class="num">127 (T=106, F=21)</td><td class="num good">-0.073</td><td class="num">[-0.244, +0.103]</td><td class="num">PDR_T=0.632 / PDR_F=0.714</td></tr><tr><td>wbq.team_is_Banned</td><td>binary</td><td class="num">127 (T=16, F=111)</td><td class="num bad">+0.057</td><td class="num">[-0.119, +0.229]</td><td class="num">PDR_T=0.708 / PDR_F=0.637</td></tr><tr><td>wbq.team_is_Fraud</td><td>binary</td><td class="num">127 (T=2, F=125)</td><td class="num bad">+0.057</td><td class="num">[-0.119, +0.229]</td><td class="num">PDR_T=0.833 / PDR_F=0.643</td></tr><tr><td>users.country_code_matches_ip</td><td>binary</td><td class="num">487 (T=484, F=3)</td><td class="num good">-0.055</td><td class="num">[-0.143, +0.034]</td><td class="num">PDR_T=0.712 / PDR_F=1.0</td></tr></tbody></table>
+  <h3>Categorical trait breakdowns (top groups per trait)</h3>
+  <details class="course-combo"><summary><b>wbq.STANDARDIZED_EDUCATION_LEVEL</b> &mdash; n=123, overall mean_PDR=0.65</summary><table class="mini"><thead><tr><th>Group</th><th>n</th><th>mean_PDR</th><th>Δ vs overall</th></tr></thead><tbody><tr><td>Bachelors</td><td class="num">89</td><td class="num"><b>0.63</b></td><td class="num good">-0.02</td></tr><tr><td>Masters</td><td class="num">30</td><td class="num"><b>0.71</b></td><td class="num bad">+0.06</td></tr></tbody></table></details><details class="course-combo"><summary><b>wbq.WORKER_TEAM_NAME</b> &mdash; n=127, overall mean_PDR=0.65</summary><table class="mini"><thead><tr><th>Group</th><th>n</th><th>mean_PDR</th><th>Δ vs overall</th></tr></thead><tbody><tr><td>Outlier/marketplace</td><td class="num">100</td><td class="num"><b>0.61</b></td><td class="num good">-0.04</td></tr><tr><td>Outlier/Free Agent/Banned/Cheating</td><td class="num">15</td><td class="num"><b>0.69</b></td><td class="num bad">+0.04</td></tr><tr><td>Free Agent/Generative AI/Low Quality/Marketplace Low Quality Offboarded</td><td class="num">5</td><td class="num"><b>1.00</b></td><td class="num bad">+0.35</td></tr></tbody></table></details><details class="course-combo"><summary><b>wbq.ONLINE_STATUS</b> &mdash; n=127, overall mean_PDR=0.65</summary><table class="mini"><thead><tr><th>Group</th><th>n</th><th>mean_PDR</th><th>Δ vs overall</th></tr></thead><tbody><tr><td>0. 7d Active</td><td class="num">71</td><td class="num"><b>0.57</b></td><td class="num good">-0.08</td></tr><tr><td>1. 7d Online</td><td class="num">40</td><td class="num"><b>0.76</b></td><td class="num bad">+0.11</td></tr><tr><td>2. 14d Online</td><td class="num">8</td><td class="num"><b>0.83</b></td><td class="num bad">+0.19</td></tr><tr><td>3. 30d Online</td><td class="num">6</td><td class="num"><b>0.50</b></td><td class="num good">-0.15</td></tr></tbody></table></details><details class="course-combo"><summary><b>wbq.IP_COUNTRY_CODE</b> &mdash; n=127, overall mean_PDR=0.65</summary><table class="mini"><thead><tr><th>Group</th><th>n</th><th>mean_PDR</th><th>Δ vs overall</th></tr></thead><tbody><tr><td>IN</td><td class="num">39</td><td class="num"><b>0.59</b></td><td class="num good">-0.06</td></tr><tr><td>AR</td><td class="num">12</td><td class="num"><b>0.56</b></td><td class="num good">-0.09</td></tr><tr><td>CO</td><td class="num">12</td><td class="num"><b>0.50</b></td><td class="num good">-0.15</td></tr><tr><td>EG</td><td class="num">10</td><td class="num"><b>0.77</b></td><td class="num bad">+0.12</td></tr><tr><td>MX</td><td class="num">9</td><td class="num"><b>0.74</b></td><td class="num bad">+0.09</td></tr><tr><td>BR</td><td class="num">6</td><td class="num"><b>0.58</b></td><td class="num good">-0.06</td></tr><tr><td>US</td><td class="num">5</td><td class="num"><b>0.93</b></td><td class="num bad">+0.29</td></tr></tbody></table></details><details class="course-combo"><summary><b>users.IP_COUNTRY_CODE</b> &mdash; n=487, overall mean_PDR=0.71</summary><table class="mini"><thead><tr><th>Group</th><th>n</th><th>mean_PDR</th><th>Δ vs overall</th></tr></thead><tbody><tr><td>IN</td><td class="num">219</td><td class="num"><b>0.68</b></td><td class="num good">-0.03</td></tr><tr><td>CO</td><td class="num">39</td><td class="num"><b>0.69</b></td><td class="num good">-0.02</td></tr><tr><td>AR</td><td class="num">30</td><td class="num"><b>0.63</b></td><td class="num good">-0.09</td></tr><tr><td>US</td><td class="num">27</td><td class="num"><b>0.77</b></td><td class="num bad">+0.06</td></tr><tr><td>MX</td><td class="num">22</td><td class="num"><b>0.76</b></td><td class="num bad">+0.04</td></tr><tr><td>BR</td><td class="num">19</td><td class="num"><b>0.71</b></td><td class="num good">-0.00</td></tr><tr><td>GB</td><td class="num">16</td><td class="num"><b>0.84</b></td><td class="num bad">+0.13</td></tr><tr><td>EG</td><td class="num">14</td><td class="num"><b>0.83</b></td><td class="num bad">+0.12</td></tr></tbody></table></details><details class="course-combo"><summary><b>users.COUNTRY_CODE</b> &mdash; n=487, overall mean_PDR=0.71</summary><table class="mini"><thead><tr><th>Group</th><th>n</th><th>mean_PDR</th><th>Δ vs overall</th></tr></thead><tbody><tr><td>IN</td><td class="num">218</td><td class="num"><b>0.68</b></td><td class="num good">-0.04</td></tr><tr><td>CO</td><td class="num">39</td><td class="num"><b>0.69</b></td><td class="num good">-0.02</td></tr><tr><td>AR</td><td class="num">30</td><td class="num"><b>0.63</b></td><td class="num good">-0.09</td></tr><tr><td>US</td><td class="num">27</td><td class="num"><b>0.77</b></td><td class="num bad">+0.06</td></tr><tr><td>MX</td><td class="num">22</td><td class="num"><b>0.76</b></td><td class="num bad">+0.04</td></tr><tr><td>BR</td><td class="num">19</td><td class="num"><b>0.71</b></td><td class="num good">-0.00</td></tr><tr><td>GB</td><td class="num">18</td><td class="num"><b>0.86</b></td><td class="num bad">+0.15</td></tr><tr><td>EG</td><td class="num">14</td><td class="num"><b>0.83</b></td><td class="num bad">+0.12</td></tr></tbody></table></details><details class="course-combo"><summary><b>users.UTM_SOURCE</b> &mdash; n=285, overall mean_PDR=0.72</summary><table class="mini"><thead><tr><th>Group</th><th>n</th><th>mean_PDR</th><th>Δ vs overall</th></tr></thead><tbody><tr><td>/en/expert/signup?signup_flow=99ecd392-9bf1-487d-88b4-2ff893d96199&amp;utm_sourc</td><td class="num">8</td><td class="num"><b>0.96</b></td><td class="num bad">+0.24</td></tr><tr><td>/en/expert/signup?signup_flow=6d53daf3-60fe-46c5-bf75-fc07b0f5e6c6&amp;utm_sourc</td><td class="num">8</td><td class="num"><b>0.81</b></td><td class="num bad">+0.10</td></tr><tr><td>/en/expert/signup?signup_flow=6d53daf3-60fe-46c5-bf75-fc07b0f5e6c6&amp;utm_sourc</td><td class="num">6</td><td class="num"><b>0.72</b></td><td class="num bad">+0.01</td></tr><tr><td>/login?location=All&amp;type=All&amp;job_post_id=4671609005&amp;signup_flow=68ba</td><td class="num">5</td><td class="num"><b>0.53</b></td><td class="num good">-0.18</td></tr></tbody></table></details><details class="course-combo"><summary><b>users.SIGNUP_FLOW</b> &mdash; n=343, overall mean_PDR=0.72</summary><table class="mini"><thead><tr><th>Group</th><th>n</th><th>mean_PDR</th><th>Δ vs overall</th></tr></thead><tbody><tr><td>6d53daf3-60fe-46c5-bf75-fc07b0f5e6c6</td><td class="num">34</td><td class="num"><b>0.70</b></td><td class="num good">-0.02</td></tr><tr><td>ceac9ea5-f20c-477d-8fdc-5eef1f4729b3</td><td class="num">31</td><td class="num"><b>0.76</b></td><td class="num bad">+0.04</td></tr><tr><td>e3d9115d-6611-457e-baee-4933d80378a7</td><td class="num">30</td><td class="num"><b>0.80</b></td><td class="num bad">+0.08</td></tr><tr><td>4775e2d9-e55b-43d0-9214-79e1a1a0e79c</td><td class="num">28</td><td class="num"><b>0.74</b></td><td class="num bad">+0.02</td></tr><tr><td>57436eb3-a60b-4dde-8d6f-7648dfe4576b</td><td class="num">27</td><td class="num"><b>0.64</b></td><td class="num good">-0.08</td></tr><tr><td>2f1bdb3d-3966-474e-8e7c-6993a2adead3</td><td class="num">19</td><td class="num"><b>0.62</b></td><td class="num good">-0.10</td></tr><tr><td>07831992-a96f-4be7-9c55-31e384a15921</td><td class="num">18</td><td class="num"><b>0.69</b></td><td class="num good">-0.03</td></tr><tr><td>a591b9ad-b4d0-4a5c-a7df-72bbab570e70</td><td class="num">13</td><td class="num"><b>0.63</b></td><td class="num good">-0.09</td></tr></tbody></table></details><details class="course-combo"><summary><b>users.TEAM_ROLE</b> &mdash; n=487, overall mean_PDR=0.71</summary><table class="mini"><thead><tr><th>Group</th><th>n</th><th>mean_PDR</th><th>Δ vs overall</th></tr></thead><tbody><tr><td>admin</td><td class="num">487</td><td class="num"><b>0.71</b></td><td class="num good">+0.00</td></tr></tbody></table></details><details class="course-combo"><summary><b>users.WORKER_STATUS</b> &mdash; n=487, overall mean_PDR=0.71</summary><table class="mini"><thead><tr><th>Group</th><th>n</th><th>mean_PDR</th><th>Δ vs overall</th></tr></thead><tbody><tr><td>pending</td><td class="num">368</td><td class="num"><b>0.68</b></td><td class="num good">-0.03</td></tr><tr><td>disabled</td><td class="num">107</td><td class="num"><b>0.83</b></td><td class="num bad">+0.12</td></tr><tr><td>banned</td><td class="num">12</td><td class="num"><b>0.71</b></td><td class="num good">-0.01</td></tr></tbody></table></details>
+  <h3>Top user-tag predictors (≥5 carriers; sorted by |r vs PDR|)</h3>
+  <table class="full"><thead><tr><th>Tag</th><th>n carriers</th><th>r vs PDR</th><th>95% CI</th><th>PDR (with / without)</th></tr></thead><tbody><tr><td><b>reviewer_on_multiple_projects</b><div><code>id_b633d5</code></div></td><td class="num">118</td><td class="num good">-0.375</td><td class="num">[-0.449, -0.297] *</td><td class="num">0.4435 / 0.8015</td></tr><tr><td><b>openclaw_mc_IN_Onsite</b><div><code>id_804ab8</code></div><div class="meta">IN Onsite Contributors on OpenClaw Main Capabilities </div></td><td class="num">46</td><td class="num good">-0.256</td><td class="num">[-0.336, -0.172] *</td><td class="num">0.3913 / 0.7494</td></tr><tr><td><b>openclaw_mc_IN_onsite_reviewer</b><div><code>id_90d77d</code></div><div class="meta">IN onsite reviewers of IN_Onsite for Openclaw atlas</div></td><td class="num">26</td><td class="num good">-0.255</td><td class="num">[-0.336, -0.171] *</td><td class="num">0.2756 / 0.7406</td></tr><tr><td><b>secure:TnS_A_List</b><div><code>id_00fe1c</code></div><div class="meta">CB belongs to a high value / high potential list that requires they be manually audited before disable/banning actions b</div></td><td class="num">232</td><td class="num good">-0.247</td><td class="num">[-0.328, -0.163] *</td><td class="num">0.6092 / 0.8105</td></tr><tr><td><b>spidey_mm_rubrics_bootcamp_pass</b><div><code>id_8b0791</code></div></td><td class="num">70</td><td class="num good">-0.213</td><td class="num">[-0.296, -0.128] *</td><td class="num">0.5024 / 0.7514</td></tr><tr><td><b>steady_spider_cb</b><div><code>id_c5f952</code></div></td><td class="num">24</td><td class="num good">-0.205</td><td class="num">[-0.288, -0.119] *</td><td class="num">0.3472 / 0.735</td></tr><tr><td><b>keysegment_workforces</b><div><code>id_ee9083</code></div></td><td class="num">29</td><td class="num good">-0.203</td><td class="num">[-0.286, -0.117] *</td><td class="num">0.3851 / 0.7368</td></tr><tr><td><b>support_hvc_pilot</b><div><code>id_240579</code></div><div class="meta">Support&#x27;s definition of high value CBs.</div></td><td class="num">58</td><td class="num good">-0.196</td><td class="num">[-0.280, -0.110] *</td><td class="num">0.4971 / 0.7452</td></tr><tr><td><b>secure:oracle_contributor</b><div><code>id_755cbc</code></div></td><td class="num">97</td><td class="num good">-0.196</td><td class="num">[-0.279, -0.110] *</td><td class="num">0.555 / 0.7554</td></tr><tr><td><b>tau2_retail_allocated</b><div><code>id_346f98</code></div></td><td class="num">35</td><td class="num good">-0.195</td><td class="num">[-0.279, -0.109] *</td><td class="num">0.4286 / 0.738</td></tr><tr><td><b>secure:hvc</b><div><code>id_87757e</code></div></td><td class="num">110</td><td class="num good">-0.195</td><td class="num">[-0.278, -0.108] *</td><td class="num">0.5682 / 0.7584</td></tr><tr><td><b>spidey_mm_temp_no_onboarding_04.09</b><div><code>id_2c9535</code></div><div class="meta">temp excluding tag so QM can do QHs and no one onboards</div></td><td class="num">102</td><td class="num good">-0.193</td><td class="num">[-0.277, -0.107] *</td><td class="num">0.5621 / 0.7562</td></tr><tr><td><b>spider_web_mission_group_2</b><div><code>id_2526a5</code></div></td><td class="num">11</td><td class="num good">-0.193</td><td class="num">[-0.276, -0.106] *</td><td class="num">0.197 / 0.728</td></tr><tr><td><b>voice_mission_disable</b><div><code>id_429222</code></div></td><td class="num">54</td><td class="num bad">+0.191</td><td class="num">[+0.105, +0.275] *</td><td class="num">0.9383 / 0.689</td></tr><tr><td><b>spider_web_evals_course</b><div><code>id_7760b3</code></div></td><td class="num">36</td><td class="num good">-0.190</td><td class="num">[-0.274, -0.104] *</td><td class="num">0.4398 / 0.7378</td></tr><tr><td><b>live_chat_pilot</b><div><code>id_a84143</code></div><div class="meta">support live chat </div></td><td class="num">93</td><td class="num good">-0.188</td><td class="num">[-0.272, -0.101] *</td><td class="num">0.5573 / 0.7529</td></tr><tr><td><b>spidey_bypass_tag</b><div><code>id_2703c7</code></div></td><td class="num">98</td><td class="num good">-0.185</td><td class="num">[-0.269, -0.099] *</td><td class="num">0.5646 / 0.7536</td></tr><tr><td><b>reviewing_json_schema_latam_coder</b><div><code>id_d00cf7</code></div><div class="meta">Tag for LCs priority</div></td><td class="num">7</td><td class="num good">-0.183</td><td class="num">[-0.267, -0.096] *</td><td class="num">0.0952 / 0.7251</td></tr><tr><td><b>growth_whatsapp_inactive_for_7_days_on_acp_funnel:control</b><div><code>id_641fca</code></div></td><td class="num">17</td><td class="num good">-0.182</td><td class="num">[-0.266, -0.096] *</td><td class="num">0.3235 / 0.7301</td></tr><tr><td><b>TCM_trusted_coder</b><div><code>id_7c03f7</code></div><div class="meta">On the Trusted Coder Marketplace program (all tiers)</div></td><td class="num">58</td><td class="num good">-0.181</td><td class="num">[-0.265, -0.094] *</td><td class="num">0.5144 / 0.7429</td></tr><tr><td><b>multimango_account_granted</b><div><code>id_828c3a</code></div></td><td class="num">34</td><td class="num good">-0.180</td><td class="num">[-0.264, -0.094] *</td><td class="num">0.4461 / 0.7361</td></tr><tr><td><b>exp_agent_verified_catalyst</b><div><code>id_e1b776</code></div></td><td class="num">39</td><td class="num good">-0.180</td><td class="num">[-0.264, -0.093] *</td><td class="num">0.4658 / 0.7376</td></tr><tr><td><b>TCM_experimental_group</b><div><code>id_b7068e</code></div><div class="meta">TCM coders that are actually allowed to use marketplace for joining projects (80% of TCM); control group will be compare</div></td><td class="num">48</td><td class="num good">-0.180</td><td class="num">[-0.264, -0.093] *</td><td class="num">0.4931 / 0.7401</td></tr><tr><td><b>ots_mcp_rl_cursory_pass</b><div><code>id_82ea71</code></div></td><td class="num">29</td><td class="num good">-0.178</td><td class="num">[-0.263, -0.092] *</td><td class="num">0.4253 / 0.7343</td></tr><tr><td><b>TCM_PrefRank_Enabled</b><div><code>id_7ef7e4</code></div><div class="meta">Eligible to be enabled as a marketplace CB for Pref Rank (part of experimental group)</div></td><td class="num">42</td><td class="num good">-0.177</td><td class="num">[-0.261, -0.090] *</td><td class="num">0.4802 / 0.738</td></tr><tr><td><b>spider_web_trusted_reviewer</b><div><code>id_7de0c2</code></div></td><td class="num">24</td><td class="num good">-0.174</td><td class="num">[-0.258, -0.087] *</td><td class="num">0.4028 / 0.7321</td></tr><tr><td><b>TCM_ChatBasedRubrics</b><div><code>id_8b20d6</code></div><div class="meta">Enabled for Chat Based Coding Rubrics on 2.23.2026</div></td><td class="num">40</td><td class="num good">-0.173</td><td class="num">[-0.257, -0.086] *</td><td class="num">0.4792 / 0.737</td></tr><tr><td><b>spidey_mm_intro_pass</b><div><code>id_d689e4</code></div></td><td class="num">82</td><td class="num good">-0.172</td><td class="num">[-0.257, -0.086] *</td><td class="num">0.5589 / 0.7474</td></tr><tr><td><b>expert_prompt_passes</b><div><code>id_f0544f</code></div></td><td class="num">82</td><td class="num good">-0.172</td><td class="num">[-0.257, -0.086] *</td><td class="num">0.5589 / 0.7474</td></tr><tr><td><b>support_playground_tracking_tag</b><div><code>id_d95f44</code></div><div class="meta">For support to track the experiment from query https://redash.scale.com/queries/314884/source</div></td><td class="num">338</td><td class="num good">-0.172</td><td class="num">[-0.256, -0.085] *</td><td class="num">0.6686 / 0.8185</td></tr></tbody></table>
+  <details class="caveats">
+    <summary><b>Caveats</b></summary>
+    <ul>
+      <li><b>Coverage gap:</b> <code>worker_base_query</code> only has ~128/495 workers (the rest aren't in the active staffing pipeline). All <code>wbq.*</code> rows are computed on that smaller subset.</li>
+      <li><b>Filtered out <code>openclaw_rl_*</code> tags.</b> Those tags are themselves derived from the very QM signal we're trying to predict (e.g., <code>openclaw_rl_bad_quality</code> is set <em>because</em> a reviewer gave low QM scores). Their correlations with PDR are partly tautological, so we drop them. Tags raised here are therefore upstream signals (cross-project history, team membership, mission-specific flags).</li>
+      <li><b>Confounders:</b> tags overlap (a worker can have multiple); per-tag biserials don't control for one another. <code>users.is_corporate_user</code> may overlap with team membership we missed in our <code>scale.com</code>-email filter from step 1.</li>
+      <li><b>Small categorical groups:</b> some country / signup-flow / online-status groups have n &lt; 10. Δ vs overall is shown but should be interpreted cautiously.</li>
+      <li><b>This is descriptive correlation.</b> No causal claim. A worker tagged <code>trusted_reviewer</code> isn't necessarily MADE good by the tag; the tag itself is downstream of past good performance.</li>
+    </ul>
+  </details>
+</section>
+
+<a id="s65"></a>
+<section class="step">
+  <h2>Step 6.5 — Tag combinations: which tag bundles best predict PDR?</h2>
+  <div class="punchline">
+    The pos-count curve (more good tags → lower PDR) and the net-score curve quantify how stacking good tags together moves the defect rate. Subsets where the carriers' PDR is much lower than non-carriers' — especially when the bundle’s effect exceeds the best single tag in it (synergy uplift &gt; 0) — are the real action.
+  </div>
+  <details class="method" open>
+    <summary><b>Definition</b></summary>
+    <p><b>Top tags:</b> top 10 by |r vs PDR| from Step 6 (excluding <code>openclaw_rl_*</code>). A tag is GOOD when carriers have a lower PDR (r vs PDR &lt; 0) and BAD when carriers have a higher PDR (r &gt; 0).</p>
+    <p><b>Good-tag-count curve:</b> per worker, count how many of the top good tags they carry. Bucket by count.</p>
+    <p><b>Net-score curve:</b> count(good tags) − count(bad tags). Single ordinal score; bucket by score.</p>
+    <p><b>Subset search:</b> enumerate every subset (size 1–4) of the top 10 tags. For each subset, find workers carrying ALL tags in the subset (intersection); compute mean PDR and Δ vs non-carriers. Surfaces SYNERGY: combinations where (|Δ| of bundle) &gt; (|Δ| of strongest single tag in the bundle).</p>
+    <p><b>Min carriers:</b> 10. Subsets below this threshold are dropped — too few workers to be meaningful.</p>
+  </details>
+  <details class="method">
+    <summary><b>Derivation</b></summary>
+    <p>Code: <code>analysis/run_g4_tagcombos.py</code>. Inputs:
+    <code>g4_user_tag_predictive.csv</code>, <code>g4_user_baseline.csv</code> (TAGS column), <code>g4_worker_outcomes.json</code>. Outputs:
+    <code>g4_tagcombo_curves.json</code>, <code>g4_tagcombo_subsets.csv</code>.</p>
+  </details>
+
+  <h3>Top 10 tags used (from Step 6, openclaw_rl_* excluded). NEG r = GOOD tag.</h3>
+  <ol class="taglist"><li><code>id_b633d5</code> <span class="good">-0.375</span> <b>reviewer_on_multiple_projects</b></li><li><code>id_804ab8</code> <span class="good">-0.256</span> <b>openclaw_mc_IN_Onsite</b></li><li><code>id_90d77d</code> <span class="good">-0.255</span> <b>openclaw_mc_IN_onsite_reviewer</b></li><li><code>id_00fe1c</code> <span class="good">-0.247</span> <b>secure:TnS_A_List</b></li><li><code>id_8b0791</code> <span class="good">-0.213</span> <b>spidey_mm_rubrics_bootcamp_pass</b></li><li><code>id_c5f952</code> <span class="good">-0.205</span> <b>steady_spider_cb</b></li><li><code>id_ee9083</code> <span class="good">-0.203</span> <b>keysegment_workforces</b></li><li><code>id_240579</code> <span class="good">-0.196</span> <b>support_hvc_pilot</b></li><li><code>id_755cbc</code> <span class="good">-0.196</span> <b>secure:oracle_contributor</b></li><li><code>id_346f98</code> <span class="good">-0.195</span> <b>tau2_retail_allocated</b></li></ol>
+
+  <div class="combo-flex">
+    <div>
+      <h3>Good-tag-count curve</h3>
+      <svg width="490" height="212" viewBox="-30 -8 520 220" style="font-family: -apple-system, sans-serif;"><rect x="8.4" y="24.6" width="25.1" height="155.4" fill="#d62728" opacity="0.7"/><line x1="20.9" y1="17.0" x2="20.9" y2="32.3" stroke="#333" stroke-width="1.5"/><line x1="16.9" y1="17.0" x2="24.9" y2="17.0" stroke="#333" stroke-width="1.5"/><line x1="16.9" y1="32.3" x2="24.9" y2="32.3" stroke="#333" stroke-width="1.5"/><text x="20.9" y="194.0" font-size="10" text-anchor="middle" fill="#666">0 (n=212)</text><text x="20.9" y="20.6" font-size="9" text-anchor="middle" fill="#333">0.86</text><rect x="50.2" y="54.1" width="25.1" height="125.9" fill="#d62728" opacity="0.7"/><line x1="62.7" y1="39.3" x2="62.7" y2="68.8" stroke="#333" stroke-width="1.5"/><line x1="58.7" y1="39.3" x2="66.7" y2="39.3" stroke="#333" stroke-width="1.5"/><line x1="58.7" y1="68.8" x2="66.7" y2="68.8" stroke="#333" stroke-width="1.5"/><text x="62.7" y="194.0" font-size="10" text-anchor="middle" fill="#666">1 (n=101)</text><text x="62.7" y="50.1" font-size="9" text-anchor="middle" fill="#333">0.70</text><rect x="92.0" y="48.3" width="25.1" height="131.7" fill="#d62728" opacity="0.7"/><line x1="104.5" y1="32.8" x2="104.5" y2="63.8" stroke="#333" stroke-width="1.5"/><line x1="100.5" y1="32.8" x2="108.5" y2="32.8" stroke="#333" stroke-width="1.5"/><line x1="100.5" y1="63.8" x2="108.5" y2="63.8" stroke="#333" stroke-width="1.5"/><text x="104.5" y="194.0" font-size="10" text-anchor="middle" fill="#666">2 (n=77)</text><text x="104.5" y="44.3" font-size="9" text-anchor="middle" fill="#333">0.73</text><rect x="133.8" y="83.3" width="25.1" height="96.7" fill="#d62728" opacity="0.7"/><line x1="146.4" y1="58.8" x2="146.4" y2="107.9" stroke="#333" stroke-width="1.5"/><line x1="142.4" y1="58.8" x2="150.4" y2="58.8" stroke="#333" stroke-width="1.5"/><line x1="142.4" y1="107.9" x2="150.4" y2="107.9" stroke="#333" stroke-width="1.5"/><text x="146.4" y="194.0" font-size="10" text-anchor="middle" fill="#666">3 (n=36)</text><text x="146.4" y="79.3" font-size="9" text-anchor="middle" fill="#333">0.54</text><rect x="175.6" y="105.0" width="25.1" height="75.0" fill="#2ca02c" opacity="0.7"/><line x1="188.2" y1="79.4" x2="188.2" y2="130.6" stroke="#333" stroke-width="1.5"/><line x1="184.2" y1="79.4" x2="192.2" y2="79.4" stroke="#333" stroke-width="1.5"/><line x1="184.2" y1="130.6" x2="192.2" y2="130.6" stroke="#333" stroke-width="1.5"/><text x="188.2" y="194.0" font-size="10" text-anchor="middle" fill="#666">4 (n=28)</text><text x="188.2" y="101.0" font-size="9" text-anchor="middle" fill="#333">0.42</text><rect x="217.5" y="123.0" width="25.1" height="57.0" fill="#2ca02c" opacity="0.7"/><line x1="230.0" y1="87.3" x2="230.0" y2="158.7" stroke="#333" stroke-width="1.5"/><line x1="226.0" y1="87.3" x2="234.0" y2="87.3" stroke="#333" stroke-width="1.5"/><line x1="226.0" y1="158.7" x2="234.0" y2="158.7" stroke="#333" stroke-width="1.5"/><text x="230.0" y="194.0" font-size="10" text-anchor="middle" fill="#666">5 (n=20)</text><text x="230.0" y="119.0" font-size="9" text-anchor="middle" fill="#333">0.32</text><rect x="259.3" y="108.0" width="25.1" height="72.0" fill="#2ca02c" opacity="0.7"/><line x1="271.8" y1="21.6" x2="271.8" y2="194.4" stroke="#333" stroke-width="1.5"/><line x1="267.8" y1="21.6" x2="275.8" y2="21.6" stroke="#333" stroke-width="1.5"/><line x1="267.8" y1="194.4" x2="275.8" y2="194.4" stroke="#333" stroke-width="1.5"/><text x="271.8" y="194.0" font-size="10" text-anchor="middle" fill="#666">6 (n=5)</text><text x="271.8" y="104.0" font-size="9" text-anchor="middle" fill="#333">0.40</text><rect x="301.1" y="52.5" width="25.1" height="127.5" fill="#d62728" opacity="0.7"/><line x1="313.6" y1="15.5" x2="313.6" y2="89.5" stroke="#333" stroke-width="1.5"/><line x1="309.6" y1="15.5" x2="317.6" y2="15.5" stroke="#333" stroke-width="1.5"/><line x1="309.6" y1="89.5" x2="317.6" y2="89.5" stroke="#333" stroke-width="1.5"/><text x="313.6" y="194.0" font-size="10" text-anchor="middle" fill="#666">7 (n=4)</text><text x="313.6" y="48.5" font-size="9" text-anchor="middle" fill="#333">0.71</text><rect x="342.9" y="145.7" width="25.1" height="34.3" fill="#2ca02c" opacity="0.7"/><line x1="355.5" y1="110.7" x2="355.5" y2="180.7" stroke="#333" stroke-width="1.5"/><line x1="351.5" y1="110.7" x2="359.5" y2="110.7" stroke="#333" stroke-width="1.5"/><line x1="351.5" y1="180.7" x2="359.5" y2="180.7" stroke="#333" stroke-width="1.5"/><text x="355.5" y="194.0" font-size="10" text-anchor="middle" fill="#666">8 (n=7)</text><text x="355.5" y="141.7" font-size="9" text-anchor="middle" fill="#333">0.19</text><rect x="384.7" y="135.0" width="25.1" height="45.0" fill="#2ca02c" opacity="0.7"/><line x1="397.3" y1="46.8" x2="397.3" y2="223.2" stroke="#333" stroke-width="1.5"/><line x1="393.3" y1="46.8" x2="401.3" y2="46.8" stroke="#333" stroke-width="1.5"/><line x1="393.3" y1="223.2" x2="401.3" y2="223.2" stroke="#333" stroke-width="1.5"/><text x="397.3" y="194.0" font-size="10" text-anchor="middle" fill="#666">9 (n=4)</text><text x="397.3" y="131.0" font-size="9" text-anchor="middle" fill="#333">0.25</text><rect x="426.5" y="180.0" width="25.1" height="0.0" fill="#2ca02c" opacity="0.7"/><text x="439.1" y="194.0" font-size="10" text-anchor="middle" fill="#666">10 (n=1)</text><text x="439.1" y="176.0" font-size="9" text-anchor="middle" fill="#333">0.00</text><line x1="0" y1="135.0" x2="460" y2="135.0" stroke="#ddd" stroke-width="0.5"/><text x="-4" y="138.0" font-size="9" text-anchor="end" fill="#999">0.25</text><line x1="0" y1="90.0" x2="460" y2="90.0" stroke="#ddd" stroke-width="0.5"/><text x="-4" y="93.0" font-size="9" text-anchor="end" fill="#999">0.50</text><line x1="0" y1="45.0" x2="460" y2="45.0" stroke="#ddd" stroke-width="0.5"/><text x="-4" y="48.0" font-size="9" text-anchor="end" fill="#999">0.75</text><line x1="0" y1="90.0" x2="460" y2="90.0" stroke="#aaa" stroke-width="1" stroke-dasharray="4,3"/><text x="230.0" y="208" font-size="10" fill="#666" text-anchor="middle"># of top-10 GOOD tags carried (lower PDR = better)</text></svg>
+    </div>
+    <div>
+      <h3>Net-score curve (good − bad)</h3>
+      <svg width="490" height="212" viewBox="-30 -8 520 220" style="font-family: -apple-system, sans-serif;"><rect x="8.4" y="24.6" width="25.1" height="155.4" fill="#d62728" opacity="0.7"/><line x1="20.9" y1="17.0" x2="20.9" y2="32.3" stroke="#333" stroke-width="1.5"/><line x1="16.9" y1="17.0" x2="24.9" y2="17.0" stroke="#333" stroke-width="1.5"/><line x1="16.9" y1="32.3" x2="24.9" y2="32.3" stroke="#333" stroke-width="1.5"/><text x="20.9" y="194.0" font-size="10" text-anchor="middle" fill="#666">0 (n=212)</text><text x="20.9" y="20.6" font-size="9" text-anchor="middle" fill="#333">0.86</text><rect x="50.2" y="54.1" width="25.1" height="125.9" fill="#d62728" opacity="0.7"/><line x1="62.7" y1="39.3" x2="62.7" y2="68.8" stroke="#333" stroke-width="1.5"/><line x1="58.7" y1="39.3" x2="66.7" y2="39.3" stroke="#333" stroke-width="1.5"/><line x1="58.7" y1="68.8" x2="66.7" y2="68.8" stroke="#333" stroke-width="1.5"/><text x="62.7" y="194.0" font-size="10" text-anchor="middle" fill="#666">1 (n=101)</text><text x="62.7" y="50.1" font-size="9" text-anchor="middle" fill="#333">0.70</text><rect x="92.0" y="48.3" width="25.1" height="131.7" fill="#d62728" opacity="0.7"/><line x1="104.5" y1="32.8" x2="104.5" y2="63.8" stroke="#333" stroke-width="1.5"/><line x1="100.5" y1="32.8" x2="108.5" y2="32.8" stroke="#333" stroke-width="1.5"/><line x1="100.5" y1="63.8" x2="108.5" y2="63.8" stroke="#333" stroke-width="1.5"/><text x="104.5" y="194.0" font-size="10" text-anchor="middle" fill="#666">2 (n=77)</text><text x="104.5" y="44.3" font-size="9" text-anchor="middle" fill="#333">0.73</text><rect x="133.8" y="83.3" width="25.1" height="96.7" fill="#d62728" opacity="0.7"/><line x1="146.4" y1="58.8" x2="146.4" y2="107.9" stroke="#333" stroke-width="1.5"/><line x1="142.4" y1="58.8" x2="150.4" y2="58.8" stroke="#333" stroke-width="1.5"/><line x1="142.4" y1="107.9" x2="150.4" y2="107.9" stroke="#333" stroke-width="1.5"/><text x="146.4" y="194.0" font-size="10" text-anchor="middle" fill="#666">3 (n=36)</text><text x="146.4" y="79.3" font-size="9" text-anchor="middle" fill="#333">0.54</text><rect x="175.6" y="105.0" width="25.1" height="75.0" fill="#2ca02c" opacity="0.7"/><line x1="188.2" y1="79.4" x2="188.2" y2="130.6" stroke="#333" stroke-width="1.5"/><line x1="184.2" y1="79.4" x2="192.2" y2="79.4" stroke="#333" stroke-width="1.5"/><line x1="184.2" y1="130.6" x2="192.2" y2="130.6" stroke="#333" stroke-width="1.5"/><text x="188.2" y="194.0" font-size="10" text-anchor="middle" fill="#666">4 (n=28)</text><text x="188.2" y="101.0" font-size="9" text-anchor="middle" fill="#333">0.42</text><rect x="217.5" y="123.0" width="25.1" height="57.0" fill="#2ca02c" opacity="0.7"/><line x1="230.0" y1="87.3" x2="230.0" y2="158.7" stroke="#333" stroke-width="1.5"/><line x1="226.0" y1="87.3" x2="234.0" y2="87.3" stroke="#333" stroke-width="1.5"/><line x1="226.0" y1="158.7" x2="234.0" y2="158.7" stroke="#333" stroke-width="1.5"/><text x="230.0" y="194.0" font-size="10" text-anchor="middle" fill="#666">5 (n=20)</text><text x="230.0" y="119.0" font-size="9" text-anchor="middle" fill="#333">0.32</text><rect x="259.3" y="108.0" width="25.1" height="72.0" fill="#2ca02c" opacity="0.7"/><line x1="271.8" y1="21.6" x2="271.8" y2="194.4" stroke="#333" stroke-width="1.5"/><line x1="267.8" y1="21.6" x2="275.8" y2="21.6" stroke="#333" stroke-width="1.5"/><line x1="267.8" y1="194.4" x2="275.8" y2="194.4" stroke="#333" stroke-width="1.5"/><text x="271.8" y="194.0" font-size="10" text-anchor="middle" fill="#666">6 (n=5)</text><text x="271.8" y="104.0" font-size="9" text-anchor="middle" fill="#333">0.40</text><rect x="301.1" y="52.5" width="25.1" height="127.5" fill="#d62728" opacity="0.7"/><line x1="313.6" y1="15.5" x2="313.6" y2="89.5" stroke="#333" stroke-width="1.5"/><line x1="309.6" y1="15.5" x2="317.6" y2="15.5" stroke="#333" stroke-width="1.5"/><line x1="309.6" y1="89.5" x2="317.6" y2="89.5" stroke="#333" stroke-width="1.5"/><text x="313.6" y="194.0" font-size="10" text-anchor="middle" fill="#666">7 (n=4)</text><text x="313.6" y="48.5" font-size="9" text-anchor="middle" fill="#333">0.71</text><rect x="342.9" y="145.7" width="25.1" height="34.3" fill="#2ca02c" opacity="0.7"/><line x1="355.5" y1="110.7" x2="355.5" y2="180.7" stroke="#333" stroke-width="1.5"/><line x1="351.5" y1="110.7" x2="359.5" y2="110.7" stroke="#333" stroke-width="1.5"/><line x1="351.5" y1="180.7" x2="359.5" y2="180.7" stroke="#333" stroke-width="1.5"/><text x="355.5" y="194.0" font-size="10" text-anchor="middle" fill="#666">8 (n=7)</text><text x="355.5" y="141.7" font-size="9" text-anchor="middle" fill="#333">0.19</text><rect x="384.7" y="135.0" width="25.1" height="45.0" fill="#2ca02c" opacity="0.7"/><line x1="397.3" y1="46.8" x2="397.3" y2="223.2" stroke="#333" stroke-width="1.5"/><line x1="393.3" y1="46.8" x2="401.3" y2="46.8" stroke="#333" stroke-width="1.5"/><line x1="393.3" y1="223.2" x2="401.3" y2="223.2" stroke="#333" stroke-width="1.5"/><text x="397.3" y="194.0" font-size="10" text-anchor="middle" fill="#666">9 (n=4)</text><text x="397.3" y="131.0" font-size="9" text-anchor="middle" fill="#333">0.25</text><rect x="426.5" y="180.0" width="25.1" height="0.0" fill="#2ca02c" opacity="0.7"/><text x="439.1" y="194.0" font-size="10" text-anchor="middle" fill="#666">10 (n=1)</text><text x="439.1" y="176.0" font-size="9" text-anchor="middle" fill="#333">0.00</text><line x1="0" y1="135.0" x2="460" y2="135.0" stroke="#ddd" stroke-width="0.5"/><text x="-4" y="138.0" font-size="9" text-anchor="end" fill="#999">0.25</text><line x1="0" y1="90.0" x2="460" y2="90.0" stroke="#ddd" stroke-width="0.5"/><text x="-4" y="93.0" font-size="9" text-anchor="end" fill="#999">0.50</text><line x1="0" y1="45.0" x2="460" y2="45.0" stroke="#ddd" stroke-width="0.5"/><text x="-4" y="48.0" font-size="9" text-anchor="end" fill="#999">0.75</text><line x1="0" y1="90.0" x2="460" y2="90.0" stroke="#aaa" stroke-width="1" stroke-dasharray="4,3"/><text x="230.0" y="208" font-size="10" fill="#666" text-anchor="middle">net score (#good − #bad)</text></svg>
+    </div>
+  </div>
+
+  <h3>Top 15 subsets by |Δ PDR| (deduplicated). NEG Δ = carriers have lower defects.</h3>
+  <table class="full">
+    <thead><tr><th>size</th><th>combo</th><th>n carriers</th><th>PDR with</th><th>without</th><th>Δ PDR</th><th>best single Δ</th><th>synergy uplift</th></tr></thead>
+    <tbody><tr><td class="num">2</td><td>+secure:oracle_contributor + +tau2_retail_allocated</td><td class="num">11</td><td class="num">0.1818</td><td class="num">0.7283</td><td class="num good">-0.5465</td><td class="num">-0.3095</td><td class="num good">0.237</td></tr><tr><td class="num">3</td><td>+spidey_mm_rubrics_bootcamp_pass + +secure:oracle_contributor + +tau2_retail_allocated</td><td class="num">10</td><td class="num">0.2</td><td class="num">0.7268</td><td class="num good">-0.5268</td><td class="num">-0.3095</td><td class="num good">0.2173</td></tr><tr><td class="num">3</td><td>+steady_spider_cb + +secure:oracle_contributor + +tau2_retail_allocated</td><td class="num">10</td><td class="num">0.2</td><td class="num">0.7268</td><td class="num good">-0.5268</td><td class="num">-0.3877</td><td class="num good">0.1391</td></tr><tr><td class="num">2</td><td>+steady_spider_cb + +secure:oracle_contributor</td><td class="num">12</td><td class="num">0.2222</td><td class="num">0.7284</td><td class="num good">-0.5062</td><td class="num">-0.3877</td><td class="num good">0.1185</td></tr><tr><td class="num">2</td><td>+reviewer_on_multiple_projects + +openclaw_mc_IN_Onsite</td><td class="num">31</td><td class="num">0.2419</td><td class="num">0.7478</td><td class="num good">-0.5059</td><td class="num">-0.3581</td><td class="num good">0.1478</td></tr><tr><td class="num">3</td><td>+reviewer_on_multiple_projects + +openclaw_mc_IN_Onsite + +secure:oracle_contributor</td><td class="num">22</td><td class="num">0.2349</td><td class="num">0.7385</td><td class="num good">-0.5037</td><td class="num">-0.3581</td><td class="num good">0.1456</td></tr><tr><td class="num">3</td><td>+reviewer_on_multiple_projects + +openclaw_mc_IN_Onsite + +secure:TnS_A_List</td><td class="num">30</td><td class="num">0.25</td><td class="num">0.7462</td><td class="num good">-0.4962</td><td class="num">-0.3581</td><td class="num good">0.1381</td></tr><tr><td class="num">2</td><td>+reviewer_on_multiple_projects + +openclaw_mc_IN_onsite_reviewer</td><td class="num">25</td><td class="num">0.2467</td><td class="num">0.7411</td><td class="num good">-0.4945</td><td class="num">-0.4649</td><td class="num good">0.0295</td></tr><tr><td class="num">3</td><td>+openclaw_mc_IN_Onsite + +support_hvc_pilot + +tau2_retail_allocated</td><td class="num">10</td><td class="num">0.2333</td><td class="num">0.7261</td><td class="num good">-0.4928</td><td class="num">-0.3581</td><td class="num good">0.1346</td></tr><tr><td class="num">3</td><td>+reviewer_on_multiple_projects + +steady_spider_cb + +secure:oracle_contributor</td><td class="num">11</td><td class="num">0.2424</td><td class="num">0.7269</td><td class="num good">-0.4845</td><td class="num">-0.3877</td><td class="num good">0.0968</td></tr><tr><td class="num">3</td><td>+spidey_mm_rubrics_bootcamp_pass + +steady_spider_cb + +secure:oracle_contributor</td><td class="num">11</td><td class="num">0.2424</td><td class="num">0.7269</td><td class="num good">-0.4845</td><td class="num">-0.3877</td><td class="num good">0.0968</td></tr><tr><td class="num">1</td><td>+openclaw_mc_IN_onsite_reviewer</td><td class="num">26</td><td class="num">0.2756</td><td class="num">0.7406</td><td class="num good">-0.4649</td><td class="num">-0.4649</td><td class="num bad">0.0</td></tr><tr><td class="num">4</td><td>+reviewer_on_multiple_projects + +openclaw_mc_IN_Onsite + +spidey_mm_rubrics_bootcamp_pass + +tau2_retail_allocated</td><td class="num">10</td><td class="num">0.2667</td><td class="num">0.7254</td><td class="num good">-0.4588</td><td class="num">-0.3581</td><td class="num good">0.1006</td></tr><tr><td class="num">4</td><td>+reviewer_on_multiple_projects + +spidey_mm_rubrics_bootcamp_pass + +steady_spider_cb + +secure:oracle_contributor</td><td class="num">10</td><td class="num">0.2667</td><td class="num">0.7254</td><td class="num good">-0.4588</td><td class="num">-0.3877</td><td class="num good">0.071</td></tr><tr><td class="num">3</td><td>+reviewer_on_multiple_projects + +support_hvc_pilot + +tau2_retail_allocated</td><td class="num">16</td><td class="num">0.2812</td><td class="num">0.7307</td><td class="num good">-0.4494</td><td class="num">-0.358</td><td class="num good">0.0914</td></tr></tbody>
+  </table>
+
+  <details class="caveats">
+    <summary><b>Caveats</b></summary>
+    <ul>
+      <li><b>Tag co-occurrence:</b> Many of these tags appear on overlapping populations. <code>TCM_*</code> tags are nearly always co-present — a worker with one TCM tag tends to have the others. So a "size 4" subset of all TCM tags isn't 4 independent signals; it's mostly the same population as size 1 with one of those tags.</li>
+      <li><b>Synergy uplift is the true new-information metric.</b> A subset with high |Δ_PDR| but ≤0 synergy uplift is just being carried by its strongest individual tag. A subset with positive synergy is genuinely more predictive than any tag alone.</li>
+      <li><b>Small carriers:</b> our cutoff is n≥10. The very top subsets cluster around n=10–20, so the CIs on Δ are wide. Don't over-interpret a single subset's Δ down to the third decimal.</li>
+      <li><b>PDR ceiling effect:</b> because PDR is bounded [0, 1] and most workers have PDR=1.0 in this cohort, the magnitudes shrink at the extremes. Use the +Step 6.5 net-curve below as the cleanest ordinal view.</li>
+    </ul>
+  </details>
+</section>
+
+
+</main>
+<footer class="site-footer">
+  Generated 2026-06-10 18:48 UTC ·
+  <a href="index.html">Overview</a> ·
+  <a href="summary.html">Summary</a> ·
+  Source: <code>analysis/</code>
+</footer>
+<script src="_assets/dashboard.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OpenClaw analysis — summary</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="_assets/design.css">
+<script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="site-title" href="index.html">OpenClaw analysis</a>
+    <nav class="site-nav" aria-label="Primary"><a class="" href="index.html">Overview</a><a class="is-active" href="summary.html">Summary</a><a class="" href="themes/courses.html">Courses</a><a class="" href="themes/questions.html">Questions</a><a class="" href="themes/reviewers.html">Reviewers</a><a class="" href="themes/workers.html">Workers</a></nav>
+    <span class="site-meta" title="2026-06-10T18:48+00:00">Updated 2026-06-10 18:48 UTC</span>
+  </div>
+</header>
+<main class="page-shell">
+
+<header class="page-header"><h1>Executive summary</h1><p class="lede">Three sections, one chart each. Read it top-to-bottom for the state of the project; click any &#x27;method&#x27; pill for the definition behind a number.</p></header>
+<section class="card"><div class="card-header"><h2>Headline</h2></div><p style='font-size:18px;line-height:1.55;max-width:80ch;'>Of <b>728</b> workers who started onboarding, <b>156</b> made it to last-toucher status (<b>21%</b> end-to-end conversion). <b>36</b> of <b>40</b> audited reviewers cleared the trust bar; <b>4</b> were dropped. The curriculum contains <b>10</b> predictive and <b>9</b> counterproductive course questions — rewrite the latter.</p></section>
+<a id="funnel"></a><section class="section"><h2>1. The funnel</h2><p>From the latest pipeline diagnose (<code>2026-06-09</code>).<span class="method-pop" data-method="modal_funnel" title="Show methodology">method</span></p>
+<div class="stat-grid"><div class="stat">
+  <div class="stat-label">Top of funnel</div>
+  <div class="stat-number num">728</div>
+  <div class="stat-sub">workers who started onboarding</div>
+</div><div class="stat is-good">
+  <div class="stat-label">Bottom of funnel</div>
+  <div class="stat-number num">156</div>
+  <div class="stat-sub">workers tagged as last-touchers</div>
+</div><div class="stat is-warn">
+  <div class="stat-label">End-to-end conversion</div>
+  <div class="stat-number num">21%</div>
+  <div class="stat-sub">of starters become last-touchers</div>
+</div></div>
+<div class="hero-chart"><div id="summary_funnel" class="plot" role="img" aria-label="Workers entering vs reaching each pipeline stage."></div><script>Plotly.newPlot("summary_funnel", {"data": [{"type": "bar", "orientation": "h", "x": [156, 169, 161, 652, 150, 728, 728], "y": ["Last-toucher tagged", "Reviewer course passed", "Eligible for reviewer promo", "Attempted first task", "Onboarding complete", "Onboarding started", "Total workers"], "marker": {"color": "#4f46e5"}, "text": ["156", "169", "161", "652", "150", "728", "728"], "textposition": "outside", "hovertemplate": "%{y}: <b>%{x}</b> workers<extra></extra>"}], "layout": {"font": {"family": "\"Inter\", -apple-system, BlinkMacSystemFont, system-ui, sans-serif", "size": 13, "color": "#0f172a"}, "paper_bgcolor": "rgba(0,0,0,0)", "plot_bgcolor": "rgba(0,0,0,0)", "height": 320, "margin": {"l": 220, "r": 60, "t": 16, "b": 40}, "hoverlabel": {"bgcolor": "#ffffff", "bordercolor": "#e2e8f0", "font": {"family": "\"Inter\", system-ui, sans-serif", "color": "#0f172a"}}, "xaxis": {"title": {"text": "Workers", "font": {"size": 12, "color": "#475569"}}, "showgrid": true, "gridcolor": "#e2e8f0", "zeroline": false, "linecolor": "#e2e8f0", "tickfont": {"size": 12, "color": "#475569"}}, "yaxis": {"automargin": true, "tickfont": {"size": 13}}, "legend": {"bgcolor": "rgba(0,0,0,0)", "bordercolor": "rgba(0,0,0,0)", "font": {"size": 12, "color": "#475569"}, "orientation": "h", "yanchor": "bottom", "y": 1.0, "xanchor": "right", "x": 1.0}, "showlegend": false}}.data, {"data": [{"type": "bar", "orientation": "h", "x": [156, 169, 161, 652, 150, 728, 728], "y": ["Last-toucher tagged", "Reviewer course passed", "Eligible for reviewer promo", "Attempted first task", "Onboarding complete", "Onboarding started", "Total workers"], "marker": {"color": "#4f46e5"}, "text": ["156", "169", "161", "652", "150", "728", "728"], "textposition": "outside", "hovertemplate": "%{y}: <b>%{x}</b> workers<extra></extra>"}], "layout": {"font": {"family": "\"Inter\", -apple-system, BlinkMacSystemFont, system-ui, sans-serif", "size": 13, "color": "#0f172a"}, "paper_bgcolor": "rgba(0,0,0,0)", "plot_bgcolor": "rgba(0,0,0,0)", "height": 320, "margin": {"l": 220, "r": 60, "t": 16, "b": 40}, "hoverlabel": {"bgcolor": "#ffffff", "bordercolor": "#e2e8f0", "font": {"family": "\"Inter\", system-ui, sans-serif", "color": "#0f172a"}}, "xaxis": {"title": {"text": "Workers", "font": {"size": 12, "color": "#475569"}}, "showgrid": true, "gridcolor": "#e2e8f0", "zeroline": false, "linecolor": "#e2e8f0", "tickfont": {"size": 12, "color": "#475569"}}, "yaxis": {"automargin": true, "tickfont": {"size": 13}}, "legend": {"bgcolor": "rgba(0,0,0,0)", "bordercolor": "rgba(0,0,0,0)", "font": {"size": 12, "color": "#475569"}, "orientation": "h", "yanchor": "bottom", "y": 1.0, "xanchor": "right", "x": 1.0}, "showlegend": false}}.layout,{"responsive": true, "displaylogo": false});</script><p class="plot-caption">Workers entering vs reaching each pipeline stage.</p></div><div class="modal" id="modal_funnel" role="dialog" aria-modal="true" aria-hidden="true">
+  <div class="modal-card">
+    <button class="modal-close" aria-label="Close">×</button>
+    <h4>How the funnel is computed</h4>
+    <div><p>Each row is one stage in the worker journey. A worker is counted in a stage if they reached it at any point in the project window. Counts are not exclusive — a 'last-toucher tagged' worker also appears in every earlier stage.</p><p>Source: <code>reports/&lt;project&gt;/&lt;date&gt;/funnel.csv</code> (from <code>pipeline.diagnose</code>).</p></div>
+  </div>
+</div></section>
+<a id="reviewers"></a><section class="section"><h2>2. The reviewers</h2><p>Reviewer trust scores from the Goal-2 audit, applied to filter
+the review pool feeding the curriculum analysis.<span class="method-pop" data-method="modal_trust" title="Show methodology">method</span></p>
+<div class="stat-grid"><div class="stat">
+  <div class="stat-label">Reviewers audited</div>
+  <div class="stat-number num">40</div>
+  <div class="stat-sub">distinct emails sampled</div>
+</div><div class="stat is-good">
+  <div class="stat-label">Reviewers kept</div>
+  <div class="stat-number num">36</div>
+  <div class="stat-sub">trust ≥ 0.5 and minority unjustified</div>
+</div><div class="stat is-bad">
+  <div class="stat-label">Reviewers dropped</div>
+  <div class="stat-number num">4</div>
+  <div class="stat-sub">majority of audits unjustified</div>
+</div><div class="stat">
+  <div class="stat-label">Reviews kept</div>
+  <div class="stat-number num">883</div>
+  <div class="stat-sub">from trusted reviewers — powers everything below</div>
+</div></div>
+<div class="hero-chart"><div id="summary_trust" class="plot" role="img" aria-label="Audited reviewers grouped by trust score. Anything below 0.5 (red) gets dropped from the trusted-review pool."></div><script>Plotly.newPlot("summary_trust", {"data": [{"type": "bar", "x": ["0.0\u20130.2", "0.2\u20130.4", "0.4\u20130.5", "0.5\u20130.6", "0.6\u20130.8", "0.8\u20131.0"], "y": [0, 8, 2, 8, 14, 8], "marker": {"color": ["#e11d48", "#e11d48", "#e11d48", "#059669", "#059669", "#059669"]}, "text": [0, 8, 2, 8, 14, 8], "textposition": "outside", "hovertemplate": "Trust %{x}: <b>%{y}</b> reviewers<extra></extra>"}], "layout": {"font": {"family": "\"Inter\", -apple-system, BlinkMacSystemFont, system-ui, sans-serif", "size": 13, "color": "#0f172a"}, "paper_bgcolor": "rgba(0,0,0,0)", "plot_bgcolor": "rgba(0,0,0,0)", "height": 300, "margin": {"l": 60, "r": 24, "t": 16, "b": 56}, "hoverlabel": {"bgcolor": "#ffffff", "bordercolor": "#e2e8f0", "font": {"family": "\"Inter\", system-ui, sans-serif", "color": "#0f172a"}}, "xaxis": {"title": {"text": "Trust score bucket", "font": {"size": 12, "color": "#475569"}}, "showgrid": true, "gridcolor": "#e2e8f0", "zeroline": false, "linecolor": "#e2e8f0", "tickfont": {"size": 12, "color": "#475569"}}, "yaxis": {"title": {"text": "Reviewers", "font": {"size": 12, "color": "#475569"}}, "showgrid": true, "gridcolor": "#e2e8f0", "zeroline": false, "linecolor": "#e2e8f0", "tickfont": {"size": 12, "color": "#475569"}}, "legend": {"bgcolor": "rgba(0,0,0,0)", "bordercolor": "rgba(0,0,0,0)", "font": {"size": 12, "color": "#475569"}, "orientation": "h", "yanchor": "bottom", "y": 1.0, "xanchor": "right", "x": 1.0}, "showlegend": false}}.data, {"data": [{"type": "bar", "x": ["0.0\u20130.2", "0.2\u20130.4", "0.4\u20130.5", "0.5\u20130.6", "0.6\u20130.8", "0.8\u20131.0"], "y": [0, 8, 2, 8, 14, 8], "marker": {"color": ["#e11d48", "#e11d48", "#e11d48", "#059669", "#059669", "#059669"]}, "text": [0, 8, 2, 8, 14, 8], "textposition": "outside", "hovertemplate": "Trust %{x}: <b>%{y}</b> reviewers<extra></extra>"}], "layout": {"font": {"family": "\"Inter\", -apple-system, BlinkMacSystemFont, system-ui, sans-serif", "size": 13, "color": "#0f172a"}, "paper_bgcolor": "rgba(0,0,0,0)", "plot_bgcolor": "rgba(0,0,0,0)", "height": 300, "margin": {"l": 60, "r": 24, "t": 16, "b": 56}, "hoverlabel": {"bgcolor": "#ffffff", "bordercolor": "#e2e8f0", "font": {"family": "\"Inter\", system-ui, sans-serif", "color": "#0f172a"}}, "xaxis": {"title": {"text": "Trust score bucket", "font": {"size": 12, "color": "#475569"}}, "showgrid": true, "gridcolor": "#e2e8f0", "zeroline": false, "linecolor": "#e2e8f0", "tickfont": {"size": 12, "color": "#475569"}}, "yaxis": {"title": {"text": "Reviewers", "font": {"size": 12, "color": "#475569"}}, "showgrid": true, "gridcolor": "#e2e8f0", "zeroline": false, "linecolor": "#e2e8f0", "tickfont": {"size": 12, "color": "#475569"}}, "legend": {"bgcolor": "rgba(0,0,0,0)", "bordercolor": "rgba(0,0,0,0)", "font": {"size": 12, "color": "#475569"}, "orientation": "h", "yanchor": "bottom", "y": 1.0, "xanchor": "right", "x": 1.0}, "showlegend": false}}.layout,{"responsive": true, "displaylogo": false});</script><p class="plot-caption">Audited reviewers grouped by trust score. Anything below 0.5 (red) gets dropped from the trusted-review pool.</p></div><div class="modal" id="modal_trust" role="dialog" aria-modal="true" aria-hidden="true">
+  <div class="modal-card">
+    <button class="modal-close" aria-label="Close">×</button>
+    <h4>How reviewer trust is computed</h4>
+    <div><p>A reviewer's trust score is the share of their audits an LLM-driven auditor judged 'defensible' (with 'questionable' counting half). We drop any reviewer whose majority of audits came back <code>feedback_unjustified</code>.</p><p>Source: <code>analysis/g4_reviewer_trust.csv</code>, <code>analysis/g4_dropped_reviewers.csv</code> from <code>analysis.run_g4 step-1</code> + <code>analysis.lib.trust</code>.</p></div>
+  </div>
+</div></section>
+<a id="curriculum"></a><section class="section"><h2>3. The curriculum</h2><p>Each course's questions, split by whether passing them is linked to
+better or worse downstream production work.<span class="method-pop" data-method="modal_curric" title="Show methodology">method</span></p>
+<div class="stat-grid"><div class="stat">
+  <div class="stat-label">Questions analyzed</div>
+  <div class="stat-number num">52</div>
+  <div class="stat-sub">(course, question) pairs with n ≥ 10</div>
+</div><div class="stat is-good">
+  <div class="stat-label">Predictive (↑)</div>
+  <div class="stat-number num">10</div>
+  <div class="stat-sub">passing → lower defect rate</div>
+</div><div class="stat is-bad">
+  <div class="stat-label">Counterproductive (↓)</div>
+  <div class="stat-number num">9</div>
+  <div class="stat-sub">passing → higher defect rate</div>
+</div></div>
+<div class="hero-chart"><div id="summary_curric" class="plot" role="img" aria-label="Per course: how many of its questions are linked to lower vs higher defect rates among workers who pass them."></div><script>Plotly.newPlot("summary_curric", {"data": [{"type": "bar", "name": "Predictive", "orientation": "h", "x": [2, 3, 2, 0, 3], "y": ["OpenClaw Atlas Reviewers", "Rubrics + Unit Tests Screening", "OpenClaw RL Common Errors Screening", "Almost Right: The Science of LLM Errors", "OpenClaw - Screening Course"], "marker": {"color": "#059669"}, "hovertemplate": "%{y}: <b>%{x}</b> predictive questions<extra></extra>"}, {"type": "bar", "name": "Counterproductive", "orientation": "h", "x": [0, -2, -1, 0, -6], "y": ["OpenClaw Atlas Reviewers", "Rubrics + Unit Tests Screening", "OpenClaw RL Common Errors Screening", "Almost Right: The Science of LLM Errors", "OpenClaw - Screening Course"], "marker": {"color": "#e11d48"}, "hovertemplate": "%{y}: <b>%{customdata}</b> counterproductive questions<extra></extra>", "customdata": [0, 2, 1, 0, 6]}], "layout": {"font": {"family": "\"Inter\", -apple-system, BlinkMacSystemFont, system-ui, sans-serif", "size": 13, "color": "#0f172a"}, "paper_bgcolor": "rgba(0,0,0,0)", "plot_bgcolor": "rgba(0,0,0,0)", "height": 300, "margin": {"l": 260, "r": 24, "t": 16, "b": 56}, "hoverlabel": {"bgcolor": "#ffffff", "bordercolor": "#e2e8f0", "font": {"family": "\"Inter\", system-ui, sans-serif", "color": "#0f172a"}}, "xaxis": {"title": {"text": "Question count (left = bad, right = good)", "font": {"size": 12, "color": "#475569"}}, "showgrid": true, "gridcolor": "#e2e8f0", "zeroline": false, "linecolor": "#e2e8f0", "tickfont": {"size": 12, "color": "#475569"}}, "yaxis": {"automargin": true, "tickfont": {"size": 13}}, "legend": {"bgcolor": "rgba(0,0,0,0)", "bordercolor": "rgba(0,0,0,0)", "font": {"size": 12, "color": "#475569"}, "orientation": "h", "yanchor": "bottom", "y": 1.0, "xanchor": "right", "x": 1.0}, "showlegend": true, "barmode": "relative"}}.data, {"data": [{"type": "bar", "name": "Predictive", "orientation": "h", "x": [2, 3, 2, 0, 3], "y": ["OpenClaw Atlas Reviewers", "Rubrics + Unit Tests Screening", "OpenClaw RL Common Errors Screening", "Almost Right: The Science of LLM Errors", "OpenClaw - Screening Course"], "marker": {"color": "#059669"}, "hovertemplate": "%{y}: <b>%{x}</b> predictive questions<extra></extra>"}, {"type": "bar", "name": "Counterproductive", "orientation": "h", "x": [0, -2, -1, 0, -6], "y": ["OpenClaw Atlas Reviewers", "Rubrics + Unit Tests Screening", "OpenClaw RL Common Errors Screening", "Almost Right: The Science of LLM Errors", "OpenClaw - Screening Course"], "marker": {"color": "#e11d48"}, "hovertemplate": "%{y}: <b>%{customdata}</b> counterproductive questions<extra></extra>", "customdata": [0, 2, 1, 0, 6]}], "layout": {"font": {"family": "\"Inter\", -apple-system, BlinkMacSystemFont, system-ui, sans-serif", "size": 13, "color": "#0f172a"}, "paper_bgcolor": "rgba(0,0,0,0)", "plot_bgcolor": "rgba(0,0,0,0)", "height": 300, "margin": {"l": 260, "r": 24, "t": 16, "b": 56}, "hoverlabel": {"bgcolor": "#ffffff", "bordercolor": "#e2e8f0", "font": {"family": "\"Inter\", system-ui, sans-serif", "color": "#0f172a"}}, "xaxis": {"title": {"text": "Question count (left = bad, right = good)", "font": {"size": 12, "color": "#475569"}}, "showgrid": true, "gridcolor": "#e2e8f0", "zeroline": false, "linecolor": "#e2e8f0", "tickfont": {"size": 12, "color": "#475569"}}, "yaxis": {"automargin": true, "tickfont": {"size": 13}}, "legend": {"bgcolor": "rgba(0,0,0,0)", "bordercolor": "rgba(0,0,0,0)", "font": {"size": 12, "color": "#475569"}, "orientation": "h", "yanchor": "bottom", "y": 1.0, "xanchor": "right", "x": 1.0}, "showlegend": true, "barmode": "relative"}}.layout,{"responsive": true, "displaylogo": false});</script><p class="plot-caption">Per course: how many of its questions are linked to lower vs higher defect rates among workers who pass them.</p></div><div class="modal" id="modal_curric" role="dialog" aria-modal="true" aria-hidden="true">
+  <div class="modal-card">
+    <button class="modal-close" aria-label="Close">×</button>
+    <h4>How question predictivity is computed</h4>
+    <div><p>For each (course, question) we compute a point-biserial correlation between whether a worker passed the question and their <b>PDR</b> (Performance Defect Rate = fraction of their last 3 trusted reviews scored below QM=4, the promotion gate). Lower PDR = better worker.</p><ul><li><b>Predictive</b>: r_pdr &lt; −0.05 (passing reduces defects).</li><li><b>Counterproductive</b>: r_pdr &gt; +0.05 (passing raises defects).</li></ul><p>Source: <code>analysis/g4_question_predictive.csv</code> from <code>analysis.run_g4 step-2</code>.</p></div>
+  </div>
+</div></section>
+<details class="caveats">
+  <summary>One-page summary caveats</summary>
+  <ul><li>Every chart on this page is a <b>summary</b>. Drill into the theme pages or the deep-dive dashboards for full distributions and CIs.</li><li>The reviewer trust score is derived from a sample of ~200 audited reviews. Unaudited reviewers are kept by default.</li><li>'Predictive' and 'counterproductive' are based on point-biserial r_pdr thresholds of ±0.05 — small effect sizes by Cohen, but the comparison is between hundreds of workers so the signal is real.</li></ul>
+</details>
+</main>
+<footer class="site-footer">
+  Generated 2026-06-10 18:48 UTC ·
+  <a href="index.html">Overview</a> ·
+  <a href="summary.html">Summary</a> ·
+  Source: <code>analysis/</code>
+</footer>
+<script src="_assets/dashboard.js"></script>
+
+</body>
+</html>
