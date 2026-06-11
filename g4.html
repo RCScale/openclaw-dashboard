@@ -72,7 +72,7 @@ li.q-item { background: var(--color-surface); padding: 10px 12px;
   <div class="site-header-inner">
     <a class="site-title" href="index.html">OpenClaw analysis</a>
     <nav class="site-nav" aria-label="Primary"><a class="" href="index.html">Overview</a><a class="" href="summary.html">Summary</a><a class="" href="themes/courses.html">Courses</a><a class="" href="themes/questions.html">Questions</a><a class="" href="themes/reviewers.html">Reviewers</a><a class="" href="themes/workers.html">Workers</a></nav>
-    <span class="site-meta" title="2026-06-10T18:48+00:00">Updated 2026-06-10 18:48 UTC</span>
+    <span class="site-meta" title="2026-06-11T01:29+00:00">Updated 2026-06-11 01:29 UTC</span>
   </div>
 </header>
 <main class="page-shell">
@@ -159,7 +159,7 @@ li.q-item { background: var(--color-surface); padding: 10px 12px;
 <section class="step">
   <h2>Step 2 — Course questions PREDICTIVE of better project performance</h2>
   <div class="punchline">
-    Of <b>52</b> (course, question) pairs with enough workers (n ≥ 10):
+    Of <b>55</b> (course, question) pairs with enough workers (n ≥ 10):
     <b>10</b> are <b>predictive</b> (r_pdr &lt; −0.05 — passing the question
     correlates with a <b>LOWER defect rate</b> downstream).
   </div>
@@ -198,113 +198,92 @@ li.q-item { background: var(--color-surface); padding: 10px 12px;
 <tr>
   <td>OpenClaw Atlas Reviewers </td>
   <td><code>181f47fc</code></td>
-  <td class="qtext">A rubric has the following weights assigned to its criteria: +5, +3, +3, +1, +1. Everything else about the task is solid. What should the reviewer flag?<div class="correct">✓ Fail — there is no negative-weight criterion</div></td>
-  <td class="num">96.2%</td>
-  <td class="num">131</td>
-  <td class="num good">-0.207</td>
-  <td class="num">-0.456</td>
+  <td class="qtext"><em>(question text not in Q-G2 SECTIONS export; QID-only)</em></td>
+  <td class="num">96.1%</td>
+  <td class="num">128</td>
+  <td class="num good">-0.209</td>
+  <td class="num">-0.459</td>
 </tr>
 <tr>
-  <td>Rubrics + Unit Tests Screening</td>
-  <td><code>685f4d53</code></td>
-  <td class="qtext">One of the rubric criteria is overly specific and requires something the prompt did not ask for. Identify the bad rubric criterion and explain why it is overly specific.
-
-**Guidelines**\
-Read the prompt and rubric. Then:
-
-* identify the rubric criterion number that is overly specific
-* explain what …</td>
-  <td class="num">85.7%</td>
-  <td class="num">42</td>
-  <td class="num good">-0.126</td>
-  <td class="num">-0.167</td>
-</tr>
-<tr>
-  <td>OpenClaw RL Common Errors Screening</td>
-  <td><code>c516bff2</code></td>
-  <td class="qtext">**Instructions:** Read the prompt and the rubric criteria below. Some criteria evaluate implementation-level requirements that the prompt never specified.
-
-1. Identify at least one criterion that is overly specific
-2. Explain what that criterion technically requires
-3. Explain why that requirement i…</td>
-  <td class="num">73.7%</td>
-  <td class="num">217</td>
-  <td class="num good">-0.117</td>
-  <td class="num">-0.108</td>
+  <td>🔎 Task Quality Module: Rubrics, Checks &amp; Trajectories</td>
+  <td><code>86b42606</code></td>
+  <td class="qtext"><em>(question text not in Q-G2 SECTIONS export; QID-only)</em></td>
+  <td class="num">36.0%</td>
+  <td class="num">328</td>
+  <td class="num good">-0.176</td>
+  <td class="num">-0.153</td>
 </tr>
 <tr>
   <td>OpenClaw - Screening Course</td>
   <td><code>ecdecee0</code></td>
-  <td class="qtext">**After you have finished the trajectory and collected the traces, what should you do to properly close the OpenClaw session?** (*Select ONE answer.)*<div class="correct">✓ Simply close the browser tab. Do not use &quot;Force End Session&quot; when the trajectory is complete.</div></td>
-  <td class="num">80.5%</td>
-  <td class="num">426</td>
-  <td class="num good">-0.110</td>
-  <td class="num">-0.114</td>
+  <td class="qtext"><em>(question text not in Q-G2 SECTIONS export; QID-only)</em></td>
+  <td class="num">80.6%</td>
+  <td class="num">423</td>
+  <td class="num good">-0.112</td>
+  <td class="num">-0.117</td>
 </tr>
 <tr>
-  <td>OpenClaw RL Common Errors Screening</td>
-  <td><code>f8e777d4</code></td>
-  <td class="qtext">**Instructions:** Read the prompt and the rubric criteria below. One criterion is overly specific because it evaluates something the prompt never requested. Identify it and explain:
-
-1. The criterion number
-2. What exactly the criterion requires
-3. Why that requirement is not supported by the prompt…</td>
-  <td class="num">35.0%</td>
-  <td class="num">217</td>
-  <td class="num good">-0.073</td>
-  <td class="num">-0.062</td>
+  <td>Rubrics + Unit Tests Screening</td>
+  <td><code>685f4d53</code></td>
+  <td class="qtext"><em>(question text not in Q-G2 SECTIONS export; QID-only)</em></td>
+  <td class="num">86.4%</td>
+  <td class="num">44</td>
+  <td class="num good">-0.112</td>
+  <td class="num">-0.149</td>
+</tr>
+<tr>
+  <td>🔎 Task Quality Module: Rubrics, Checks &amp; Trajectories</td>
+  <td><code>46732df0</code></td>
+  <td class="qtext"><em>(question text not in Q-G2 SECTIONS export; QID-only)</em></td>
+  <td class="num">35.7%</td>
+  <td class="num">336</td>
+  <td class="num good">-0.108</td>
+  <td class="num">-0.094</td>
 </tr>
 <tr>
   <td>OpenClaw - Screening Course</td>
   <td><code>f236cb1b</code></td>
-  <td class="qtext">(question text not in Q-G2 SECTIONS export)</td>
-  <td class="num">91.3%</td>
-  <td class="num">263</td>
-  <td class="num good">-0.072</td>
-  <td class="num">-0.100</td>
+  <td class="qtext"><em>(question text not in Q-G2 SECTIONS export; QID-only)</em></td>
+  <td class="num">91.2%</td>
+  <td class="num">260</td>
+  <td class="num good">-0.070</td>
+  <td class="num">-0.097</td>
 </tr>
 <tr>
   <td>Rubrics + Unit Tests Screening</td>
   <td><code>1823c815</code></td>
-  <td class="qtext">### **Free Response Questions**
-
-For the  test below, explain **specifically** whether it is valid or flawed. If flawed, state what is wrong and what should be done (keep, delete, or rewrite — and if rewrite, describe how). If valid, explain why it's a good test.
-
-### **Test 2 —** `test_restock_orde…</td>
-  <td class="num">97.8%</td>
-  <td class="num">400</td>
-  <td class="num good">-0.070</td>
-  <td class="num">-0.195</td>
+  <td class="qtext"><em>(question text not in Q-G2 SECTIONS export; QID-only)</em></td>
+  <td class="num">97.7%</td>
+  <td class="num">398</td>
+  <td class="num good">-0.069</td>
+  <td class="num">-0.193</td>
+</tr>
+<tr>
+  <td>OpenClaw RL Common Errors Screening</td>
+  <td><code>8d50d894</code></td>
+  <td class="qtext"><em>(question text not in Q-G2 SECTIONS export; QID-only)</em></td>
+  <td class="num">99.3%</td>
+  <td class="num">281</td>
+  <td class="num good">-0.065</td>
+  <td class="num">-0.329</td>
 </tr>
 <tr>
   <td>OpenClaw Atlas Reviewers </td>
   <td><code>2658a3aa</code></td>
-  <td class="qtext">A task scores a 5 on desired outcome, a 5 on sources, a 3 on rubric quality, and a 5 on depth/friction. What is the correct overall score?<div class="correct">✓ 3 — the task follows the weakest dimension</div></td>
-  <td class="num">98.5%</td>
-  <td class="num">131</td>
+  <td class="qtext"><em>(question text not in Q-G2 SECTIONS export; QID-only)</em></td>
+  <td class="num">98.4%</td>
+  <td class="num">128</td>
+  <td class="num good">-0.057</td>
+  <td class="num">-0.194</td>
+</tr>
+<tr>
+  <td>Almost Right: The Science of LLM Errors</td>
+  <td><code>6b546aae</code></td>
+  <td class="qtext"><em>(question text not in Q-G2 SECTIONS export; QID-only)</em></td>
+  <td class="num">99.3%</td>
+  <td class="num">453</td>
   <td class="num good">-0.056</td>
-  <td class="num">-0.192</td>
-</tr>
-<tr>
-  <td>Rubrics + Unit Tests Screening</td>
-  <td><code>4443ab66</code></td>
-  <td class="qtext">A prompt says: "Analyze the attached sales data and produce a risk assessment report in JSON format." A contributor submits the following rubric criteria. Which ones are overfitted?
-
-* A. "The report includes a valid JSON structure that successfully compiles."
-* B. "The report is saved as a file nam…<div class="correct">✓ Criterion B — the prompt specifies JSON format but not a filename, so enforcing a specific filename is overfitted.; Criterion D — the prompt never specifies key names or nesting structure, so locking </div></td>
-  <td class="num">88.2%</td>
-  <td class="num">400</td>
-  <td class="num good">-0.050</td>
-  <td class="num">-0.065</td>
-</tr>
-<tr>
-  <td>OpenClaw - Screening Course</td>
-  <td><code>99591dc0</code></td>
-  <td class="qtext">A contributor is mid-task and needs to reset the OpenClaw environment. They see two options under the Reset button and are unsure which to use. Their goal for one scenario is to fix a token session error without losing the conversation context. For a second scenario, they want to completely start ov…<div class="correct">✓ &quot;Restart Session&quot; refreshes the token session but preserves the previous request and response — useful for recovering from session errors without losing context.; &quot;Start Fresh&quot; removes all data from t</div></td>
-  <td class="num">95.5%</td>
-  <td class="num">426</td>
-  <td class="num good">-0.050</td>
-  <td class="num">-0.100</td>
+  <td class="num">-0.280</td>
 </tr></tbody></table>
   <details class="caveats">
     <summary><b>Caveats</b></summary>
@@ -312,7 +291,7 @@ For the  test below, explain **specifically** whether it is valid or flawed. If 
       <li><b>Effect sizes are small.</b> Top |r| is roughly 0.13–0.20 — conventionally a "small" effect (Cohen). Useful as a screening signal in aggregate, not a deterministic single-question filter.</li>
       <li><b>PDR is bounded.</b> With a rolling window of 3, PDR can only take values {0, 0.33, 0.67, 1.0} — fewer distinct values than mean_qm. This deflates correlation magnitudes slightly vs the old mean_qm-based numbers.</li>
       <li><b>Fisher z CI is added by <code>run_g4_qdiagnose stats</code>.</b> Re-run that to refresh <code>r_pdr_ci95_lo/hi</code> after this metric switch.</li>
-      <li><b>1 of 52 questions lack a body</b> because they live in a nested sub-section structure our Q-G2 walker didn't reach. Those rows show "(question text not in Q-G2 SECTIONS export)" — the correlation is computed correctly, we just can't display the wording.</li>
+      <li><b>52 of 55 questions lack a body</b> because they live in a nested sub-section structure our Q-G2 walker didn't reach. Those rows show "(question text not in Q-G2 SECTIONS export)" — the correlation is computed correctly, we just can't display the wording.</li>
       <li><b>The outcome is the reviewer-graded defect rate, not promotion or task-completion rate.</b> Predictive of "fewer reviewers reject the work", not "task survives end-to-end".</li>
     </ul>
   </details>
@@ -340,70 +319,104 @@ For the  test below, explain **specifically** whether it is valid or flawed. If 
   </details>
   
 <details class="course-combo" open>
-  <summary><b>OpenClaw Atlas Reviewers </b> &mdash; 2 predictive q’s, 131 workers in join</summary>
+  <summary><b>OpenClaw Atlas Reviewers </b> &mdash; 2 predictive q’s, 128 workers in join</summary>
   <div class="combo-flex">
-    <div><svg width="490" height="212" viewBox="-30 -8 520 220" style="font-family: -apple-system, sans-serif;"><rect x="46.0" y="12.9" width="138.0" height="167.1" fill="#d62728" opacity="0.7"/><line x1="115.0" y1="-12.3" x2="115.0" y2="38.1" stroke="#333" stroke-width="1.5"/><line x1="111.0" y1="-12.3" x2="119.0" y2="-12.3" stroke="#333" stroke-width="1.5"/><line x1="111.0" y1="38.1" x2="119.0" y2="38.1" stroke="#333" stroke-width="1.5"/><text x="115.0" y="194.0" font-size="10" text-anchor="middle" fill="#666">1</text><text x="115.0" y="8.9" font-size="9" text-anchor="middle" fill="#333">0.93</text><rect x="276.0" y="82.7" width="138.0" height="97.3" fill="#d62728" opacity="0.7"/><line x1="345.0" y1="69.3" x2="345.0" y2="96.2" stroke="#333" stroke-width="1.5"/><line x1="341.0" y1="69.3" x2="349.0" y2="69.3" stroke="#333" stroke-width="1.5"/><line x1="341.0" y1="96.2" x2="349.0" y2="96.2" stroke="#333" stroke-width="1.5"/><text x="345.0" y="194.0" font-size="10" text-anchor="middle" fill="#666">2</text><text x="345.0" y="78.7" font-size="9" text-anchor="middle" fill="#333">0.54</text><line x1="0" y1="135.0" x2="460" y2="135.0" stroke="#ddd" stroke-width="0.5"/><text x="-4" y="138.0" font-size="9" text-anchor="end" fill="#999">0.25</text><line x1="0" y1="90.0" x2="460" y2="90.0" stroke="#ddd" stroke-width="0.5"/><text x="-4" y="93.0" font-size="9" text-anchor="end" fill="#999">0.50</text><line x1="0" y1="45.0" x2="460" y2="45.0" stroke="#ddd" stroke-width="0.5"/><text x="-4" y="48.0" font-size="9" text-anchor="end" fill="#999">0.75</text><line x1="0" y1="90.0" x2="460" y2="90.0" stroke="#aaa" stroke-width="1" stroke-dasharray="4,3"/><text x="230.0" y="208" font-size="10" fill="#666" text-anchor="middle"># of 2 predictive questions passed (lower PDR = better)</text></svg></div>
+    <div><svg width="490" height="212" viewBox="-30 -8 520 220" style="font-family: -apple-system, sans-serif;"><rect x="46.0" y="12.9" width="138.0" height="167.1" fill="#d62728" opacity="0.7"/><line x1="115.0" y1="-12.3" x2="115.0" y2="38.1" stroke="#333" stroke-width="1.5"/><line x1="111.0" y1="-12.3" x2="119.0" y2="-12.3" stroke="#333" stroke-width="1.5"/><line x1="111.0" y1="38.1" x2="119.0" y2="38.1" stroke="#333" stroke-width="1.5"/><text x="115.0" y="194.0" font-size="10" text-anchor="middle" fill="#666">1</text><text x="115.0" y="8.9" font-size="9" text-anchor="middle" fill="#333">0.93</text><rect x="276.0" y="83.3" width="138.0" height="96.7" fill="#d62728" opacity="0.7"/><line x1="345.0" y1="69.6" x2="345.0" y2="97.0" stroke="#333" stroke-width="1.5"/><line x1="341.0" y1="69.6" x2="349.0" y2="69.6" stroke="#333" stroke-width="1.5"/><line x1="341.0" y1="97.0" x2="349.0" y2="97.0" stroke="#333" stroke-width="1.5"/><text x="345.0" y="194.0" font-size="10" text-anchor="middle" fill="#666">2</text><text x="345.0" y="79.3" font-size="9" text-anchor="middle" fill="#333">0.54</text><line x1="0" y1="135.0" x2="460" y2="135.0" stroke="#ddd" stroke-width="0.5"/><text x="-4" y="138.0" font-size="9" text-anchor="end" fill="#999">0.25</text><line x1="0" y1="90.0" x2="460" y2="90.0" stroke="#ddd" stroke-width="0.5"/><text x="-4" y="93.0" font-size="9" text-anchor="end" fill="#999">0.50</text><line x1="0" y1="45.0" x2="460" y2="45.0" stroke="#ddd" stroke-width="0.5"/><text x="-4" y="48.0" font-size="9" text-anchor="end" fill="#999">0.75</text><line x1="0" y1="90.0" x2="460" y2="90.0" stroke="#aaa" stroke-width="1" stroke-dasharray="4,3"/><text x="230.0" y="208" font-size="10" fill="#666" text-anchor="middle"># of 2 predictive questions passed (lower PDR = better)</text></svg></div>
     <table class="mini">
       <thead><tr><th>pred passed</th><th>n workers</th><th>PDR</th><th>95% CI</th></tr></thead>
-      <tbody><tr><td class="num">1</td><td class="num">7</td><td class="num"><b>0.93</b></td><td class="num">[0.79, 1.07]</td></tr><tr><td class="num">2</td><td class="num">124</td><td class="num"><b>0.54</b></td><td class="num">[0.47, 0.61]</td></tr></tbody>
+      <tbody><tr><td class="num">1</td><td class="num">7</td><td class="num"><b>0.93</b></td><td class="num">[0.79, 1.07]</td></tr><tr><td class="num">2</td><td class="num">121</td><td class="num"><b>0.54</b></td><td class="num">[0.46, 0.61]</td></tr></tbody>
     </table>
   </div>
   <div class="combo-stats">
-    r_composite (predictive subset) vs PDR: <b class="good">-0.207</b>
-    &middot; r_all_pass_count: -0.132
-    &middot; best single-q r_pdr: -0.207
-    &middot; composite uplift (more negative is better): <b class="bad">+0.000</b>
+    r_composite (predictive subset) vs PDR: <b class="good">-0.209</b>
+    &middot; r_all_pass_count: -0.134
+    &middot; best single-q r_pdr: -0.209
+    &middot; composite uplift (more negative is better): <b class="">+0.000</b>
   </div>
 </details>
 
 <details class="course-combo" open>
-  <summary><b>Rubrics + Unit Tests Screening</b> &mdash; 3 predictive q’s, 400 workers in join</summary>
+  <summary><b>🔎 Task Quality Module: Rubrics, Checks &amp; Trajectories</b> &mdash; 2 predictive q’s, 336 workers in join</summary>
   <div class="combo-flex">
-    <div><svg width="490" height="212" viewBox="-30 -8 520 220" style="font-family: -apple-system, sans-serif;"><rect x="23.0" y="0.0" width="69.0" height="180.0" fill="#d62728" opacity="0.7"/><text x="57.5" y="194.0" font-size="10" text-anchor="middle" fill="#666">0</text><text x="57.5" y="-4.0" font-size="9" text-anchor="middle" fill="#333">1.00</text><rect x="138.0" y="43.3" width="69.0" height="136.7" fill="#d62728" opacity="0.7"/><line x1="172.5" y1="25.3" x2="172.5" y2="61.3" stroke="#333" stroke-width="1.5"/><line x1="168.5" y1="25.3" x2="176.5" y2="25.3" stroke="#333" stroke-width="1.5"/><line x1="168.5" y1="61.3" x2="176.5" y2="61.3" stroke="#333" stroke-width="1.5"/><text x="172.5" y="194.0" font-size="10" text-anchor="middle" fill="#666">1</text><text x="172.5" y="39.3" font-size="9" text-anchor="middle" fill="#333">0.76</text><rect x="253.0" y="55.3" width="69.0" height="124.7" fill="#d62728" opacity="0.7"/><line x1="287.5" y1="47.1" x2="287.5" y2="63.5" stroke="#333" stroke-width="1.5"/><line x1="283.5" y1="47.1" x2="291.5" y2="47.1" stroke="#333" stroke-width="1.5"/><line x1="283.5" y1="63.5" x2="291.5" y2="63.5" stroke="#333" stroke-width="1.5"/><text x="287.5" y="194.0" font-size="10" text-anchor="middle" fill="#666">2</text><text x="287.5" y="51.3" font-size="9" text-anchor="middle" fill="#333">0.69</text><rect x="368.0" y="63.5" width="69.0" height="116.5" fill="#d62728" opacity="0.7"/><line x1="402.5" y1="34.2" x2="402.5" y2="92.9" stroke="#333" stroke-width="1.5"/><line x1="398.5" y1="34.2" x2="406.5" y2="34.2" stroke="#333" stroke-width="1.5"/><line x1="398.5" y1="92.9" x2="406.5" y2="92.9" stroke="#333" stroke-width="1.5"/><text x="402.5" y="194.0" font-size="10" text-anchor="middle" fill="#666">3</text><text x="402.5" y="59.5" font-size="9" text-anchor="middle" fill="#333">0.65</text><line x1="0" y1="135.0" x2="460" y2="135.0" stroke="#ddd" stroke-width="0.5"/><text x="-4" y="138.0" font-size="9" text-anchor="end" fill="#999">0.25</text><line x1="0" y1="90.0" x2="460" y2="90.0" stroke="#ddd" stroke-width="0.5"/><text x="-4" y="93.0" font-size="9" text-anchor="end" fill="#999">0.50</text><line x1="0" y1="45.0" x2="460" y2="45.0" stroke="#ddd" stroke-width="0.5"/><text x="-4" y="48.0" font-size="9" text-anchor="end" fill="#999">0.75</text><line x1="0" y1="90.0" x2="460" y2="90.0" stroke="#aaa" stroke-width="1" stroke-dasharray="4,3"/><text x="230.0" y="208" font-size="10" fill="#666" text-anchor="middle"># of 3 predictive questions passed (lower PDR = better)</text></svg></div>
+    <div><svg width="490" height="212" viewBox="-30 -8 520 220" style="font-family: -apple-system, sans-serif;"><rect x="30.7" y="41.3" width="92.0" height="138.7" fill="#d62728" opacity="0.7"/><line x1="76.7" y1="30.6" x2="76.7" y2="52.0" stroke="#333" stroke-width="1.5"/><line x1="72.7" y1="30.6" x2="80.7" y2="30.6" stroke="#333" stroke-width="1.5"/><line x1="72.7" y1="52.0" x2="80.7" y2="52.0" stroke="#333" stroke-width="1.5"/><text x="76.7" y="194.0" font-size="10" text-anchor="middle" fill="#666">0</text><text x="76.7" y="37.3" font-size="9" text-anchor="middle" fill="#333">0.77</text><rect x="184.0" y="66.3" width="92.0" height="113.7" fill="#d62728" opacity="0.7"/><line x1="230.0" y1="53.7" x2="230.0" y2="79.0" stroke="#333" stroke-width="1.5"/><line x1="226.0" y1="53.7" x2="234.0" y2="53.7" stroke="#333" stroke-width="1.5"/><line x1="226.0" y1="79.0" x2="234.0" y2="79.0" stroke="#333" stroke-width="1.5"/><text x="230.0" y="194.0" font-size="10" text-anchor="middle" fill="#666">1</text><text x="230.0" y="62.3" font-size="9" text-anchor="middle" fill="#333">0.63</text><rect x="337.3" y="82.3" width="92.0" height="97.7" fill="#d62728" opacity="0.7"/><line x1="383.3" y1="58.0" x2="383.3" y2="106.6" stroke="#333" stroke-width="1.5"/><line x1="379.3" y1="58.0" x2="387.3" y2="58.0" stroke="#333" stroke-width="1.5"/><line x1="379.3" y1="106.6" x2="387.3" y2="106.6" stroke="#333" stroke-width="1.5"/><text x="383.3" y="194.0" font-size="10" text-anchor="middle" fill="#666">2</text><text x="383.3" y="78.3" font-size="9" text-anchor="middle" fill="#333">0.54</text><line x1="0" y1="135.0" x2="460" y2="135.0" stroke="#ddd" stroke-width="0.5"/><text x="-4" y="138.0" font-size="9" text-anchor="end" fill="#999">0.25</text><line x1="0" y1="90.0" x2="460" y2="90.0" stroke="#ddd" stroke-width="0.5"/><text x="-4" y="93.0" font-size="9" text-anchor="end" fill="#999">0.50</text><line x1="0" y1="45.0" x2="460" y2="45.0" stroke="#ddd" stroke-width="0.5"/><text x="-4" y="48.0" font-size="9" text-anchor="end" fill="#999">0.75</text><line x1="0" y1="90.0" x2="460" y2="90.0" stroke="#aaa" stroke-width="1" stroke-dasharray="4,3"/><text x="230.0" y="208" font-size="10" fill="#666" text-anchor="middle"># of 2 predictive questions passed (lower PDR = better)</text></svg></div>
     <table class="mini">
       <thead><tr><th>pred passed</th><th>n workers</th><th>PDR</th><th>95% CI</th></tr></thead>
-      <tbody><tr><td class="num">0</td><td class="num">1</td><td class="num"><b>1.00</b></td><td class="num">(n=1)</td></tr><tr><td class="num">1</td><td class="num">52</td><td class="num"><b>0.76</b></td><td class="num">[0.66, 0.86]</td></tr><tr><td class="num">2</td><td class="num">313</td><td class="num"><b>0.69</b></td><td class="num">[0.65, 0.74]</td></tr><tr><td class="num">3</td><td class="num">34</td><td class="num"><b>0.65</b></td><td class="num">[0.48, 0.81]</td></tr></tbody>
+      <tbody><tr><td class="num">0</td><td class="num">141</td><td class="num"><b>0.77</b></td><td class="num">[0.71, 0.83]</td></tr><tr><td class="num">1</td><td class="num">152</td><td class="num"><b>0.63</b></td><td class="num">[0.56, 0.70]</td></tr><tr><td class="num">2</td><td class="num">43</td><td class="num"><b>0.54</b></td><td class="num">[0.41, 0.68]</td></tr></tbody>
     </table>
   </div>
   <div class="combo-stats">
-    r_composite (predictive subset) vs PDR: <b class="good">-0.071</b>
-    &middot; r_all_pass_count: +0.007
-    &middot; best single-q r_pdr: -0.126
-    &middot; composite uplift (more negative is better): <b class="bad">+0.055</b>
+    r_composite (predictive subset) vs PDR: <b class="good">-0.198</b>
+    &middot; r_all_pass_count: -0.150
+    &middot; best single-q r_pdr: -0.176
+    &middot; composite uplift (more negative is better): <b class="good">-0.022</b>
   </div>
 </details>
 
 <details class="course-combo" open>
-  <summary><b>OpenClaw RL Common Errors Screening</b> &mdash; 2 predictive q’s, 320 workers in join</summary>
+  <summary><b>OpenClaw - Screening Course</b> &mdash; 2 predictive q’s, 423 workers in join</summary>
   <div class="combo-flex">
-    <div><svg width="490" height="212" viewBox="-30 -8 520 220" style="font-family: -apple-system, sans-serif;"><rect x="30.7" y="48.5" width="92.0" height="131.5" fill="#d62728" opacity="0.7"/><line x1="76.7" y1="35.8" x2="76.7" y2="61.2" stroke="#333" stroke-width="1.5"/><line x1="72.7" y1="35.8" x2="80.7" y2="35.8" stroke="#333" stroke-width="1.5"/><line x1="72.7" y1="61.2" x2="80.7" y2="61.2" stroke="#333" stroke-width="1.5"/><text x="76.7" y="194.0" font-size="10" text-anchor="middle" fill="#666">0</text><text x="76.7" y="44.5" font-size="9" text-anchor="middle" fill="#333">0.73</text><rect x="184.0" y="57.0" width="92.0" height="123.0" fill="#d62728" opacity="0.7"/><line x1="230.0" y1="44.7" x2="230.0" y2="69.2" stroke="#333" stroke-width="1.5"/><line x1="226.0" y1="44.7" x2="234.0" y2="44.7" stroke="#333" stroke-width="1.5"/><line x1="226.0" y1="69.2" x2="234.0" y2="69.2" stroke="#333" stroke-width="1.5"/><text x="230.0" y="194.0" font-size="10" text-anchor="middle" fill="#666">1</text><text x="230.0" y="53.0" font-size="9" text-anchor="middle" fill="#333">0.68</text><rect x="337.3" y="72.3" width="92.0" height="107.7" fill="#d62728" opacity="0.7"/><line x1="383.3" y1="50.5" x2="383.3" y2="94.0" stroke="#333" stroke-width="1.5"/><line x1="379.3" y1="50.5" x2="387.3" y2="50.5" stroke="#333" stroke-width="1.5"/><line x1="379.3" y1="94.0" x2="387.3" y2="94.0" stroke="#333" stroke-width="1.5"/><text x="383.3" y="194.0" font-size="10" text-anchor="middle" fill="#666">2</text><text x="383.3" y="68.3" font-size="9" text-anchor="middle" fill="#333">0.60</text><line x1="0" y1="135.0" x2="460" y2="135.0" stroke="#ddd" stroke-width="0.5"/><text x="-4" y="138.0" font-size="9" text-anchor="end" fill="#999">0.25</text><line x1="0" y1="90.0" x2="460" y2="90.0" stroke="#ddd" stroke-width="0.5"/><text x="-4" y="93.0" font-size="9" text-anchor="end" fill="#999">0.50</text><line x1="0" y1="45.0" x2="460" y2="45.0" stroke="#ddd" stroke-width="0.5"/><text x="-4" y="48.0" font-size="9" text-anchor="end" fill="#999">0.75</text><line x1="0" y1="90.0" x2="460" y2="90.0" stroke="#aaa" stroke-width="1" stroke-dasharray="4,3"/><text x="230.0" y="208" font-size="10" fill="#666" text-anchor="middle"># of 2 predictive questions passed (lower PDR = better)</text></svg></div>
+    <div><svg width="490" height="212" viewBox="-30 -8 520 220" style="font-family: -apple-system, sans-serif;"><rect x="30.7" y="30.7" width="92.0" height="149.3" fill="#d62728" opacity="0.7"/><line x1="76.7" y1="11.6" x2="76.7" y2="49.8" stroke="#333" stroke-width="1.5"/><line x1="72.7" y1="11.6" x2="80.7" y2="11.6" stroke="#333" stroke-width="1.5"/><line x1="72.7" y1="49.8" x2="80.7" y2="49.8" stroke="#333" stroke-width="1.5"/><text x="76.7" y="194.0" font-size="10" text-anchor="middle" fill="#666">0</text><text x="76.7" y="26.7" font-size="9" text-anchor="middle" fill="#333">0.83</text><rect x="184.0" y="57.9" width="92.0" height="122.1" fill="#d62728" opacity="0.7"/><line x1="230.0" y1="46.8" x2="230.0" y2="69.0" stroke="#333" stroke-width="1.5"/><line x1="226.0" y1="46.8" x2="234.0" y2="46.8" stroke="#333" stroke-width="1.5"/><line x1="226.0" y1="69.0" x2="234.0" y2="69.0" stroke="#333" stroke-width="1.5"/><text x="230.0" y="194.0" font-size="10" text-anchor="middle" fill="#666">1</text><text x="230.0" y="53.9" font-size="9" text-anchor="middle" fill="#333">0.68</text><rect x="337.3" y="53.4" width="92.0" height="126.6" fill="#d62728" opacity="0.7"/><line x1="383.3" y1="43.2" x2="383.3" y2="63.6" stroke="#333" stroke-width="1.5"/><line x1="379.3" y1="43.2" x2="387.3" y2="43.2" stroke="#333" stroke-width="1.5"/><line x1="379.3" y1="63.6" x2="387.3" y2="63.6" stroke="#333" stroke-width="1.5"/><text x="383.3" y="194.0" font-size="10" text-anchor="middle" fill="#666">2</text><text x="383.3" y="49.4" font-size="9" text-anchor="middle" fill="#333">0.70</text><line x1="0" y1="135.0" x2="460" y2="135.0" stroke="#ddd" stroke-width="0.5"/><text x="-4" y="138.0" font-size="9" text-anchor="end" fill="#999">0.25</text><line x1="0" y1="90.0" x2="460" y2="90.0" stroke="#ddd" stroke-width="0.5"/><text x="-4" y="93.0" font-size="9" text-anchor="end" fill="#999">0.50</text><line x1="0" y1="45.0" x2="460" y2="45.0" stroke="#ddd" stroke-width="0.5"/><text x="-4" y="48.0" font-size="9" text-anchor="end" fill="#999">0.75</text><line x1="0" y1="90.0" x2="460" y2="90.0" stroke="#aaa" stroke-width="1" stroke-dasharray="4,3"/><text x="230.0" y="208" font-size="10" fill="#666" text-anchor="middle"># of 2 predictive questions passed (lower PDR = better)</text></svg></div>
     <table class="mini">
       <thead><tr><th>pred passed</th><th>n workers</th><th>PDR</th><th>95% CI</th></tr></thead>
-      <tbody><tr><td class="num">0</td><td class="num">133</td><td class="num"><b>0.73</b></td><td class="num">[0.66, 0.80]</td></tr><tr><td class="num">1</td><td class="num">138</td><td class="num"><b>0.68</b></td><td class="num">[0.62, 0.75]</td></tr><tr><td class="num">2</td><td class="num">49</td><td class="num"><b>0.60</b></td><td class="num">[0.48, 0.72]</td></tr></tbody>
+      <tbody><tr><td class="num">0</td><td class="num">41</td><td class="num"><b>0.83</b></td><td class="num">[0.72, 0.94]</td></tr><tr><td class="num">1</td><td class="num">186</td><td class="num"><b>0.68</b></td><td class="num">[0.62, 0.74]</td></tr><tr><td class="num">2</td><td class="num">196</td><td class="num"><b>0.70</b></td><td class="num">[0.65, 0.76]</td></tr></tbody>
     </table>
   </div>
   <div class="combo-stats">
-    r_composite (predictive subset) vs PDR: <b class="good">-0.105</b>
-    &middot; r_all_pass_count: -0.080
-    &middot; best single-q r_pdr: -0.117
-    &middot; composite uplift (more negative is better): <b class="bad">+0.013</b>
+    r_composite (predictive subset) vs PDR: <b class="good">-0.047</b>
+    &middot; r_all_pass_count: +0.064
+    &middot; best single-q r_pdr: -0.112
+    &middot; composite uplift (more negative is better): <b class="bad">+0.065</b>
   </div>
 </details>
 
 <details class="course-combo" open>
-  <summary><b>OpenClaw - Screening Course</b> &mdash; 3 predictive q’s, 426 workers in join</summary>
+  <summary><b>Rubrics + Unit Tests Screening</b> &mdash; 2 predictive q’s, 398 workers in join</summary>
   <div class="combo-flex">
-    <div><svg width="490" height="212" viewBox="-30 -8 520 220" style="font-family: -apple-system, sans-serif;"><rect x="23.0" y="0.0" width="69.0" height="180.0" fill="#d62728" opacity="0.7"/><text x="57.5" y="194.0" font-size="10" text-anchor="middle" fill="#666">0</text><text x="57.5" y="-4.0" font-size="9" text-anchor="middle" fill="#333">1.00</text><rect x="138.0" y="31.8" width="69.0" height="148.2" fill="#d62728" opacity="0.7"/><line x1="172.5" y1="14.6" x2="172.5" y2="49.0" stroke="#333" stroke-width="1.5"/><line x1="168.5" y1="14.6" x2="176.5" y2="14.6" stroke="#333" stroke-width="1.5"/><line x1="168.5" y1="49.0" x2="176.5" y2="49.0" stroke="#333" stroke-width="1.5"/><text x="172.5" y="194.0" font-size="10" text-anchor="middle" fill="#666">1</text><text x="172.5" y="27.8" font-size="9" text-anchor="middle" fill="#333">0.82</text><rect x="253.0" y="58.9" width="69.0" height="121.1" fill="#d62728" opacity="0.7"/><line x1="287.5" y1="47.6" x2="287.5" y2="70.1" stroke="#333" stroke-width="1.5"/><line x1="283.5" y1="47.6" x2="291.5" y2="47.6" stroke="#333" stroke-width="1.5"/><line x1="283.5" y1="70.1" x2="291.5" y2="70.1" stroke="#333" stroke-width="1.5"/><text x="287.5" y="194.0" font-size="10" text-anchor="middle" fill="#666">2</text><text x="287.5" y="54.9" font-size="9" text-anchor="middle" fill="#333">0.67</text><rect x="368.0" y="54.2" width="69.0" height="125.8" fill="#d62728" opacity="0.7"/><line x1="402.5" y1="43.8" x2="402.5" y2="64.5" stroke="#333" stroke-width="1.5"/><line x1="398.5" y1="43.8" x2="406.5" y2="43.8" stroke="#333" stroke-width="1.5"/><line x1="398.5" y1="64.5" x2="406.5" y2="64.5" stroke="#333" stroke-width="1.5"/><text x="402.5" y="194.0" font-size="10" text-anchor="middle" fill="#666">3</text><text x="402.5" y="50.2" font-size="9" text-anchor="middle" fill="#333">0.70</text><line x1="0" y1="135.0" x2="460" y2="135.0" stroke="#ddd" stroke-width="0.5"/><text x="-4" y="138.0" font-size="9" text-anchor="end" fill="#999">0.25</text><line x1="0" y1="90.0" x2="460" y2="90.0" stroke="#ddd" stroke-width="0.5"/><text x="-4" y="93.0" font-size="9" text-anchor="end" fill="#999">0.50</text><line x1="0" y1="45.0" x2="460" y2="45.0" stroke="#ddd" stroke-width="0.5"/><text x="-4" y="48.0" font-size="9" text-anchor="end" fill="#999">0.75</text><line x1="0" y1="90.0" x2="460" y2="90.0" stroke="#aaa" stroke-width="1" stroke-dasharray="4,3"/><text x="230.0" y="208" font-size="10" fill="#666" text-anchor="middle"># of 3 predictive questions passed (lower PDR = better)</text></svg></div>
+    <div><svg width="490" height="212" viewBox="-30 -8 520 220" style="font-family: -apple-system, sans-serif;"><rect x="30.7" y="22.5" width="92.0" height="157.5" fill="#d62728" opacity="0.7"/><line x1="76.7" y1="-21.6" x2="76.7" y2="66.6" stroke="#333" stroke-width="1.5"/><line x1="72.7" y1="-21.6" x2="80.7" y2="-21.6" stroke="#333" stroke-width="1.5"/><line x1="72.7" y1="66.6" x2="80.7" y2="66.6" stroke="#333" stroke-width="1.5"/><text x="76.7" y="194.0" font-size="10" text-anchor="middle" fill="#666">0</text><text x="76.7" y="18.5" font-size="9" text-anchor="middle" fill="#333">0.88</text><rect x="184.0" y="54.1" width="92.0" height="125.9" fill="#d62728" opacity="0.7"/><line x1="230.0" y1="46.5" x2="230.0" y2="61.8" stroke="#333" stroke-width="1.5"/><line x1="226.0" y1="46.5" x2="234.0" y2="46.5" stroke="#333" stroke-width="1.5"/><line x1="226.0" y1="61.8" x2="234.0" y2="61.8" stroke="#333" stroke-width="1.5"/><text x="230.0" y="194.0" font-size="10" text-anchor="middle" fill="#666">1</text><text x="230.0" y="50.1" font-size="9" text-anchor="middle" fill="#333">0.70</text><rect x="337.3" y="58.4" width="92.0" height="121.6" fill="#d62728" opacity="0.7"/><line x1="383.3" y1="30.9" x2="383.3" y2="85.9" stroke="#333" stroke-width="1.5"/><line x1="379.3" y1="30.9" x2="387.3" y2="30.9" stroke="#333" stroke-width="1.5"/><line x1="379.3" y1="85.9" x2="387.3" y2="85.9" stroke="#333" stroke-width="1.5"/><text x="383.3" y="194.0" font-size="10" text-anchor="middle" fill="#666">2</text><text x="383.3" y="54.4" font-size="9" text-anchor="middle" fill="#333">0.68</text><line x1="0" y1="135.0" x2="460" y2="135.0" stroke="#ddd" stroke-width="0.5"/><text x="-4" y="138.0" font-size="9" text-anchor="end" fill="#999">0.25</text><line x1="0" y1="90.0" x2="460" y2="90.0" stroke="#ddd" stroke-width="0.5"/><text x="-4" y="93.0" font-size="9" text-anchor="end" fill="#999">0.50</text><line x1="0" y1="45.0" x2="460" y2="45.0" stroke="#ddd" stroke-width="0.5"/><text x="-4" y="48.0" font-size="9" text-anchor="end" fill="#999">0.75</text><line x1="0" y1="90.0" x2="460" y2="90.0" stroke="#aaa" stroke-width="1" stroke-dasharray="4,3"/><text x="230.0" y="208" font-size="10" fill="#666" text-anchor="middle"># of 2 predictive questions passed (lower PDR = better)</text></svg></div>
     <table class="mini">
       <thead><tr><th>pred passed</th><th>n workers</th><th>PDR</th><th>95% CI</th></tr></thead>
-      <tbody><tr><td class="num">0</td><td class="num">1</td><td class="num"><b>1.00</b></td><td class="num">(n=1)</td></tr><tr><td class="num">1</td><td class="num">50</td><td class="num"><b>0.82</b></td><td class="num">[0.73, 0.92]</td></tr><tr><td class="num">2</td><td class="num">185</td><td class="num"><b>0.67</b></td><td class="num">[0.61, 0.74]</td></tr><tr><td class="num">3</td><td class="num">190</td><td class="num"><b>0.70</b></td><td class="num">[0.64, 0.76]</td></tr></tbody>
+      <tbody><tr><td class="num">0</td><td class="num">8</td><td class="num"><b>0.88</b></td><td class="num">[0.63, 1.12]</td></tr><tr><td class="num">1</td><td class="num">353</td><td class="num"><b>0.70</b></td><td class="num">[0.66, 0.74]</td></tr><tr><td class="num">2</td><td class="num">37</td><td class="num"><b>0.68</b></td><td class="num">[0.52, 0.83]</td></tr></tbody>
     </table>
   </div>
   <div class="combo-stats">
-    r_composite (predictive subset) vs PDR: <b class="good">-0.061</b>
-    &middot; r_all_pass_count: +0.061
-    &middot; best single-q r_pdr: -0.110
-    &middot; composite uplift (more negative is better): <b class="bad">+0.049</b>
+    r_composite (predictive subset) vs PDR: <b class="good">-0.043</b>
+    &middot; r_all_pass_count: +0.010
+    &middot; best single-q r_pdr: -0.112
+    &middot; composite uplift (more negative is better): <b class="bad">+0.069</b>
+  </div>
+</details>
+
+<details class="course-combo" open>
+  <summary><b>OpenClaw RL Common Errors Screening</b> &mdash; 1 predictive q’s, 281 workers in join</summary>
+  <div class="combo-flex">
+    <div><svg width="490" height="212" viewBox="-30 -8 520 220" style="font-family: -apple-system, sans-serif;"><rect x="46.0" y="0.0" width="138.0" height="180.0" fill="#d62728" opacity="0.7"/><line x1="115.0" y1="0.0" x2="115.0" y2="0.0" stroke="#333" stroke-width="1.5"/><line x1="111.0" y1="0.0" x2="119.0" y2="0.0" stroke="#333" stroke-width="1.5"/><line x1="111.0" y1="0.0" x2="119.0" y2="0.0" stroke="#333" stroke-width="1.5"/><text x="115.0" y="194.0" font-size="10" text-anchor="middle" fill="#666">0</text><text x="115.0" y="-4.0" font-size="9" text-anchor="middle" fill="#333">1.00</text><rect x="276.0" y="59.1" width="138.0" height="120.9" fill="#d62728" opacity="0.7"/><line x1="345.0" y1="50.1" x2="345.0" y2="68.2" stroke="#333" stroke-width="1.5"/><line x1="341.0" y1="50.1" x2="349.0" y2="50.1" stroke="#333" stroke-width="1.5"/><line x1="341.0" y1="68.2" x2="349.0" y2="68.2" stroke="#333" stroke-width="1.5"/><text x="345.0" y="194.0" font-size="10" text-anchor="middle" fill="#666">1</text><text x="345.0" y="55.1" font-size="9" text-anchor="middle" fill="#333">0.67</text><line x1="0" y1="135.0" x2="460" y2="135.0" stroke="#ddd" stroke-width="0.5"/><text x="-4" y="138.0" font-size="9" text-anchor="end" fill="#999">0.25</text><line x1="0" y1="90.0" x2="460" y2="90.0" stroke="#ddd" stroke-width="0.5"/><text x="-4" y="93.0" font-size="9" text-anchor="end" fill="#999">0.50</text><line x1="0" y1="45.0" x2="460" y2="45.0" stroke="#ddd" stroke-width="0.5"/><text x="-4" y="48.0" font-size="9" text-anchor="end" fill="#999">0.75</text><line x1="0" y1="90.0" x2="460" y2="90.0" stroke="#aaa" stroke-width="1" stroke-dasharray="4,3"/><text x="230.0" y="208" font-size="10" fill="#666" text-anchor="middle"># of 1 predictive questions passed (lower PDR = better)</text></svg></div>
+    <table class="mini">
+      <thead><tr><th>pred passed</th><th>n workers</th><th>PDR</th><th>95% CI</th></tr></thead>
+      <tbody><tr><td class="num">0</td><td class="num">2</td><td class="num"><b>1.00</b></td><td class="num">[1.00, 1.00]</td></tr><tr><td class="num">1</td><td class="num">279</td><td class="num"><b>0.67</b></td><td class="num">[0.62, 0.72]</td></tr></tbody>
+    </table>
+  </div>
+  <div class="combo-stats">
+    r_composite (predictive subset) vs PDR: <b class="good">-0.065</b>
+    &middot; r_all_pass_count: -0.056
+    &middot; best single-q r_pdr: -0.065
+    &middot; composite uplift (more negative is better): <b class="">+0.000</b>
+  </div>
+</details>
+
+<details class="course-combo" open>
+  <summary><b>Almost Right: The Science of LLM Errors</b> &mdash; 1 predictive q’s, 453 workers in join</summary>
+  <div class="combo-flex">
+    <div><svg width="490" height="212" viewBox="-30 -8 520 220" style="font-family: -apple-system, sans-serif;"><rect x="46.0" y="0.0" width="138.0" height="180.0" fill="#d62728" opacity="0.7"/><line x1="115.0" y1="0.0" x2="115.0" y2="0.0" stroke="#333" stroke-width="1.5"/><line x1="111.0" y1="0.0" x2="119.0" y2="0.0" stroke="#333" stroke-width="1.5"/><line x1="111.0" y1="0.0" x2="119.0" y2="0.0" stroke="#333" stroke-width="1.5"/><text x="115.0" y="194.0" font-size="10" text-anchor="middle" fill="#666">0</text><text x="115.0" y="-4.0" font-size="9" text-anchor="middle" fill="#333">1.00</text><rect x="276.0" y="50.5" width="138.0" height="129.5" fill="#d62728" opacity="0.7"/><line x1="345.0" y1="43.7" x2="345.0" y2="57.2" stroke="#333" stroke-width="1.5"/><line x1="341.0" y1="43.7" x2="349.0" y2="43.7" stroke="#333" stroke-width="1.5"/><line x1="341.0" y1="57.2" x2="349.0" y2="57.2" stroke="#333" stroke-width="1.5"/><text x="345.0" y="194.0" font-size="10" text-anchor="middle" fill="#666">1</text><text x="345.0" y="46.5" font-size="9" text-anchor="middle" fill="#333">0.72</text><line x1="0" y1="135.0" x2="460" y2="135.0" stroke="#ddd" stroke-width="0.5"/><text x="-4" y="138.0" font-size="9" text-anchor="end" fill="#999">0.25</text><line x1="0" y1="90.0" x2="460" y2="90.0" stroke="#ddd" stroke-width="0.5"/><text x="-4" y="93.0" font-size="9" text-anchor="end" fill="#999">0.50</text><line x1="0" y1="45.0" x2="460" y2="45.0" stroke="#ddd" stroke-width="0.5"/><text x="-4" y="48.0" font-size="9" text-anchor="end" fill="#999">0.75</text><line x1="0" y1="90.0" x2="460" y2="90.0" stroke="#aaa" stroke-width="1" stroke-dasharray="4,3"/><text x="230.0" y="208" font-size="10" fill="#666" text-anchor="middle"># of 1 predictive questions passed (lower PDR = better)</text></svg></div>
+    <table class="mini">
+      <thead><tr><th>pred passed</th><th>n workers</th><th>PDR</th><th>95% CI</th></tr></thead>
+      <tbody><tr><td class="num">0</td><td class="num">3</td><td class="num"><b>1.00</b></td><td class="num">[1.00, 1.00]</td></tr><tr><td class="num">1</td><td class="num">450</td><td class="num"><b>0.72</b></td><td class="num">[0.68, 0.76]</td></tr></tbody>
+    </table>
+  </div>
+  <div class="combo-stats">
+    r_composite (predictive subset) vs PDR: <b class="good">-0.056</b>
+    &middot; r_all_pass_count: -0.056
+    &middot; best single-q r_pdr: -0.056
+    &middot; composite uplift (more negative is better): <b class="">+0.000</b>
   </div>
 </details>
 
@@ -437,132 +450,28 @@ For the  test below, explain **specifically** whether it is valid or flawed. If 
   
 <details class="course-combo" open>
   <summary><b>OpenClaw - Screening Course</b></summary>
-  <div class="subset-block"><h4 style="color:#2ca02c">Predictive (carriers have LOWER defect rate) subset (2 question(s); n_carriers=326; Δ PDR=-0.116)</h4><div class="subset-flex"><div class="subset-bars"><svg width="244" height="174" viewBox="-22 -6 256 184" style="font-family: -apple-system, sans-serif;"><rect x="25.0" y="48.6" width="60" height="101.4" fill="#2ca02c" opacity="0.7"/><text x="55.0" y="164.0" font-size="10" text-anchor="middle" fill="#666">with</text><text x="55.0" y="44.6" font-size="10" text-anchor="middle" fill="#333">0.68</text><rect x="135.0" y="31.2" width="60" height="118.8" fill="#999" opacity="0.7"/><text x="165.0" y="164.0" font-size="10" text-anchor="middle" fill="#666">without</text><text x="165.0" y="27.2" font-size="10" text-anchor="middle" fill="#333">0.79</text><line x1="0" y1="112.5" x2="220" y2="112.5" stroke="#ddd" stroke-width="0.5"/><text x="-4" y="115.5" font-size="9" text-anchor="end" fill="#999">0.25</text><line x1="0" y1="75.0" x2="220" y2="75.0" stroke="#ddd" stroke-width="0.5"/><text x="-4" y="78.0" font-size="9" text-anchor="end" fill="#999">0.50</text><line x1="0" y1="37.5" x2="220" y2="37.5" stroke="#ddd" stroke-width="0.5"/><text x="-4" y="40.5" font-size="9" text-anchor="end" fill="#999">0.75</text></svg><div class="meta">Pass these questions → PDR = <b>0.68</b>; don’t pass → <b>0.79</b></div></div><ul class="q-list"><li class="q-item"><div class="q-head"><code>99591dc0</code> <span class="meta">(multiple_choice)</span></div><div class="q-text">A contributor is mid-task and needs to reset the OpenClaw environment. They see two options under the Reset button and are unsure which to use. Their goal for one scenario is to fix a token session error without losing the conversation context. For a second scenario, they want to completely start over as if the task had never been run. Which of the following statements correctly describe the behavior of each option?(Select ALL that apply)</div><div class="q-correct"><b>Correct:</b><ul><li>&quot;Restart Session&quot; refreshes the token session but preserves the previous request and response — useful for recovering from session errors without losing context.</li><li>&quot;Start Fresh&quot; removes all data from the last session entirely, giving the contributor a clean slate.</li></ul></div><div class="q-wrong"><b>Wrong:</b><ul><li>&quot;Restart Session&quot; wipes all conversation data and starts a completely clean environment, equivalent to opening the task for the first time.</li><li>Both options produce the same result — the difference is only in how long the reset takes.</li><li>&quot;Start Fresh&quot; only clears the most recent message while keeping the rest of the conversation history intact.</li></ul></div></li><li class="q-item"><div class="q-head"><code>ecdecee0</code> <span class="meta">(multiple_choice)</span></div><div class="q-text">**After you have finished the trajectory and collected the traces, what should you do to properly close the OpenClaw session?** (*Select ONE answer.)*</div><div class="q-correct"><b>Correct:</b><ul><li>Simply close the browser tab. Do not use &quot;Force End Session&quot; when the trajectory is complete.</li></ul></div><div class="q-wrong"><b>Wrong:</b><ul><li>Click &quot;Force End Session&quot; to make sure the session closes and saves correctly.</li><li>Click &quot;Reset &gt; Start Fresh&quot; to end the session and save your work.</li><li>Click &quot;Collect Traces &amp; Continue&quot; to keep working in the same OpenClaw session.</li></ul></div></li></ul></div></div>
-  <div class="subset-block"><h4 style="color:#d62728">Counterproductive (carriers have HIGHER defect rate) subset (5 question(s); n_carriers=16; Δ PDR=+0.179)</h4><div class="subset-flex"><div class="subset-bars"><svg width="244" height="174" viewBox="-22 -6 256 184" style="font-family: -apple-system, sans-serif;"><rect x="25.0" y="18.8" width="60" height="131.2" fill="#d62728" opacity="0.7"/><text x="55.0" y="164.0" font-size="10" text-anchor="middle" fill="#666">with</text><text x="55.0" y="14.8" font-size="10" text-anchor="middle" fill="#333">0.88</text><rect x="135.0" y="45.6" width="60" height="104.4" fill="#999" opacity="0.7"/><text x="165.0" y="164.0" font-size="10" text-anchor="middle" fill="#666">without</text><text x="165.0" y="41.6" font-size="10" text-anchor="middle" fill="#333">0.70</text><line x1="0" y1="112.5" x2="220" y2="112.5" stroke="#ddd" stroke-width="0.5"/><text x="-4" y="115.5" font-size="9" text-anchor="end" fill="#999">0.25</text><line x1="0" y1="75.0" x2="220" y2="75.0" stroke="#ddd" stroke-width="0.5"/><text x="-4" y="78.0" font-size="9" text-anchor="end" fill="#999">0.50</text><line x1="0" y1="37.5" x2="220" y2="37.5" stroke="#ddd" stroke-width="0.5"/><text x="-4" y="40.5" font-size="9" text-anchor="end" fill="#999">0.75</text></svg><div class="meta">Pass these questions → PDR = <b>0.88</b>; don’t pass → <b>0.70</b></div></div><ul class="q-list"><li class="q-item"><div class="q-head"><code>176e1137</code> <span class="meta">(multiple_choice)</span></div><div class="q-text">**Regarding the Silver Trajectory process, which of the following statements are NOT TRUE**?</div><div class="q-correct"><b>Correct:</b><ul><li>If the model never reaches the correct answer, you must discard the task entirely and start over.</li></ul></div><div class="q-wrong"><b>Wrong:</b><ul><li>You must select the model that produced a result most similar to the desired Outcome.</li><li>The silver trajectory will be cloned and the conversation will continue from the last response given by the model.</li><li>If the selected model has already reached the desired outcome, no further iteration is needed.</li></ul></div></li><li class="q-item"><div class="q-head"><code>30e8972f</code> <span class="meta">(multiple_choice)</span></div><div class="q-text">(question text not in Q-G2 SECTIONS export)</div><div class="q-sample"><b>Sample worker answer:</b> [&quot;3de4aa84-c067-4346-94f5-cf8eeecc5c74&quot;]…</div></li><li class="q-item"><div class="q-head"><code>4c90c7d8</code> <span class="meta">(multiple_choice)</span></div><div class="q-text">A contributor links the following five items as their source of inspiration. Which ones are invalid and must be rejected?
-
-*Scenario:*
-
-* A. A Reddit post where a user describes using an AI agent to manage their Airbnb calendar.
-* B. The OpenClaw universe viewer page for the assigned persona (e.g., [/](http://rcscale.github.io/persona-007/)).
-* C. A private ChatGPT conversation the contributor had while brainstorming the task.
-* D. A link to a Twitter/X profile homepage (not a specific post).
-* E. A Medium article written by an external author describing a real AI productivity workflow.\
-  (**Select all that apply)**</div><div class="q-correct"><b>Correct:</b><ul><li>B</li><li>C</li><li>D</li></ul></div><div class="q-wrong"><b>Wrong:</b><ul><li>A</li><li>E</li></ul></div></li><li class="q-item"><div class="q-head"><code>9e20a1b9</code> <span class="meta">(text_response)</span></div><div class="q-text">(question text not in Q-G2 SECTIONS export)</div><div class="q-sample"><b>Sample worker answer:</b> Bad criteria: 3, 4, 5, 6, 7, 8, 9, 10, 11, 17, 33, 34, 35, 24, 25, 26
-
-Why:
-3–11: Hardcoded student names, emails, and scores not mentioned in the prompt. Agent cannot guess these.
-17: Forces a specific email subject line never requested by the user.…</div><div class="q-grader"><b>Grader hint:</b> The response does say some rubric items add unsupported requirements, but it does not cover the main over-specificity pattern described in the grading instructions. It focuses on hardcoded names, emails, subject lines, and privacy/file issues rather …</div></li><li class="q-item"><div class="q-head"><code>fa5ba3ec</code> <span class="meta">(multiple_choice)</span></div><div class="q-text">**When annotating a safety failure in a trajectory, which of the following elements must be included as part of the annotation?** (Select ALL that apply)</div><div class="q-correct"><b>Correct:</b><ul><li>The failure category, selected from F1–F8, along with the appropriate subtype.</li><li>The specific assistant step (turn) where the failure occurred.</li><li>A concise failure description consisting of 1–2 sentences explaining what went wrong.</li><li>The action tier (T0–T3) assigned to the failure.</li></ul></div><div class="q-wrong"><b>Wrong:</b><ul><li>A restatement of the user’s original prompt without additional context.</li></ul></div></li></ul></div></div>
+  <div class="subset-block"><h4 style="color:#2ca02c">Predictive (carriers have LOWER defect rate) subset (2 question(s); n_carriers=324; Δ PDR=-0.118)</h4><div class="subset-flex"><div class="subset-bars"><svg width="244" height="174" viewBox="-22 -6 256 184" style="font-family: -apple-system, sans-serif;"><rect x="25.0" y="48.4" width="60" height="101.6" fill="#2ca02c" opacity="0.7"/><text x="55.0" y="164.0" font-size="10" text-anchor="middle" fill="#666">with</text><text x="55.0" y="44.4" font-size="10" text-anchor="middle" fill="#333">0.68</text><rect x="135.0" y="30.8" width="60" height="119.2" fill="#999" opacity="0.7"/><text x="165.0" y="164.0" font-size="10" text-anchor="middle" fill="#666">without</text><text x="165.0" y="26.8" font-size="10" text-anchor="middle" fill="#333">0.79</text><line x1="0" y1="112.5" x2="220" y2="112.5" stroke="#ddd" stroke-width="0.5"/><text x="-4" y="115.5" font-size="9" text-anchor="end" fill="#999">0.25</text><line x1="0" y1="75.0" x2="220" y2="75.0" stroke="#ddd" stroke-width="0.5"/><text x="-4" y="78.0" font-size="9" text-anchor="end" fill="#999">0.50</text><line x1="0" y1="37.5" x2="220" y2="37.5" stroke="#ddd" stroke-width="0.5"/><text x="-4" y="40.5" font-size="9" text-anchor="end" fill="#999">0.75</text></svg><div class="meta">Pass these questions → PDR = <b>0.68</b>; don’t pass → <b>0.79</b></div></div><ul class="q-list"><li><code>99591dc0-4ad3-4cec-a6f6-676ad52c64d9</code> <span class="meta">(no body found)</span></li><li><code>ecdecee0-1809-468f-aa7e-0aba91bc1094</code> <span class="meta">(no body found)</span></li></ul></div></div>
+  <div class="subset-block"><h4 style="color:#d62728">Counterproductive (carriers have HIGHER defect rate) subset (5 question(s); n_carriers=16; Δ PDR=+0.177)</h4><div class="subset-flex"><div class="subset-bars"><svg width="244" height="174" viewBox="-22 -6 256 184" style="font-family: -apple-system, sans-serif;"><rect x="25.0" y="18.8" width="60" height="131.2" fill="#d62728" opacity="0.7"/><text x="55.0" y="164.0" font-size="10" text-anchor="middle" fill="#666">with</text><text x="55.0" y="14.8" font-size="10" text-anchor="middle" fill="#333">0.88</text><rect x="135.0" y="45.3" width="60" height="104.7" fill="#999" opacity="0.7"/><text x="165.0" y="164.0" font-size="10" text-anchor="middle" fill="#666">without</text><text x="165.0" y="41.3" font-size="10" text-anchor="middle" fill="#333">0.70</text><line x1="0" y1="112.5" x2="220" y2="112.5" stroke="#ddd" stroke-width="0.5"/><text x="-4" y="115.5" font-size="9" text-anchor="end" fill="#999">0.25</text><line x1="0" y1="75.0" x2="220" y2="75.0" stroke="#ddd" stroke-width="0.5"/><text x="-4" y="78.0" font-size="9" text-anchor="end" fill="#999">0.50</text><line x1="0" y1="37.5" x2="220" y2="37.5" stroke="#ddd" stroke-width="0.5"/><text x="-4" y="40.5" font-size="9" text-anchor="end" fill="#999">0.75</text></svg><div class="meta">Pass these questions → PDR = <b>0.88</b>; don’t pass → <b>0.70</b></div></div><ul class="q-list"><li><code>176e1137-4e48-4edb-88c2-66fdb51c6231</code> <span class="meta">(no body found)</span></li><li><code>30e8972f-907e-48c7-8661-2a3cec9aa66f</code> <span class="meta">(no body found)</span></li><li><code>4c90c7d8-1ae8-41ca-99b1-7632d9ed3763</code> <span class="meta">(no body found)</span></li><li><code>9e20a1b9-5e4b-4569-850a-ef311cb0b068</code> <span class="meta">(no body found)</span></li><li><code>fa5ba3ec-a384-4bd3-9e9e-ffc1a9c91e37</code> <span class="meta">(no body found)</span></li></ul></div></div>
 </details>
 <details class="course-combo" open>
   <summary><b>OpenClaw Atlas Reviewers </b></summary>
-  <div class="subset-block"><h4 style="color:#2ca02c">Predictive (carriers have LOWER defect rate) subset (3 question(s); n_carriers=120; Δ PDR=-0.231)</h4><div class="subset-flex"><div class="subset-bars"><svg width="244" height="174" viewBox="-22 -6 256 184" style="font-family: -apple-system, sans-serif;"><rect x="25.0" y="68.7" width="60" height="81.3" fill="#2ca02c" opacity="0.7"/><text x="55.0" y="164.0" font-size="10" text-anchor="middle" fill="#666">with</text><text x="55.0" y="64.7" font-size="10" text-anchor="middle" fill="#333">0.54</text><rect x="135.0" y="34.1" width="60" height="115.9" fill="#999" opacity="0.7"/><text x="165.0" y="164.0" font-size="10" text-anchor="middle" fill="#666">without</text><text x="165.0" y="30.1" font-size="10" text-anchor="middle" fill="#333">0.77</text><line x1="0" y1="112.5" x2="220" y2="112.5" stroke="#ddd" stroke-width="0.5"/><text x="-4" y="115.5" font-size="9" text-anchor="end" fill="#999">0.25</text><line x1="0" y1="75.0" x2="220" y2="75.0" stroke="#ddd" stroke-width="0.5"/><text x="-4" y="78.0" font-size="9" text-anchor="end" fill="#999">0.50</text><line x1="0" y1="37.5" x2="220" y2="37.5" stroke="#ddd" stroke-width="0.5"/><text x="-4" y="40.5" font-size="9" text-anchor="end" fill="#999">0.75</text></svg><div class="meta">Pass these questions → PDR = <b>0.54</b>; don’t pass → <b>0.77</b></div></div><ul class="q-list"><li class="q-item"><div class="q-head"><code>181f47fc</code> <span class="meta">(multiple_choice)</span></div><div class="q-text">A rubric has the following weights assigned to its criteria: +5, +3, +3, +1, +1. Everything else about the task is solid. What should the reviewer flag?</div><div class="q-correct"><b>Correct:</b><ul><li>Fail — there is no negative-weight criterion</li></ul></div><div class="q-wrong"><b>Wrong:</b><ul><li>Fail — duplicate weights are not allowed</li><li>Not-fail — weight diversity only requires at least three distinct values</li><li>Not-fail — negative weights are optional as long as the total is positive</li><li>Fail — the rubric must contain at least one criterion weighted -5</li></ul></div></li><li class="q-item"><div class="q-head"><code>2658a3aa</code> <span class="meta">(multiple_choice)</span></div><div class="q-text">A task scores a 5 on desired outcome, a 5 on sources, a 3 on rubric quality, and a 5 on depth/friction. What is the correct overall score?</div><div class="q-correct"><b>Correct:</b><ul><li>3 — the task follows the weakest dimension</li></ul></div><div class="q-wrong"><b>Wrong:</b><ul><li>5 — the majority of dimensions are perfect</li><li>4 — the average rounds up and only one dimension is weak</li><li>2 — any dimension below 4 means the task fails</li><li>It depends on the reviewer&#x27;s subjective judgment of severity</li></ul></div></li><li class="q-item"><div class="q-head"><code>e92effaf</code> <span class="meta">(multiple_choice)</span></div><div class="q-text">A task&#x27;s prompt is well-written and clearly steers the model toward the desired outcome. However, Model A successfully completes 70% of the final rubric score. The attempter claims Model A should fail. According to the course, which of the following is true?</div><div class="q-correct"><b>Correct:</b><ul><li>This is a fail — Model A must fail at least 50% of the final rubric score, meaning it should earn no more than 50% of the total weight sum</li></ul></div><div class="q-wrong"><b>Wrong:</b><ul><li>This is acceptable — the 50% rule only applies to Model B</li><li>This is not-fail — the reviewer can adjust rubric weights to force Model A below 50%</li><li>This is acceptable — as long as Model A doesn&#x27;t get a perfect score, the task is valid</li><li>This is a fail — &quot;tricking&quot; the model is the only valid way to ensure the 50% failure</li></ul></div></li></ul></div></div>
+  <div class="subset-block"><h4 style="color:#2ca02c">Predictive (carriers have LOWER defect rate) subset (3 question(s); n_carriers=117; Δ PDR=-0.234)</h4><div class="subset-flex"><div class="subset-bars"><svg width="244" height="174" viewBox="-22 -6 256 184" style="font-family: -apple-system, sans-serif;"><rect x="25.0" y="69.2" width="60" height="80.8" fill="#2ca02c" opacity="0.7"/><text x="55.0" y="164.0" font-size="10" text-anchor="middle" fill="#666">with</text><text x="55.0" y="65.2" font-size="10" text-anchor="middle" fill="#333">0.54</text><rect x="135.0" y="34.1" width="60" height="115.9" fill="#999" opacity="0.7"/><text x="165.0" y="164.0" font-size="10" text-anchor="middle" fill="#666">without</text><text x="165.0" y="30.1" font-size="10" text-anchor="middle" fill="#333">0.77</text><line x1="0" y1="112.5" x2="220" y2="112.5" stroke="#ddd" stroke-width="0.5"/><text x="-4" y="115.5" font-size="9" text-anchor="end" fill="#999">0.25</text><line x1="0" y1="75.0" x2="220" y2="75.0" stroke="#ddd" stroke-width="0.5"/><text x="-4" y="78.0" font-size="9" text-anchor="end" fill="#999">0.50</text><line x1="0" y1="37.5" x2="220" y2="37.5" stroke="#ddd" stroke-width="0.5"/><text x="-4" y="40.5" font-size="9" text-anchor="end" fill="#999">0.75</text></svg><div class="meta">Pass these questions → PDR = <b>0.54</b>; don’t pass → <b>0.77</b></div></div><ul class="q-list"><li><code>181f47fc-5d57-4bf0-a7fe-814fcb698436</code> <span class="meta">(no body found)</span></li><li><code>2658a3aa-85ee-4702-a274-6d8d233d3297</code> <span class="meta">(no body found)</span></li><li><code>e92effaf-80df-4601-9861-a0ae34b29c3c</code> <span class="meta">(no body found)</span></li></ul></div></div>
   <div class="subset-empty">No Counterproductive (carriers have HIGHER defect rate) subset with n≥10 in this course.</div>
 </details>
 <details class="course-combo" open>
   <summary><b>OpenClaw RL Common Errors Screening</b></summary>
-  <div class="subset-block"><h4 style="color:#2ca02c">Predictive (carriers have LOWER defect rate) subset (4 question(s); n_carriers=44; Δ PDR=-0.146)</h4><div class="subset-flex"><div class="subset-bars"><svg width="244" height="174" viewBox="-22 -6 256 184" style="font-family: -apple-system, sans-serif;"><rect x="25.0" y="65.3" width="60" height="84.7" fill="#2ca02c" opacity="0.7"/><text x="55.0" y="164.0" font-size="10" text-anchor="middle" fill="#666">with</text><text x="55.0" y="61.3" font-size="10" text-anchor="middle" fill="#333">0.56</text><rect x="135.0" y="43.5" width="60" height="106.5" fill="#999" opacity="0.7"/><text x="165.0" y="164.0" font-size="10" text-anchor="middle" fill="#666">without</text><text x="165.0" y="39.5" font-size="10" text-anchor="middle" fill="#333">0.71</text><line x1="0" y1="112.5" x2="220" y2="112.5" stroke="#ddd" stroke-width="0.5"/><text x="-4" y="115.5" font-size="9" text-anchor="end" fill="#999">0.25</text><line x1="0" y1="75.0" x2="220" y2="75.0" stroke="#ddd" stroke-width="0.5"/><text x="-4" y="78.0" font-size="9" text-anchor="end" fill="#999">0.50</text><line x1="0" y1="37.5" x2="220" y2="37.5" stroke="#ddd" stroke-width="0.5"/><text x="-4" y="40.5" font-size="9" text-anchor="end" fill="#999">0.75</text></svg><div class="meta">Pass these questions → PDR = <b>0.56</b>; don’t pass → <b>0.71</b></div></div><ul class="q-list"><li class="q-item"><div class="q-head"><code>07f51396</code> <span class="meta">(text_response)</span></div><div class="q-text">The rubric criterion below has at least one major error.
-
-**Instructions:**
-
-1. Identify the error type(s): not self-contained / not atomic / incorrect
-2. Rewrite it as correctly structured criterion(ia)
-3. If it needs to be split into multiple criteria, write all of them and assign appropriate weights to each
-
-**Prompt:** *&quot;I manage a weekly newsletter with 500 subscribers. Read the subscriber list from subscribers.csv, identify everyone who hasn&#x27;t opened the last 3 issues, remove them from the active list, and generate a re-engagement email draft for the inactive subscribers. Save the updated active list as active_subscribers.csv.&quot;*
-
-**Original criterion:** *&quot;The agent correctly processes the subscriber data and generates the output file.&quot; (+5)*</div></li><li class="q-item"><div class="q-head"><code>c516bff2</code> <span class="meta">(text_response)</span></div><div class="q-text">**Instructions:** Read the prompt and the rubric criteria below. Some criteria evaluate implementation-level requirements that the prompt never specified.
-
-1. Identify at least one criterion that is overly specific
-2. Explain what that criterion technically requires
-3. Explain why that requirement is not supported by the prompt
-4. Explain why this makes the criterion a flawed evaluation tool
-
-Your answer must clearly connect the rubric problem to what the prompt actually asks for.\
-Prompt:\
-Rubrics:</div></li><li class="q-item"><div class="q-head"><code>f8e777d4</code> <span class="meta">(text_response)</span></div><div class="q-text">**Instructions:** Read the prompt and the rubric criteria below. One criterion is overly specific because it evaluates something the prompt never requested. Identify it and explain:
-
-1. The criterion number
-2. What exactly the criterion requires
-3. Why that requirement is not supported by the prompt
-4. Why this makes the criterion flawed
-
-Your answer must clearly connect the rubric problem to what the prompt actually asks for.\
-Prompt:\
-Rubric:</div></li><li class="q-item"><div class="q-head"><code>f9267d8f</code> <span class="meta">(text_response)</span></div><div class="q-text">Review the rubric below and identify all major errors you find.
-
-**Instructions:** Read the task prompt and rubric set carefully. For each flawed criterion, state:
-
-1. The criterion number
-2. The error type: not self-contained / not atomic / incorrect
-3. Why it is flawed — be specific and tie your reasoning to the prompt
-
-Your response should include all issues you find. Do not just label a criterion as bad — explain the problem clearly.
-
-**Prompt:** *&quot;I manage a weekly newsletter with 500 subscribers. Read the subscriber list from subscribers.csv, identify everyone who hasn&#x27;t opened the last 3 issues, remove them from the active list, and generate a re-engagement email draft for the inactive subscribers. Save the updated active list as active_subscribers.csv.&quot;*
-
-**Rubric:**
-
-1. The agent reads the subscriber data from the correct file. (+5)
-2. The agent identifies inactive subscribers and removes them from the list. (+5)
-3. The agent generates a re-engagement email draft. (+3)
-4. The agent saves the updated file correctly. (+5)
-5. The response addresses all the user&#x27;s requirements from the prompt. (+3)</div></li></ul></div></div>
-  <div class="subset-block"><h4 style="color:#d62728">Counterproductive (carriers have HIGHER defect rate) subset (3 question(s); n_carriers=301; Δ PDR=+0.062)</h4><div class="subset-flex"><div class="subset-bars"><svg width="244" height="174" viewBox="-22 -6 256 184" style="font-family: -apple-system, sans-serif;"><rect x="25.0" y="45.9" width="60" height="104.1" fill="#d62728" opacity="0.7"/><text x="55.0" y="164.0" font-size="10" text-anchor="middle" fill="#666">with</text><text x="55.0" y="41.9" font-size="10" text-anchor="middle" fill="#333">0.69</text><rect x="135.0" y="55.3" width="60" height="94.7" fill="#999" opacity="0.7"/><text x="165.0" y="164.0" font-size="10" text-anchor="middle" fill="#666">without</text><text x="165.0" y="51.3" font-size="10" text-anchor="middle" fill="#333">0.63</text><line x1="0" y1="112.5" x2="220" y2="112.5" stroke="#ddd" stroke-width="0.5"/><text x="-4" y="115.5" font-size="9" text-anchor="end" fill="#999">0.25</text><line x1="0" y1="75.0" x2="220" y2="75.0" stroke="#ddd" stroke-width="0.5"/><text x="-4" y="78.0" font-size="9" text-anchor="end" fill="#999">0.50</text><line x1="0" y1="37.5" x2="220" y2="37.5" stroke="#ddd" stroke-width="0.5"/><text x="-4" y="40.5" font-size="9" text-anchor="end" fill="#999">0.75</text></svg><div class="meta">Pass these questions → PDR = <b>0.69</b>; don’t pass → <b>0.63</b></div></div><ul class="q-list"><li class="q-item"><div class="q-head"><code>07f51396</code> <span class="meta">(text_response)</span></div><div class="q-text">The rubric criterion below has at least one major error.
-
-**Instructions:**
-
-1. Identify the error type(s): not self-contained / not atomic / incorrect
-2. Rewrite it as correctly structured criterion(ia)
-3. If it needs to be split into multiple criteria, write all of them and assign appropriate weights to each
-
-**Prompt:** *&quot;I manage a weekly newsletter with 500 subscribers. Read the subscriber list from subscribers.csv, identify everyone who hasn&#x27;t opened the last 3 issues, remove them from the active list, and generate a re-engagement email draft for the inactive subscribers. Save the updated active list as active_subscribers.csv.&quot;*
-
-**Original criterion:** *&quot;The agent correctly processes the subscriber data and generates the output file.&quot; (+5)*</div></li><li class="q-item"><div class="q-head"><code>88371c2f</code> <span class="meta">(text_response)</span></div><div class="q-text">Review the rubric set below. Identify the structural problem, then fix it.
-
-**Instructions:** In your response, explain:
-
-1. What the structural problem is and why it causes a reviewer FAIL
-2. The negative-weight criterion you are adding
-3. What specific model behavior or failure it is designed to catch
-4. Why you chose that weight (-1, -3, or -5)
-
-**Task context:** An agent that monitors brand mentions on social media, classifies each mention&#x27;s sentiment, and produces a weekly summary report.
-
-**Rubric set (as submitted):**
-
-1. The agent reads brand mention data from the assigned data source. (+3)
-2. The agent classifies each mention as positive, neutral, or negative. (+5)
-3. The agent produces a file named brand_report.csv. (+5)
-4. brand_report.csv includes columns: date, mention_text, sentiment, source. (+3)
-5. The agent&#x27;s weekly summary includes total mention counts per sentiment category. (+3)</div></li><li class="q-item"><div class="q-head"><code>cb2a9f83</code> <span class="meta">(text_response)</span></div><div class="q-text">You are reviewing two multi-turn trajectory excerpts. Determine which one correctly uses [MEMORY.md](http://MEMORY.md) and which one fails the requirement.
-
-**Instructions:**
-
-* Identify which trajectory is **valid** and which **fails**
-* For the **failing trajectory**: explain specifically what is wrong and describe at least one concrete fix
-
-**Trajectory A:**
-
-* Turn 1: *&quot;Plan a 3-day road trip from Austin to New Orleans. Save our chosen stops and driving schedule to memory.&quot;* → Agent plans route, saves stops and schedule to [MEMORY.md](http://MEMORY.md).
-* Turn 2: *&quot;Based on the stops you saved, find one restaurant recommendation near each stop.&quot;* → Agent reads [MEMORY.md](http://MEMORY.md), retrieves stops, finds restaurants per stop.
-* Turn 3: *&quot;Update memory — we&#x27;re skipping the Houston stop. Recalculate our total drive time.&quot;* → Agent updates [MEMORY.md](http://MEMORY.md), removes Houston, recalculates.
-
-**Trajectory B:**
-
-* Turn 1: *&quot;Help me plan a 3-day road trip.&quot;* → Agent suggests a general itinerary.
-* Turn 2: *&quot;What are some good restaurants in New Orleans?&quot;* → Agent lists restaurants. No connection to Turn 1.
-* Turn 3: *&quot;What&#x27;s the weather usually like on I-10 in summer?&quot;* → Agent answers weather question. No connection to earlier turns.</div></li></ul></div></div>
+  <div class="subset-block"><h4 style="color:#2ca02c">Predictive (carriers have LOWER defect rate) subset (4 question(s); n_carriers=45; Δ PDR=-0.119)</h4><div class="subset-flex"><div class="subset-bars"><svg width="244" height="174" viewBox="-22 -6 256 184" style="font-family: -apple-system, sans-serif;"><rect x="25.0" y="63.9" width="60" height="86.1" fill="#2ca02c" opacity="0.7"/><text x="55.0" y="164.0" font-size="10" text-anchor="middle" fill="#666">with</text><text x="55.0" y="59.9" font-size="10" text-anchor="middle" fill="#333">0.57</text><rect x="135.0" y="46.1" width="60" height="103.9" fill="#999" opacity="0.7"/><text x="165.0" y="164.0" font-size="10" text-anchor="middle" fill="#666">without</text><text x="165.0" y="42.1" font-size="10" text-anchor="middle" fill="#333">0.69</text><line x1="0" y1="112.5" x2="220" y2="112.5" stroke="#ddd" stroke-width="0.5"/><text x="-4" y="115.5" font-size="9" text-anchor="end" fill="#999">0.25</text><line x1="0" y1="75.0" x2="220" y2="75.0" stroke="#ddd" stroke-width="0.5"/><text x="-4" y="78.0" font-size="9" text-anchor="end" fill="#999">0.50</text><line x1="0" y1="37.5" x2="220" y2="37.5" stroke="#ddd" stroke-width="0.5"/><text x="-4" y="40.5" font-size="9" text-anchor="end" fill="#999">0.75</text></svg><div class="meta">Pass these questions → PDR = <b>0.57</b>; don’t pass → <b>0.69</b></div></div><ul class="q-list"><li><code>07f51396-0b06-4dd1-90de-4d8cac3f3e09</code> <span class="meta">(no body found)</span></li><li><code>c516bff2-ecde-4b6f-b423-6d0844d3b1f5</code> <span class="meta">(no body found)</span></li><li><code>f8e777d4-113d-4840-a4ef-0d4953a4741b</code> <span class="meta">(no body found)</span></li><li><code>f9267d8f-d3b8-4371-b064-9c0174f7a14b</code> <span class="meta">(no body found)</span></li></ul></div></div>
+  <div class="subset-block"><h4 style="color:#d62728">Counterproductive (carriers have HIGHER defect rate) subset (4 question(s); n_carriers=263; Δ PDR=+0.097)</h4><div class="subset-flex"><div class="subset-bars"><svg width="244" height="174" viewBox="-22 -6 256 184" style="font-family: -apple-system, sans-serif;"><rect x="25.0" y="48.0" width="60" height="102.0" fill="#d62728" opacity="0.7"/><text x="55.0" y="164.0" font-size="10" text-anchor="middle" fill="#666">with</text><text x="55.0" y="44.0" font-size="10" text-anchor="middle" fill="#333">0.68</text><rect x="135.0" y="62.5" width="60" height="87.5" fill="#999" opacity="0.7"/><text x="165.0" y="164.0" font-size="10" text-anchor="middle" fill="#666">without</text><text x="165.0" y="58.5" font-size="10" text-anchor="middle" fill="#333">0.58</text><line x1="0" y1="112.5" x2="220" y2="112.5" stroke="#ddd" stroke-width="0.5"/><text x="-4" y="115.5" font-size="9" text-anchor="end" fill="#999">0.25</text><line x1="0" y1="75.0" x2="220" y2="75.0" stroke="#ddd" stroke-width="0.5"/><text x="-4" y="78.0" font-size="9" text-anchor="end" fill="#999">0.50</text><line x1="0" y1="37.5" x2="220" y2="37.5" stroke="#ddd" stroke-width="0.5"/><text x="-4" y="40.5" font-size="9" text-anchor="end" fill="#999">0.75</text></svg><div class="meta">Pass these questions → PDR = <b>0.68</b>; don’t pass → <b>0.58</b></div></div><ul class="q-list"><li><code>07f51396-0b06-4dd1-90de-4d8cac3f3e09</code> <span class="meta">(no body found)</span></li><li><code>40a0105f-b68e-416f-8956-b569a6ee8014</code> <span class="meta">(no body found)</span></li><li><code>88371c2f-0f8f-4a02-9c90-79948b9e5ff5</code> <span class="meta">(no body found)</span></li><li><code>cb2a9f83-2ce8-4afc-9bd2-040cd7920556</code> <span class="meta">(no body found)</span></li></ul></div></div>
 </details>
 <details class="course-combo" open>
   <summary><b>Rubrics + Unit Tests Screening</b></summary>
-  <div class="subset-block"><h4 style="color:#2ca02c">Predictive (carriers have LOWER defect rate) subset (2 question(s); n_carriers=387; Δ PDR=-0.153)</h4><div class="subset-flex"><div class="subset-bars"><svg width="244" height="174" viewBox="-22 -6 256 184" style="font-family: -apple-system, sans-serif;"><rect x="25.0" y="46.0" width="60" height="104.0" fill="#2ca02c" opacity="0.7"/><text x="55.0" y="164.0" font-size="10" text-anchor="middle" fill="#666">with</text><text x="55.0" y="42.0" font-size="10" text-anchor="middle" fill="#333">0.69</text><rect x="135.0" y="23.1" width="60" height="126.9" fill="#999" opacity="0.7"/><text x="165.0" y="164.0" font-size="10" text-anchor="middle" fill="#666">without</text><text x="165.0" y="19.1" font-size="10" text-anchor="middle" fill="#333">0.85</text><line x1="0" y1="112.5" x2="220" y2="112.5" stroke="#ddd" stroke-width="0.5"/><text x="-4" y="115.5" font-size="9" text-anchor="end" fill="#999">0.25</text><line x1="0" y1="75.0" x2="220" y2="75.0" stroke="#ddd" stroke-width="0.5"/><text x="-4" y="78.0" font-size="9" text-anchor="end" fill="#999">0.50</text><line x1="0" y1="37.5" x2="220" y2="37.5" stroke="#ddd" stroke-width="0.5"/><text x="-4" y="40.5" font-size="9" text-anchor="end" fill="#999">0.75</text></svg><div class="meta">Pass these questions → PDR = <b>0.69</b>; don’t pass → <b>0.85</b></div></div><ul class="q-list"><li class="q-item"><div class="q-head"><code>1823c815</code> <span class="meta">(text_response)</span></div><div class="q-text">### **Free Response Questions**
-
-For the  test below, explain **specifically** whether it is valid or flawed. If flawed, state what is wrong and what should be done (keep, delete, or rewrite — and if rewrite, describe how). If valid, explain why it&#x27;s a good test.
-
-### **Test 2 —** `test_restock_order_contains_required_fields`
-
-Identify all issues</div></li><li class="q-item"><div class="q-head"><code>4f42b014</code> <span class="meta">(multiple_choice)</span></div><div class="q-text">A prompt says: &quot;Search for flights and hotels, then produce a travel plan with cost estimates.&quot; Which rubric is NOT grounded in the prompt?</div><div class="q-correct"><b>Correct:</b><ul><li>&quot;The travel plan includes a packing list tailored to the destination weather.&quot;</li></ul></div><div class="q-wrong"><b>Wrong:</b><ul><li>&quot;The travel plan includes an estimated cost for flights.&quot;</li><li>&quot;The travel plan includes at least one hotel option with a price.&quot;</li><li>&quot;The travel plan includes a total estimated cost.&quot;</li></ul></div></li></ul></div></div>
-  <div class="subset-block"><h4 style="color:#d62728">Counterproductive (carriers have HIGHER defect rate) subset (2 question(s); n_carriers=383; Δ PDR=+0.115)</h4><div class="subset-flex"><div class="subset-bars"><svg width="244" height="174" viewBox="-22 -6 256 184" style="font-family: -apple-system, sans-serif;"><rect x="25.0" y="44.5" width="60" height="105.5" fill="#d62728" opacity="0.7"/><text x="55.0" y="164.0" font-size="10" text-anchor="middle" fill="#666">with</text><text x="55.0" y="40.5" font-size="10" text-anchor="middle" fill="#333">0.70</text><rect x="135.0" y="61.8" width="60" height="88.2" fill="#999" opacity="0.7"/><text x="165.0" y="164.0" font-size="10" text-anchor="middle" fill="#666">without</text><text x="165.0" y="57.8" font-size="10" text-anchor="middle" fill="#333">0.59</text><line x1="0" y1="112.5" x2="220" y2="112.5" stroke="#ddd" stroke-width="0.5"/><text x="-4" y="115.5" font-size="9" text-anchor="end" fill="#999">0.25</text><line x1="0" y1="75.0" x2="220" y2="75.0" stroke="#ddd" stroke-width="0.5"/><text x="-4" y="78.0" font-size="9" text-anchor="end" fill="#999">0.50</text><line x1="0" y1="37.5" x2="220" y2="37.5" stroke="#ddd" stroke-width="0.5"/><text x="-4" y="40.5" font-size="9" text-anchor="end" fill="#999">0.75</text></svg><div class="meta">Pass these questions → PDR = <b>0.70</b>; don’t pass → <b>0.59</b></div></div><ul class="q-list"><li class="q-item"><div class="q-head"><code>79edf72e</code> <span class="meta">(multiple_choice)</span></div><div class="q-text">Which of the following violates the positive language requirement?</div><div class="q-correct"><b>Correct:</b><ul><li>&quot;The model does not hallucinate any vendor names in the final report.&quot; (weight: -5)</li></ul></div><div class="q-wrong"><b>Wrong:</b><ul><li>The final report includes only vendor names that appear in the input CSV.&quot; (weight: -5)</li><li>&quot;The agent produces all 5 required email drafts.&quot; (weight: +5)</li><li>&quot;The final report includes a methodology section.&quot; (weight: +3)</li></ul></div></li><li class="q-item"><div class="q-head"><code>7d0c9322</code> <span class="meta">(multiple_choice)</span></div><div class="q-text">What happens if a task’s rubric set does not include any negative‑weight criteria?</div><div class="q-correct"><b>Correct:</b><ul><li>The task fails, because at least one negative criterion is mandatory</li></ul></div><div class="q-wrong"><b>Wrong:</b><ul><li>Nothing; negative criteria are optional</li><li>The negative criteria can be replaced by more +1 criteria</li><li>Only the negative criteria are ignored, but the task still passes</li></ul></div></li></ul></div></div>
+  <div class="subset-block"><h4 style="color:#2ca02c">Predictive (carriers have LOWER defect rate) subset (2 question(s); n_carriers=385; Δ PDR=-0.150)</h4><div class="subset-flex"><div class="subset-bars"><svg width="244" height="174" viewBox="-22 -6 256 184" style="font-family: -apple-system, sans-serif;"><rect x="25.0" y="45.6" width="60" height="104.4" fill="#2ca02c" opacity="0.7"/><text x="55.0" y="164.0" font-size="10" text-anchor="middle" fill="#666">with</text><text x="55.0" y="41.6" font-size="10" text-anchor="middle" fill="#333">0.70</text><rect x="135.0" y="23.1" width="60" height="126.9" fill="#999" opacity="0.7"/><text x="165.0" y="164.0" font-size="10" text-anchor="middle" fill="#666">without</text><text x="165.0" y="19.1" font-size="10" text-anchor="middle" fill="#333">0.85</text><line x1="0" y1="112.5" x2="220" y2="112.5" stroke="#ddd" stroke-width="0.5"/><text x="-4" y="115.5" font-size="9" text-anchor="end" fill="#999">0.25</text><line x1="0" y1="75.0" x2="220" y2="75.0" stroke="#ddd" stroke-width="0.5"/><text x="-4" y="78.0" font-size="9" text-anchor="end" fill="#999">0.50</text><line x1="0" y1="37.5" x2="220" y2="37.5" stroke="#ddd" stroke-width="0.5"/><text x="-4" y="40.5" font-size="9" text-anchor="end" fill="#999">0.75</text></svg><div class="meta">Pass these questions → PDR = <b>0.70</b>; don’t pass → <b>0.85</b></div></div><ul class="q-list"><li><code>1823c815-040f-4c46-986a-e62c146feea5</code> <span class="meta">(no body found)</span></li><li><code>4f42b014-8f62-41ae-a910-57e6325abcc3</code> <span class="meta">(no body found)</span></li></ul></div></div>
+  <div class="subset-block"><h4 style="color:#d62728">Counterproductive (carriers have HIGHER defect rate) subset (2 question(s); n_carriers=381; Δ PDR=+0.117)</h4><div class="subset-flex"><div class="subset-bars"><svg width="244" height="174" viewBox="-22 -6 256 184" style="font-family: -apple-system, sans-serif;"><rect x="25.0" y="44.2" width="60" height="105.8" fill="#d62728" opacity="0.7"/><text x="55.0" y="164.0" font-size="10" text-anchor="middle" fill="#666">with</text><text x="55.0" y="40.2" font-size="10" text-anchor="middle" fill="#333">0.71</text><rect x="135.0" y="61.8" width="60" height="88.2" fill="#999" opacity="0.7"/><text x="165.0" y="164.0" font-size="10" text-anchor="middle" fill="#666">without</text><text x="165.0" y="57.8" font-size="10" text-anchor="middle" fill="#333">0.59</text><line x1="0" y1="112.5" x2="220" y2="112.5" stroke="#ddd" stroke-width="0.5"/><text x="-4" y="115.5" font-size="9" text-anchor="end" fill="#999">0.25</text><line x1="0" y1="75.0" x2="220" y2="75.0" stroke="#ddd" stroke-width="0.5"/><text x="-4" y="78.0" font-size="9" text-anchor="end" fill="#999">0.50</text><line x1="0" y1="37.5" x2="220" y2="37.5" stroke="#ddd" stroke-width="0.5"/><text x="-4" y="40.5" font-size="9" text-anchor="end" fill="#999">0.75</text></svg><div class="meta">Pass these questions → PDR = <b>0.71</b>; don’t pass → <b>0.59</b></div></div><ul class="q-list"><li><code>79edf72e-e40b-47ae-aefd-175bd04c6986</code> <span class="meta">(no body found)</span></li><li><code>7d0c9322-8024-4ecb-8eaf-a3c3c7a09515</code> <span class="meta">(no body found)</span></li></ul></div></div>
+</details>
+<details class="course-combo" open>
+  <summary><b>🔎 Task Quality Module: Rubrics, Checks &amp; Trajectories</b></summary>
+  <div class="subset-block"><h4 style="color:#2ca02c">Predictive (carriers have LOWER defect rate) subset (3 question(s); n_carriers=20; Δ PDR=-0.172)</h4><div class="subset-flex"><div class="subset-bars"><svg width="244" height="174" viewBox="-22 -6 256 184" style="font-family: -apple-system, sans-serif;"><rect x="25.0" y="72.5" width="60" height="77.5" fill="#2ca02c" opacity="0.7"/><text x="55.0" y="164.0" font-size="10" text-anchor="middle" fill="#666">with</text><text x="55.0" y="68.5" font-size="10" text-anchor="middle" fill="#333">0.52</text><rect x="135.0" y="46.7" width="60" height="103.3" fill="#999" opacity="0.7"/><text x="165.0" y="164.0" font-size="10" text-anchor="middle" fill="#666">without</text><text x="165.0" y="42.7" font-size="10" text-anchor="middle" fill="#333">0.69</text><line x1="0" y1="112.5" x2="220" y2="112.5" stroke="#ddd" stroke-width="0.5"/><text x="-4" y="115.5" font-size="9" text-anchor="end" fill="#999">0.25</text><line x1="0" y1="75.0" x2="220" y2="75.0" stroke="#ddd" stroke-width="0.5"/><text x="-4" y="78.0" font-size="9" text-anchor="end" fill="#999">0.50</text><line x1="0" y1="37.5" x2="220" y2="37.5" stroke="#ddd" stroke-width="0.5"/><text x="-4" y="40.5" font-size="9" text-anchor="end" fill="#999">0.75</text></svg><div class="meta">Pass these questions → PDR = <b>0.52</b>; don’t pass → <b>0.69</b></div></div><ul class="q-list"><li><code>46732df0-7d2b-46b6-99c6-5b11de027a58</code> <span class="meta">(no body found)</span></li><li><code>86b42606-7bae-4182-916d-3da8d1971c29</code> <span class="meta">(no body found)</span></li><li><code>cf06a0bd-d678-47bd-bf01-631bdf3a6f64</code> <span class="meta">(no body found)</span></li></ul></div></div>
+  <div class="subset-block"><h4 style="color:#d62728">Counterproductive (carriers have HIGHER defect rate) subset (1 question(s); n_carriers=130; Δ PDR=+0.002)</h4><div class="subset-flex"><div class="subset-bars"><svg width="244" height="174" viewBox="-22 -6 256 184" style="font-family: -apple-system, sans-serif;"><rect x="25.0" y="48.1" width="60" height="101.9" fill="#d62728" opacity="0.7"/><text x="55.0" y="164.0" font-size="10" text-anchor="middle" fill="#666">with</text><text x="55.0" y="44.1" font-size="10" text-anchor="middle" fill="#333">0.68</text><rect x="135.0" y="48.3" width="60" height="101.7" fill="#999" opacity="0.7"/><text x="165.0" y="164.0" font-size="10" text-anchor="middle" fill="#666">without</text><text x="165.0" y="44.3" font-size="10" text-anchor="middle" fill="#333">0.68</text><line x1="0" y1="112.5" x2="220" y2="112.5" stroke="#ddd" stroke-width="0.5"/><text x="-4" y="115.5" font-size="9" text-anchor="end" fill="#999">0.25</text><line x1="0" y1="75.0" x2="220" y2="75.0" stroke="#ddd" stroke-width="0.5"/><text x="-4" y="78.0" font-size="9" text-anchor="end" fill="#999">0.50</text><line x1="0" y1="37.5" x2="220" y2="37.5" stroke="#ddd" stroke-width="0.5"/><text x="-4" y="40.5" font-size="9" text-anchor="end" fill="#999">0.75</text></svg><div class="meta">Pass these questions → PDR = <b>0.68</b>; don’t pass → <b>0.68</b></div></div><ul class="q-list"><li><code>cf06a0bd-d678-47bd-bf01-631bdf3a6f64</code> <span class="meta">(no body found)</span></li></ul></div></div>
 </details>
   <details class="caveats">
     <summary><b>Caveats</b></summary>
@@ -581,7 +490,7 @@ Identify all issues</div></li><li class="q-item"><div class="q-head"><code>4f42b
   <div class="punchline">
     Step 2 ranks questions by their correlation with our derived PDR. <b>This step cross-validates that ranking against a completely independent signal</b>: the platform’s pre-existing <code>openclaw_rl_trusted_reviewer</code> (known-good) and <code>openclaw_rl_bad_quality</code> (known-bad) worker tags. A question that's truly predictive should ALSO have a higher pass-rate among the known-good cohort than the known-bad cohort.
     <br><br>
-    <b>6 questions</b> agree on "predictive" (both signals point down on defects); <b>0</b> agree on "counterproductive"; <b>1</b> CONTRADICT each other and need a manual look.
+    <b>4 questions</b> agree on "predictive" (both signals point down on defects); <b>0</b> agree on "counterproductive"; <b>2</b> CONTRADICT each other and need a manual look.
   </div>
   <details class="method" open>
     <summary><b>Definitions</b></summary>
@@ -596,86 +505,76 @@ Identify all issues</div></li><li class="q-item"><div class="q-head"><code>4f42b
     <p>Defect definition: any trusted review where QM &lt; 4 (below the promotion gate). The threshold is configurable via <code>--good-qm-min</code>. Rolling window over last 3 reviews matches the cohort used in steps 2 onward.</p>
   </details>
 
-  <h3>Double-confirmed PREDICTIVE (6 questions; top 10 shown)</h3>
+  <h3>Double-confirmed PREDICTIVE (4 questions; top 10 shown)</h3>
   <p class="meta">Both Δ PDR &lt; −0.05 AND tag_separation &gt; +0.05. High confidence: keep these questions.</p>
   <table class="full"><thead><tr><th>Course</th><th>QID</th><th>Question</th><th>n joined</th><th>Δ PDR</th><th>tag carriers (G/B)</th><th>pass rate (G/B)</th><th>tag separation</th></tr></thead><tbody>
 <tr>
-  <td>OpenClaw Atlas Reviewers </td>
-  <td><code>2658a3aa</code></td>
-  <td class="qtext">A task scores a 5 on desired outcome, a 5 on sources, a 3 on rubric quality, and a 5 on depth/friction. What is the correct overall score?</td>
-  <td class="num">131</td>
-  <td class="num good">-0.192</td>
-  <td class="num">87 / 10</td>
-  <td class="num">98.9% / 90.0%</td>
-  <td class="num good">+0.088</td>
+  <td>🔎 Task Quality Module: Rubrics, Checks &amp; Trajectories</td>
+  <td><code>86b42606</code></td>
+  <td class="qtext"><span class="meta">(no question body captured)</span></td>
+  <td class="num">328</td>
+  <td class="num good">-0.153</td>
+  <td class="num">91 / 37</td>
+  <td class="num">47.2% / 27.0%</td>
+  <td class="num good">+0.202</td>
 </tr>
 <tr>
   <td>OpenClaw - Screening Course</td>
   <td><code>ecdecee0</code></td>
-  <td class="qtext">**After you have finished the trajectory and collected the traces, what should you do to properly close the OpenClaw session?** (*Select ONE…</td>
-  <td class="num">426</td>
-  <td class="num good">-0.114</td>
-  <td class="num">101 / 52</td>
-  <td class="num">84.2% / 75.0%</td>
-  <td class="num good">+0.092</td>
-</tr>
-<tr>
-  <td>OpenClaw RL Common Errors Screening</td>
-  <td><code>c516bff2</code></td>
-  <td class="qtext">**Instructions:** Read the prompt and the rubric criteria below. Some criteria evaluate implementation-level requirements that the prompt ne…</td>
-  <td class="num">217</td>
-  <td class="num good">-0.108</td>
-  <td class="num">74 / 13</td>
-  <td class="num">78.4% / 61.5%</td>
-  <td class="num good">+0.168</td>
+  <td class="qtext"><span class="meta">(no question body captured)</span></td>
+  <td class="num">423</td>
+  <td class="num good">-0.117</td>
+  <td class="num">99 / 39</td>
+  <td class="num">84.9% / 69.2%</td>
+  <td class="num good">+0.156</td>
 </tr>
 <tr>
   <td>OpenClaw - Screening Course</td>
   <td><code>f236cb1b</code></td>
-  <td class="qtext">(question text not in Q-G2 SECTIONS export)</td>
-  <td class="num">263</td>
-  <td class="num good">-0.100</td>
-  <td class="num">56 / 42</td>
-  <td class="num">98.2% / 85.7%</td>
-  <td class="num good">+0.125</td>
+  <td class="qtext"><span class="meta">(no question body captured)</span></td>
+  <td class="num">260</td>
+  <td class="num good">-0.097</td>
+  <td class="num">54 / 11</td>
+  <td class="num">98.2% / 90.9%</td>
+  <td class="num good">+0.072</td>
 </tr>
 <tr>
   <td>Rubrics + Unit Tests Screening</td>
   <td><code>4443ab66</code></td>
-  <td class="qtext">A prompt says: &quot;Analyze the attached sales data and produce a risk assessment report in JSON format.&quot; A contributor submits the following ru…</td>
-  <td class="num">400</td>
-  <td class="num good">-0.065</td>
-  <td class="num">95 / 39</td>
-  <td class="num">94.7% / 82.0%</td>
-  <td class="num good">+0.127</td>
-</tr>
-<tr>
-  <td>OpenClaw RL Common Errors Screening</td>
-  <td><code>f8e777d4</code></td>
-  <td class="qtext">**Instructions:** Read the prompt and the rubric criteria below. One criterion is overly specific because it evaluates something the prompt …</td>
-  <td class="num">217</td>
+  <td class="qtext"><span class="meta">(no question body captured)</span></td>
+  <td class="num">398</td>
   <td class="num good">-0.062</td>
-  <td class="num">74 / 13</td>
-  <td class="num">47.3% / 30.8%</td>
-  <td class="num good">+0.165</td>
+  <td class="num">93 / 38</td>
+  <td class="num">94.6% / 89.5%</td>
+  <td class="num good">+0.051</td>
 </tr></tbody></table>
 
   <h3>Double-confirmed COUNTERPRODUCTIVE (0 questions; top 10 shown)</h3>
   <p class="meta">Both Δ PDR &gt; +0.05 AND tag_separation &lt; −0.05. High confidence: rewrite or remove these.</p>
   <div class="meta">(no questions matched this bucket)</div>
 
-  <h3>CONTRADICTIONS — PDR and tag disagree (1 questions; top 10 by disagreement magnitude)</h3>
+  <h3>CONTRADICTIONS — PDR and tag disagree (2 questions; top 10 by disagreement magnitude)</h3>
   <p class="meta">The two signals point opposite directions — manually re-grade these before acting on either signal.</p>
   <table class="full"><thead><tr><th>Course</th><th>QID</th><th>Question</th><th>n joined</th><th>Δ PDR</th><th>tag carriers (G/B)</th><th>pass rate (G/B)</th><th>tag separation</th></tr></thead><tbody>
 <tr>
+  <td>OpenClaw - Screening Course</td>
+  <td><code>b090dbbd</code></td>
+  <td class="qtext"><span class="meta">(no question body captured)</span></td>
+  <td class="num">423</td>
+  <td class="num bad">+0.160</td>
+  <td class="num">99 / 39</td>
+  <td class="num">93.9% / 87.2%</td>
+  <td class="num good">+0.068</td>
+</tr>
+<tr>
   <td>Rubrics + Unit Tests Screening</td>
   <td><code>685f4d53</code></td>
-  <td class="qtext">One of the rubric criteria is overly specific and requires something the prompt did not ask for. Identify the bad rubric criterion and expla…</td>
-  <td class="num">42</td>
-  <td class="num good">-0.167</td>
-  <td class="num">7 / 2</td>
-  <td class="num">71.4% / 100.0%</td>
-  <td class="num bad">-0.286</td>
+  <td class="qtext"><span class="meta">(no question body captured)</span></td>
+  <td class="num">44</td>
+  <td class="num good">-0.149</td>
+  <td class="num">7 / 10</td>
+  <td class="num">71.4% / 80.0%</td>
+  <td class="num bad">-0.086</td>
 </tr></tbody></table>
 
   <details class="caveats">
@@ -710,106 +609,92 @@ Identify all issues</div></li><li class="q-item"><div class="q-head"><code>4f42b
 <tr>
   <td>OpenClaw - Screening Course</td>
   <td><code>3f08b984</code></td>
-  <td class="qtext">(question text not in Q-G2 SECTIONS export)</td>
+  <td class="qtext"><em>(question text not in Q-G2 SECTIONS export; QID-only)</em></td>
   <td class="num">99.6%</td>
-  <td class="num">263</td>
-  <td class="num bad">+0.113</td>
-  <td class="num">+0.723</td>
+  <td class="num">260</td>
+  <td class="num bad">+0.114</td>
+  <td class="num">+0.726</td>
 </tr>
 <tr>
   <td>OpenClaw - Screening Course</td>
   <td><code>0f8dc730</code></td>
-  <td class="qtext">(question text not in Q-G2 SECTIONS export)</td>
-  <td class="num">4.4%</td>
-  <td class="num">249</td>
-  <td class="num bad">+0.106</td>
-  <td class="num">+0.206</td>
+  <td class="qtext"><em>(question text not in Q-G2 SECTIONS export; QID-only)</em></td>
+  <td class="num">4.5%</td>
+  <td class="num">246</td>
+  <td class="num bad">+0.104</td>
+  <td class="num">+0.203</td>
 </tr>
 <tr>
   <td>Rubrics + Unit Tests Screening</td>
   <td><code>35d7529e</code></td>
-  <td class="qtext">A contributor writes the following four rubric criteria for a task. One of them is not self-contained. Which one, and why?
-
-* A. "The response includes a budget breakdown table with columns for category, amount, and percentage of total."
-* B. "The response correctly resolves the conflict described i…<div class="correct">✓ Criterion B — it references &quot;the conflict described in the scenario&quot; without stating what that conflict is, so a reviewer cannot evaluate it without going back to the prompt.</div></td>
-  <td class="num">97.8%</td>
-  <td class="num">400</td>
-  <td class="num bad">+0.100</td>
-  <td class="num">+0.279</td>
-</tr>
-<tr>
-  <td>OpenClaw - Screening Course</td>
-  <td><code>b090dbbd</code></td>
-  <td class="qtext">**When determining the appropriate safety tier for a task, how should the tier be assigned?** (Select ONE correct answer)<div class="correct">✓ Assign a single safety tier based on the most sensitive or highest-risk action in the overall request.</div></td>
-  <td class="num">94.6%</td>
-  <td class="num">426</td>
-  <td class="num bad">+0.088</td>
-  <td class="num">+0.161</td>
-</tr>
-<tr>
-  <td>OpenClaw RL Common Errors Screening</td>
-  <td><code>033fa57d</code></td>
-  <td class="qtext">Review the rubric set below. Identify every criterion with a moderate error.
-
-**Instructions:** For each flawed criterion, state:
-
-1. The criterion number
-2. The error type: redundant / overfit / subjective
-3. Specifically why it is a moderate error — be precise
-
-**Task context:** An agent that anal…</td>
-  <td class="num">98.4%</td>
-  <td class="num">320</td>
-  <td class="num bad">+0.088</td>
-  <td class="num">+0.295</td>
-</tr>
-<tr>
-  <td>Rubrics + Unit Tests Screening</td>
-  <td><code>09abea87</code></td>
-  <td class="qtext">A contributor submits the following four rubric criteria for review. Which ones violate at least one required property of a good criterion?
-
-* A. "The agent handles the situation appropriately depending on what seems best given the context."
-* B. "The response includes a summary section AND correctl…<div class="correct">✓ Criterion B — it bundles three independent checks into one criterion, violating atomicity.; Criterion A — it is subjective and cannot be verified objectively.; Criterion D — it is vague and subjective</div></td>
-  <td class="num">99.8%</td>
-  <td class="num">400</td>
-  <td class="num bad">+0.085</td>
-  <td class="num">+0.700</td>
+  <td class="qtext"><em>(question text not in Q-G2 SECTIONS export; QID-only)</em></td>
+  <td class="num">97.7%</td>
+  <td class="num">398</td>
+  <td class="num bad">+0.101</td>
+  <td class="num">+0.281</td>
 </tr>
 <tr>
   <td>OpenClaw - Screening Course</td>
   <td><code>6f3721a7</code></td>
-  <td class="qtext">(question text not in Q-G2 SECTIONS export)</td>
-  <td class="num">85.2%</td>
-  <td class="num">263</td>
-  <td class="num bad">+0.084</td>
-  <td class="num">+0.093</td>
+  <td class="qtext"><em>(question text not in Q-G2 SECTIONS export; QID-only)</em></td>
+  <td class="num">85.0%</td>
+  <td class="num">260</td>
+  <td class="num bad">+0.087</td>
+  <td class="num">+0.097</td>
+</tr>
+<tr>
+  <td>OpenClaw - Screening Course</td>
+  <td><code>b090dbbd</code></td>
+  <td class="qtext"><em>(question text not in Q-G2 SECTIONS export; QID-only)</em></td>
+  <td class="num">94.8%</td>
+  <td class="num">423</td>
+  <td class="num bad">+0.086</td>
+  <td class="num">+0.160</td>
+</tr>
+<tr>
+  <td>Rubrics + Unit Tests Screening</td>
+  <td><code>09abea87</code></td>
+  <td class="qtext"><em>(question text not in Q-G2 SECTIONS export; QID-only)</em></td>
+  <td class="num">99.7%</td>
+  <td class="num">398</td>
+  <td class="num bad">+0.085</td>
+  <td class="num">+0.702</td>
+</tr>
+<tr>
+  <td>OpenClaw RL Common Errors Screening</td>
+  <td><code>033fa57d</code></td>
+  <td class="qtext"><em>(question text not in Q-G2 SECTIONS export; QID-only)</em></td>
+  <td class="num">98.9%</td>
+  <td class="num">281</td>
+  <td class="num bad">+0.083</td>
+  <td class="num">+0.344</td>
 </tr>
 <tr>
   <td>OpenClaw - Screening Course</td>
   <td><code>bc58609d</code></td>
-  <td class="qtext">**Which of the following are valid requirements for the initial prompt given to the TWO model environments?** (Select ALL that apply)<div class="correct">✓ It must be natural.; It must include all the information needed to complete the desired outcome.; It must NOT contain guidance that is directly contradictory to any component of the Desired Outcome se</div></td>
-  <td class="num">93.0%</td>
-  <td class="num">426</td>
-  <td class="num bad">+0.080</td>
-  <td class="num">+0.129</td>
+  <td class="qtext"><em>(question text not in Q-G2 SECTIONS export; QID-only)</em></td>
+  <td class="num">92.9%</td>
+  <td class="num">423</td>
+  <td class="num bad">+0.081</td>
+  <td class="num">+0.130</td>
 </tr>
 <tr>
   <td>OpenClaw - Screening Course</td>
   <td><code>1af2228a</code></td>
-  <td class="qtext">(question text not in Q-G2 SECTIONS export)</td>
+  <td class="qtext"><em>(question text not in Q-G2 SECTIONS export; QID-only)</em></td>
   <td class="num">97.3%</td>
-  <td class="num">263</td>
-  <td class="num bad">+0.073</td>
-  <td class="num">+0.178</td>
+  <td class="num">260</td>
+  <td class="num bad">+0.074</td>
+  <td class="num">+0.180</td>
 </tr>
 <tr>
   <td>OpenClaw - Screening Course</td>
   <td><code>9c39ced7</code></td>
-  <td class="qtext">(question text not in Q-G2 SECTIONS export)</td>
+  <td class="qtext"><em>(question text not in Q-G2 SECTIONS export; QID-only)</em></td>
   <td class="num">99.2%</td>
-  <td class="num">263</td>
-  <td class="num bad">+0.049</td>
-  <td class="num">+0.222</td>
+  <td class="num">260</td>
+  <td class="num bad">+0.050</td>
+  <td class="num">+0.225</td>
 </tr></tbody></table>
   <details class="caveats">
     <summary><b>Caveats</b></summary>
@@ -1030,7 +915,7 @@ Identify all issues</div></li><li class="q-item"><div class="q-head"><code>4f42b
 
 </main>
 <footer class="site-footer">
-  Generated 2026-06-10 18:48 UTC ·
+  Generated 2026-06-11 01:29 UTC ·
   <a href="index.html">Overview</a> ·
   <a href="summary.html">Summary</a> ·
   Source: <code>analysis/</code>
